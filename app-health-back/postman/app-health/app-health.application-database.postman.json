@@ -1,0 +1,561 @@
+{
+    "info": {
+		"_postman_id"   : "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+		"name"          : "@app - app-health/application-database",
+		"schema"        : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+			"name": "GraphQL - appHealthCreateApplicationDatabase",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:AppHealthCreateApplicationDatabaseInput!)\n{\n\tappHealthCreateApplicationDatabase (payload:$payload)\n\t{\n\t\tid\n\t\tapplicationId\n\t\tdatabaseId\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tapplicationInfrastructureServiceId\n\t}\n}",
+                        "variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"applicationId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"databaseId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"version\": \"5pmpoi95m8k2ljhlxy1\", \n\t\t\"size\": 59139, \n\t\t\"score\": 58330, \n\t\t\"totalCollectionsTables\": 531012585, \n\t\t\"totalFields\": 290826808, \n\t\t\"applicationInfrastructureServiceId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthCreateApplicationDatabases",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:[AppHealthCreateApplicationDatabaseInput]!)\n{\n\tappHealthCreateApplicationDatabases (payload:$payload)\n}",
+						"variables": "{\n\t\"payload\":\n\t[\n\t\t{\n\t\t\t\"id\": \"5c4cfffb-fd26-4055-8e06-c65269b67937\", \n\t\t\t\"applicationId\": \"17c51c83-f851-4114-91d4-a4d9b45b1c6a\", \n\t\t\t\"databaseId\": \"3e849307-dc27-4268-ba21-d4a752aa435a\", \n\t\t\t\"version\": \"vr6xxcegh3ym9mc0j16\", \n\t\t\t\"size\": 28694, \n\t\t\t\"score\": 86002, \n\t\t\t\"totalCollectionsTables\": 621365264, \n\t\t\t\"totalFields\": 362266614, \n\t\t\t\"applicationInfrastructureServiceId\": \"06a7c83f-9e0c-49ee-98be-97d9683097e5\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"77e33c9a-c77e-43cf-b6d7-1ab3d5735e48\", \n\t\t\t\"applicationId\": \"02660963-ba64-4120-a929-e2a5b226a1e0\", \n\t\t\t\"databaseId\": \"6686c4d4-0f3c-45d7-ba6c-fdb9eb569c3c\", \n\t\t\t\"version\": \"x5douk2qnfivxdr5if2\", \n\t\t\t\"size\": 19852, \n\t\t\t\"score\": 75856, \n\t\t\t\"totalCollectionsTables\": 955134296, \n\t\t\t\"totalFields\": 490683607, \n\t\t\t\"applicationInfrastructureServiceId\": \"7b25e61a-9dae-41ad-9c15-767c162e2681\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"e7def6ab-0c84-4d3b-96fd-c8292e53c584\", \n\t\t\t\"applicationId\": \"a08bc430-de2e-47d2-9b93-fb20107bde93\", \n\t\t\t\"databaseId\": \"feb4f199-0478-498a-947f-ee00a6f4ea00\", \n\t\t\t\"version\": \"w5rtfuoyyp3xqvzvqly\", \n\t\t\t\"size\": 84398, \n\t\t\t\"score\": 72923, \n\t\t\t\"totalCollectionsTables\": 777194222, \n\t\t\t\"totalFields\": 522232489, \n\t\t\t\"applicationInfrastructureServiceId\": \"530962f2-5c16-47df-9faa-0361d48e81d4\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"0d1c984c-fe09-40f5-9d66-b6ed27ab1978\", \n\t\t\t\"applicationId\": \"30d3e437-06ce-4277-9446-1a6730054b92\", \n\t\t\t\"databaseId\": \"aebf3460-516b-4367-8a95-744c5e69300c\", \n\t\t\t\"version\": \"brkdqhidwdvl92mhx55\", \n\t\t\t\"size\": 37787, \n\t\t\t\"score\": 92259, \n\t\t\t\"totalCollectionsTables\": 378544714, \n\t\t\t\"totalFields\": 129115237, \n\t\t\t\"applicationInfrastructureServiceId\": \"692e5c82-99f8-4695-a383-945a96768b4b\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"c1305744-fc6c-48c1-98a4-279a92e11d1d\", \n\t\t\t\"applicationId\": \"6ab7a764-94f6-45b9-ba9b-fbacd3064cde\", \n\t\t\t\"databaseId\": \"0fcf5629-11e7-41e1-bb31-05d5f747b5b6\", \n\t\t\t\"version\": \"ko3st50rztfjd7cssnl\", \n\t\t\t\"size\": 58139, \n\t\t\t\"score\": 60431, \n\t\t\t\"totalCollectionsTables\": 614033511, \n\t\t\t\"totalFields\": 170613769, \n\t\t\t\"applicationInfrastructureServiceId\": \"6e691204-f3da-437a-96e5-cd2add3d7263\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"b9004008-eaab-4152-aa41-f9310a3118d6\", \n\t\t\t\"applicationId\": \"cf226a8d-c9f7-4557-9e02-7d5f7f6561a5\", \n\t\t\t\"databaseId\": \"b426e7b6-6df0-492a-900b-a2bd6825de98\", \n\t\t\t\"version\": \"tymtrdg3g4tzdn0kdjp\", \n\t\t\t\"size\": 36686, \n\t\t\t\"score\": 54107, \n\t\t\t\"totalCollectionsTables\": 209399920, \n\t\t\t\"totalFields\": 252045662, \n\t\t\t\"applicationInfrastructureServiceId\": \"3ddcb381-3827-4452-bf8a-6cfee6012c50\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"b9cddae3-aa42-41e9-96e9-4e4b812769aa\", \n\t\t\t\"applicationId\": \"58e6da02-c0ab-426f-be21-21240a2a7be0\", \n\t\t\t\"databaseId\": \"ae6f06ca-8755-44ba-8047-bb1384a69249\", \n\t\t\t\"version\": \"da7frsd9fy0boj923ts\", \n\t\t\t\"size\": 62777, \n\t\t\t\"score\": 80408, \n\t\t\t\"totalCollectionsTables\": 645483290, \n\t\t\t\"totalFields\": 455934845, \n\t\t\t\"applicationInfrastructureServiceId\": \"68ac552a-ad85-471f-8a39-04388b3505e6\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"f3e26614-2007-4123-a156-c5e9a011d4a3\", \n\t\t\t\"applicationId\": \"76ea2df0-ff1f-4e7e-811a-4463bd586a84\", \n\t\t\t\"databaseId\": \"8d2b95e2-0bb4-4e11-b047-916f6809ef76\", \n\t\t\t\"version\": \"4gyacmdg0mu7wzg4ws9\", \n\t\t\t\"size\": 99815, \n\t\t\t\"score\": 53407, \n\t\t\t\"totalCollectionsTables\": 122200162, \n\t\t\t\"totalFields\": 158591292, \n\t\t\t\"applicationInfrastructureServiceId\": \"df904db9-2237-4917-8d8b-3ef5a90bcdb0\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"523df3a6-b980-48b2-ba63-358066eb68fe\", \n\t\t\t\"applicationId\": \"353f7fe4-54e9-417d-9357-d61204cf38be\", \n\t\t\t\"databaseId\": \"0165ca5a-08e4-49ad-9762-c903ef856240\", \n\t\t\t\"version\": \"py04szewpov35t3j70n\", \n\t\t\t\"size\": 54648, \n\t\t\t\"score\": 47456, \n\t\t\t\"totalCollectionsTables\": 110832593, \n\t\t\t\"totalFields\": 118103025, \n\t\t\t\"applicationInfrastructureServiceId\": \"e8fc2f91-853b-4015-a4cd-de32d60d6577\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"cad3f378-4222-480c-998a-1ba6ee4940eb\", \n\t\t\t\"applicationId\": \"a9293978-4586-4d37-a5ed-b5e4f6325683\", \n\t\t\t\"databaseId\": \"57282ac1-bf7d-4259-9c33-b223da149928\", \n\t\t\t\"version\": \"81se535uq8ds1ruaycf\", \n\t\t\t\"size\": 99725, \n\t\t\t\"score\": 36771, \n\t\t\t\"totalCollectionsTables\": 211622775, \n\t\t\t\"totalFields\": 893825962, \n\t\t\t\"applicationInfrastructureServiceId\": \"5ed02e4b-144a-4b59-b73a-a2173c998ef9\"\n\t\t}\n\t]\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthPaginateApplicationDatabases",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement $constraint:QueryStatement)\n{\n\tappHealthPaginateApplicationDatabases (query:$query constraint:$constraint)\n\t{\n\t\ttotal\n\t\tcount\n\t\trows\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthGetApplicationDatabases",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tappHealthGetApplicationDatabases (query: $query)\n\t{\n\t\tid\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthFindApplicationDatabase",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tappHealthFindApplicationDatabase (query: $query)\n\t{\n\t\tid\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthFindApplicationDatabaseById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($id:ID)\n{\n\tappHealthFindApplicationDatabaseById (id:$id)\n\t{\n\t\tid\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthUpdateApplicationDatabase",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:AppHealthUpdateApplicationDatabaseInput!)\n{\n\tappHealthUpdateApplicationDatabase (payload:$payload)\n\t{\n\t\tid\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"applicationId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"databaseId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"version\": \"4zu7bvmgy7798eq2kqy\", \n\t\t\"size\": 86665, \n\t\t\"score\": 54240, \n\t\t\"totalCollectionsTables\": 814711222, \n\t\t\"totalFields\": 670754560, \n\t\t\"applicationInfrastructureServiceId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthDeleteApplicationDatabaseById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($id:ID!)\n{\n\tappHealthDeleteApplicationDatabaseById (id:$id)\n\t{\n\t\tid\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthDeleteApplicationDatabases",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($query:QueryStatement)\n{\n\tappHealthDeleteApplicationDatabases (query: $query)\n\t{\n\t\tid\n\t\tversion\n\t\tsize\n\t\tscore\n\t\ttotalCollectionsTables\n\t\ttotalFields\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-database/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"applicationId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"databaseId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"version\": \"ujwwgm3zwhntl1d4u9c\", \n\t\"size\": 41132, \n\t\"score\": 68173, \n\t\"totalCollectionsTables\": 317072650, \n\t\"totalFields\": 773653654, \n\t\"applicationInfrastructureServiceId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-database/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-database",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-databases/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "[\n\t{\n\t\t\"id\": \"5c8751db-9fea-462b-89b8-42b415b8c3da\", \n\t\t\"applicationId\": \"cfc2fa26-396f-4307-bd0a-fcdf940a3d8a\", \n\t\t\"databaseId\": \"c47b9d02-52a5-407d-a2b7-5621aeaa8117\", \n\t\t\"version\": \"5jedfav6rznev9c7y2k\", \n\t\t\"size\": 88584, \n\t\t\"score\": 26817, \n\t\t\"totalCollectionsTables\": 565646017, \n\t\t\"totalFields\": 404171727, \n\t\t\"applicationInfrastructureServiceId\": \"46d8f27c-47ec-451b-8833-45a68a562958\"\n\t}, \n\t{\n\t\t\"id\": \"2b062b68-665b-46c5-9ed4-0d32e8d91fbb\", \n\t\t\"applicationId\": \"4760eadc-6c11-418c-bbc8-ee58bafc5cb3\", \n\t\t\"databaseId\": \"554d3fe6-5fd0-474f-91cb-81c6b25ae4d5\", \n\t\t\"version\": \"2p6gbl3uszqjdn0vya0\", \n\t\t\"size\": 59401, \n\t\t\"score\": 14122, \n\t\t\"totalCollectionsTables\": 635186113, \n\t\t\"totalFields\": 409238289, \n\t\t\"applicationInfrastructureServiceId\": \"807486c7-8220-4c7b-b0c5-52fba46faafa\"\n\t}, \n\t{\n\t\t\"id\": \"b5dc8a08-e103-48e7-8d51-85447b30f7e8\", \n\t\t\"applicationId\": \"fc234043-ac3d-4dc0-95fa-96ea39f7acdc\", \n\t\t\"databaseId\": \"805eca80-8520-42f4-b51a-733170c0715d\", \n\t\t\"version\": \"erhqvg41f9p4rwhz8a3\", \n\t\t\"size\": 34900, \n\t\t\"score\": 83363, \n\t\t\"totalCollectionsTables\": 427433969, \n\t\t\"totalFields\": 702713088, \n\t\t\"applicationInfrastructureServiceId\": \"1c6e4bdb-ce67-4c5f-a986-e195354b56dc\"\n\t}, \n\t{\n\t\t\"id\": \"85ed5df3-d172-4a70-9e38-68ec2db08262\", \n\t\t\"applicationId\": \"df187001-0b63-4e5a-8aad-bdd219d5ae1e\", \n\t\t\"databaseId\": \"e972d5e0-639f-423c-8873-e652ffbcc358\", \n\t\t\"version\": \"9jj9fjoby0r7jmw28ri\", \n\t\t\"size\": 53464, \n\t\t\"score\": 37106, \n\t\t\"totalCollectionsTables\": 998485172, \n\t\t\"totalFields\": 380753361, \n\t\t\"applicationInfrastructureServiceId\": \"a53dd816-568c-48a2-b328-c4363a30e19e\"\n\t}, \n\t{\n\t\t\"id\": \"27df8a78-4de1-453c-9366-5b175518b3a2\", \n\t\t\"applicationId\": \"67241f80-d9b4-4238-8238-27a8f50fbf96\", \n\t\t\"databaseId\": \"aaf98fcb-746e-4d76-b0c9-1765a4849f01\", \n\t\t\"version\": \"twbw7exri0no9cdkahb\", \n\t\t\"size\": 47133, \n\t\t\"score\": 69305, \n\t\t\"totalCollectionsTables\": 446912905, \n\t\t\"totalFields\": 727094295, \n\t\t\"applicationInfrastructureServiceId\": \"42b8a3bc-4ee8-4564-9ce5-8749e876858c\"\n\t}, \n\t{\n\t\t\"id\": \"5940d6b8-9405-45e3-a055-7571c473ab72\", \n\t\t\"applicationId\": \"cb9ec8c5-125f-4819-b2a1-0007925a5d92\", \n\t\t\"databaseId\": \"dd390455-c7aa-490b-8b7e-ff4930ab7c4f\", \n\t\t\"version\": \"cewcvr46ewg6uem8s0k\", \n\t\t\"size\": 83780, \n\t\t\"score\": 53337, \n\t\t\"totalCollectionsTables\": 178602643, \n\t\t\"totalFields\": 992409087, \n\t\t\"applicationInfrastructureServiceId\": \"f5a452b9-4a9d-4a11-8da1-ac98c0d29c5a\"\n\t}, \n\t{\n\t\t\"id\": \"05f97384-b613-4fd7-ba7e-098181815c83\", \n\t\t\"applicationId\": \"254a44af-4f10-4ac7-a01d-12ef6589d02f\", \n\t\t\"databaseId\": \"c4856aaf-c390-4673-bbc4-2e5e45fe2d86\", \n\t\t\"version\": \"qm619jorkf7laokmsfm\", \n\t\t\"size\": 63040, \n\t\t\"score\": 70547, \n\t\t\"totalCollectionsTables\": 905411456, \n\t\t\"totalFields\": 462472243, \n\t\t\"applicationInfrastructureServiceId\": \"aa4f88ca-5063-4666-a9e8-b4e21db209c9\"\n\t}, \n\t{\n\t\t\"id\": \"30d38065-d099-491c-86b1-10331f7ea647\", \n\t\t\"applicationId\": \"ca273d8f-9b23-4fce-95ec-0c26aa58baf2\", \n\t\t\"databaseId\": \"6d07c0bc-3655-4436-bae5-d8522ccb4081\", \n\t\t\"version\": \"6bddps16wa0n7npqowb\", \n\t\t\"size\": 99608, \n\t\t\"score\": 62205, \n\t\t\"totalCollectionsTables\": 354215386, \n\t\t\"totalFields\": 878828311, \n\t\t\"applicationInfrastructureServiceId\": \"b94a621b-e6ba-4d7c-8adc-131f34c6e5ac\"\n\t}, \n\t{\n\t\t\"id\": \"ec0e9c20-5c36-47ae-a66a-43ad9b9f37ae\", \n\t\t\"applicationId\": \"fee05482-929e-4415-bb88-227a250139b9\", \n\t\t\"databaseId\": \"6bc96799-3e23-4c7f-a1bb-972b454da813\", \n\t\t\"version\": \"eqs2lozslt1l29qyi3n\", \n\t\t\"size\": 65429, \n\t\t\"score\": 26222, \n\t\t\"totalCollectionsTables\": 340601870, \n\t\t\"totalFields\": 128221386, \n\t\t\"applicationInfrastructureServiceId\": \"65da384f-40b3-4a8a-9683-53acf2c06c75\"\n\t}, \n\t{\n\t\t\"id\": \"ff0b020e-d51c-47cf-9562-b21d47131c45\", \n\t\t\"applicationId\": \"c3cdc2d4-ef2c-461c-ae8d-4187404c208b\", \n\t\t\"databaseId\": \"6e580d93-0656-4f18-9e00-87918b646f20\", \n\t\t\"version\": \"s9tjtxmm3dwa4e20ykp\", \n\t\t\"size\": 77682, \n\t\t\"score\": 87630, \n\t\t\"totalCollectionsTables\": 351561739, \n\t\t\"totalFields\": 647756326, \n\t\t\"applicationInfrastructureServiceId\": \"835ce372-1a48-4d09-81d4-2659821779e3\"\n\t}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-databases/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-databases",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-databases/paginate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-databases/paginate",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+                        "application-databases",
+                        "paginate"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-databases/get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-databases/get",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-databases",
+                        "get"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-database/find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-database/find",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-database",
+                        "find"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-database/find/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-database/find/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-database",
+                        "find",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-database/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"applicationId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"databaseId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"version\": \"35hgwo1688xree7wphx\", \n\t\"size\": 74393, \n\t\"score\": 55781, \n\t\"totalCollectionsTables\": 319968288, \n\t\"totalFields\": 849479731, \n\t\"applicationInfrastructureServiceId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-database/update",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-database",
+                        "update"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/application-database/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-database/delete/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-database",
+                        "delete",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "REST - app-health/application-databases/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/application-databases/delete",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"application-databases",
+                        "delete"
+					]
+				}
+			},
+			"response": []
+		}
+    ],
+    "variable": [
+		{
+			"id": "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

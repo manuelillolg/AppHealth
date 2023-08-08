@@ -1,0 +1,561 @@
+{
+    "info": {
+		"_postman_id"   : "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+		"name"          : "@app - app-health/api-interface-type",
+		"schema"        : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+			"name": "GraphQL - appHealthCreateApiInterfaceType",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:AppHealthCreateApiInterfaceTypeInput!)\n{\n\tappHealthCreateApiInterfaceType (payload:$payload)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t}\n}",
+                        "variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"name\": \"Practical Plastic Car\", \n\t\t\"score\": 96537\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthCreateApiInterfaceTypes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:[AppHealthCreateApiInterfaceTypeInput]!)\n{\n\tappHealthCreateApiInterfaceTypes (payload:$payload)\n}",
+						"variables": "{\n\t\"payload\":\n\t[\n\t\t{\n\t\t\t\"id\": \"d261b552-9887-4b27-b73e-85f295016299\", \n\t\t\t\"name\": \"Sleek Soft Fish\", \n\t\t\t\"score\": 58178\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"87fb271b-51f3-421b-8307-336f82b3488b\", \n\t\t\t\"name\": \"Tasty Rubber Table\", \n\t\t\t\"score\": 18621\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"063eab38-2a20-4a88-a12b-a1f73cfcfdc4\", \n\t\t\t\"name\": \"Refined Fresh Table\", \n\t\t\t\"score\": 15516\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"9b84474d-1f7b-44b8-861e-8fdb297f99a2\", \n\t\t\t\"name\": \"Intelligent Wooden Towels\", \n\t\t\t\"score\": 41467\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"4a05e756-e494-4cd4-b8c1-2fd2c62bfce2\", \n\t\t\t\"name\": \"Small Steel Computer\", \n\t\t\t\"score\": 29301\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"2ef13173-0b96-427a-af42-965ab1e7fa56\", \n\t\t\t\"name\": \"Sleek Frozen Computer\", \n\t\t\t\"score\": 68706\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"a3d96ea3-96a7-4ea6-9936-0c3fed1666d9\", \n\t\t\t\"name\": \"Rustic Concrete Pizza\", \n\t\t\t\"score\": 69058\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"2c504e4a-ff73-4da0-9dd9-22dae2cad240\", \n\t\t\t\"name\": \"Generic Frozen Bacon\", \n\t\t\t\"score\": 63681\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"5d11c9fb-b636-4593-8220-897232740579\", \n\t\t\t\"name\": \"Handmade Plastic Chicken\", \n\t\t\t\"score\": 36408\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"95ca2cc7-da84-41d0-98af-3830bd1787d1\", \n\t\t\t\"name\": \"Refined Metal Hat\", \n\t\t\t\"score\": 84558\n\t\t}\n\t]\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthPaginateApiInterfaceTypes",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement $constraint:QueryStatement)\n{\n\tappHealthPaginateApiInterfaceTypes (query:$query constraint:$constraint)\n\t{\n\t\ttotal\n\t\tcount\n\t\trows\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthGetApiInterfaceTypes",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tappHealthGetApiInterfaceTypes (query: $query)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthFindApiInterfaceType",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tappHealthFindApiInterfaceType (query: $query)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthFindApiInterfaceTypeById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($id:ID)\n{\n\tappHealthFindApiInterfaceTypeById (id:$id)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthUpdateApiInterfaceType",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:AppHealthUpdateApiInterfaceTypeInput!)\n{\n\tappHealthUpdateApiInterfaceType (payload:$payload)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"name\": \"Small Concrete Computer\", \n\t\t\"score\": 20374\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthDeleteApiInterfaceTypeById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($id:ID!)\n{\n\tappHealthDeleteApiInterfaceTypeById (id:$id)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthDeleteApiInterfaceTypes",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($query:QueryStatement)\n{\n\tappHealthDeleteApiInterfaceTypes (query: $query)\n\t{\n\t\tid\n\t\tname\n\t\tscore\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-type/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"name\": \"Sleek Cotton Pants\", \n\t\"score\": 81784\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-type/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-type",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-types/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "[\n\t{\n\t\t\"id\": \"10c41daf-38d2-4ea3-8d76-44a6ac446a47\", \n\t\t\"name\": \"Licensed Fresh Ball\", \n\t\t\"score\": 49739\n\t}, \n\t{\n\t\t\"id\": \"8a0ac6ae-ca37-42c8-bc5f-2fb76121e30b\", \n\t\t\"name\": \"Licensed Fresh Gloves\", \n\t\t\"score\": 26875\n\t}, \n\t{\n\t\t\"id\": \"e3d4e0a7-a944-4893-aaf6-9db2c4c1ada8\", \n\t\t\"name\": \"Sleek Soft Shirt\", \n\t\t\"score\": 29693\n\t}, \n\t{\n\t\t\"id\": \"9ec46ef4-b3c8-4b30-8c30-a4228239afc5\", \n\t\t\"name\": \"Handcrafted Wooden Shoes\", \n\t\t\"score\": 11627\n\t}, \n\t{\n\t\t\"id\": \"25c965c2-f75a-4ce1-ba28-c35425f57986\", \n\t\t\"name\": \"Gorgeous Cotton Ball\", \n\t\t\"score\": 74613\n\t}, \n\t{\n\t\t\"id\": \"cd431e3d-f208-4f35-a2cc-e453502e0c26\", \n\t\t\"name\": \"Gorgeous Wooden Car\", \n\t\t\"score\": 34032\n\t}, \n\t{\n\t\t\"id\": \"7e029b68-17c8-452a-90ff-4ba9de77a10d\", \n\t\t\"name\": \"Licensed Soft Bacon\", \n\t\t\"score\": 77899\n\t}, \n\t{\n\t\t\"id\": \"9ccf10d5-4eb5-416c-95f0-8617403c4087\", \n\t\t\"name\": \"Intelligent Metal Fish\", \n\t\t\"score\": 68832\n\t}, \n\t{\n\t\t\"id\": \"81c2cc5f-8562-409a-a137-d1fcc2701dcb\", \n\t\t\"name\": \"Unbranded Wooden Table\", \n\t\t\"score\": 47343\n\t}, \n\t{\n\t\t\"id\": \"6033a54f-1e8c-4170-8be2-e6552d5988db\", \n\t\t\"name\": \"Small Frozen Chicken\", \n\t\t\"score\": 45772\n\t}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-types/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-types",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-types/paginate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-types/paginate",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+                        "api-interface-types",
+                        "paginate"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-types/get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-types/get",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-types",
+                        "get"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-type/find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-type/find",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-type",
+                        "find"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-type/find/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-type/find/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-type",
+                        "find",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-type/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"name\": \"Awesome Steel Mouse\", \n\t\"score\": 98994\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-type/update",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-type",
+                        "update"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/api-interface-type/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-type/delete/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-type",
+                        "delete",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "REST - app-health/api-interface-types/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/api-interface-types/delete",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"api-interface-types",
+                        "delete"
+					]
+				}
+			},
+			"response": []
+		}
+    ],
+    "variable": [
+		{
+			"id": "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

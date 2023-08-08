@@ -1,0 +1,693 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/@app/app-health/app-health.seed.ts",
+            "integrity": "sha1:511bfa71bd735dfe42987ecae2480401f7714279"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorizations.command-handler.spec.ts",
+            "integrity": "sha1:7db413b7900eda857b1fb590e3df61d394b3efda"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorizations.command-handler.ts",
+            "integrity": "sha1:7dee2b2a7350dcb23a1ad951b5ba31cf7fb7fce4"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorizations.command.ts",
+            "integrity": "sha1:5436b95976efc23c3b3f3d530af46312985cc23a"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorizations.service.spec.ts",
+            "integrity": "sha1:f825dc8126eb90a445c2919667a4e4d538a3f9f3"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorizations.service.ts",
+            "integrity": "sha1:be8de3eadd302e2bd9cd1251ab3be265dbb72d63"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorization.command-handler.spec.ts",
+            "integrity": "sha1:77ba111f1d8379d719e20be999b3747b4f64e1e8"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorization.command-handler.ts",
+            "integrity": "sha1:05c8e9f6afa0f192fdf7ae7144041347805618d9"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorization.command.ts",
+            "integrity": "sha1:c63d3c17d2ff57b5f81001d2046da32581bc59ee"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorization.service.spec.ts",
+            "integrity": "sha1:1989d55bf50c82b8c866f22ea42ac03fe75c6d4d"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/create/app-health-create-application-authorization.service.ts",
+            "integrity": "sha1:89cd0d47a167e8ae166d9c62c35c6f759ef05aa2"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorizations.command-handler.spec.ts",
+            "integrity": "sha1:fd608dd9a75d49ae95531a77c6dd621ef7c6a81a"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorizations.command-handler.ts",
+            "integrity": "sha1:f95308e89e6938648734240d276ec432b7ec52e9"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorizations.command.ts",
+            "integrity": "sha1:0172ffea0466e0f55652846dc227b10cfb425909"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorizations.service.spec.ts",
+            "integrity": "sha1:16f8d8536c466413232a2c67f762fee32f023c14"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorizations.service.ts",
+            "integrity": "sha1:575c67a5fb5e0b03a53e58a3f0f47a956bc5cf95"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorization-by-id.command-handler.spec.ts",
+            "integrity": "sha1:39b12a8833a97e2b9ba8536251a8478ff7f7b0eb"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorization-by-id.command-handler.ts",
+            "integrity": "sha1:d72aa19267c9ee8a408df5fe25d0cbb35575f5ed"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorization-by-id.command.ts",
+            "integrity": "sha1:1695fb54be03528c89b45c26d64c8dddb33e6528"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorization-by-id.service.spec.ts",
+            "integrity": "sha1:44a7aa13220e8596f89f463c0d52f827135eea27"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/delete/app-health-delete-application-authorization-by-id.service.ts",
+            "integrity": "sha1:2ef5dc56f1318fe9d3aab450a551acce1dad2b6e"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-add-application-authorizations-context.event.ts",
+            "integrity": "sha1:831de67ef02c9dacd7280272626cecbcca9b84fe"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-created-application-authorizations.event-handler.ts",
+            "integrity": "sha1:106c619b3af8f59b2586342e184f32067549a1b1"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-created-application-authorizations.event.ts",
+            "integrity": "sha1:6735cc2fe8c662a07a791b61bdd709b78e95e73d"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-created-application-authorization.event-handler.ts",
+            "integrity": "sha1:6e5878e2c130694378d4642e760535234547defe"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-created-application-authorization.event.ts",
+            "integrity": "sha1:ae0b26f4e43e251bc52c12b5b2aa61528b82d98e"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-deleted-application-authorizations.event-handler.ts",
+            "integrity": "sha1:e0b16735362601cbc7df02e227bf468abe5f778a"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-deleted-application-authorizations.event.ts",
+            "integrity": "sha1:8d22c2de820cf54d1fc271b37554f7f6c06f161c"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-deleted-application-authorization.event-handler.ts",
+            "integrity": "sha1:5d2731dc5ff9f9369bba389cfdc1731708693253"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-deleted-application-authorization.event.ts",
+            "integrity": "sha1:74e2e2352d0a45de58635339d28561a0843389ac"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-updated-application-authorizations.event-handler.ts",
+            "integrity": "sha1:b1e8725cd00d197585cf69cc98fc2713d6f37bcc"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-updated-application-authorizations.event.ts",
+            "integrity": "sha1:31d9f96b3016ae4a7c7b146b0ebaf71770ec0289"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-updated-application-authorization.event-handler.ts",
+            "integrity": "sha1:8eef6acd28fb2443f19826d106640b3bcfaed696"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/events/app-health-updated-application-authorization.event.ts",
+            "integrity": "sha1:a82169023e88d152df65e7555592b66643d5e5d8"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization-by-id.query-handler.spec.ts",
+            "integrity": "sha1:82005276a37fe5e3335031f81f791fe01a5e0fc3"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization-by-id.query-handler.ts",
+            "integrity": "sha1:b715dcd8bda6fe5aa0f8eadf696cc997f0e68460"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization-by-id.query.ts",
+            "integrity": "sha1:8e491bbeac6432a66d6ee2624fe3415c841c2406"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization-by-id.service.spec.ts",
+            "integrity": "sha1:2228c77284e23f7b58cf5bbb1a39f49f061f303e"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization-by-id.service.ts",
+            "integrity": "sha1:b7b089c15230aaace6ce7cdc9830bf693194899f"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization.query-handler.spec.ts",
+            "integrity": "sha1:8bfde242abd4cdd580aa01c950032195e6ecf40c"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization.query-handler.ts",
+            "integrity": "sha1:ed570acfbd47da196f3a9a42836a9d192f8503cb"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization.query.ts",
+            "integrity": "sha1:50676d356c96c006fc66a5b99fc823cd7edbd85a"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization.service.spec.ts",
+            "integrity": "sha1:3f7e479b01fb50860e5a1e12c404754fa8a95d91"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/find/app-health-find-application-authorization.service.ts",
+            "integrity": "sha1:5578d24986352fd335298335a2af484598100aa4"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/get/app-health-get-application-authorizations.query-handler.spec.ts",
+            "integrity": "sha1:8610ab0d8f1158abb1ff2020b697fa4b538f7d67"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/get/app-health-get-application-authorizations.query-handler.ts",
+            "integrity": "sha1:2b97365d9ed27a36b4569e74e11a14a421def832"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/get/app-health-get-application-authorizations.query.ts",
+            "integrity": "sha1:b9fd26cc1300df1cdd2af01416ea46216d7dc462"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/get/app-health-get-application-authorizations.service.spec.ts",
+            "integrity": "sha1:99bdbe5bb6a71f44c2b1d421127bbe13b1be3a80"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/get/app-health-get-application-authorizations.service.ts",
+            "integrity": "sha1:14aeaabbc493f2f8e92e6854a7a2b372bdb0715e"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/paginate/app-health-paginate-application-authorizations.query-handler.spec.ts",
+            "integrity": "sha1:3c5bc9d158271b2ac38267748d2a9bc9904edafe"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/paginate/app-health-paginate-application-authorizations.query-handler.ts",
+            "integrity": "sha1:d0b3181aa595f9ad45790fe91f160130631f85f0"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/paginate/app-health-paginate-application-authorizations.query.ts",
+            "integrity": "sha1:1b694fd7488a7ac00965f81d05d89c1b55838b4e"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/paginate/app-health-paginate-application-authorizations.service.spec.ts",
+            "integrity": "sha1:221faebff8a5026c8f2417d23da64204d4d32e07"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/paginate/app-health-paginate-application-authorizations.service.ts",
+            "integrity": "sha1:15c125cda16a16587ff44710d5d4cdfe8bea9726"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/raw-sql/app-health-raw-sql-application-authorizations.query-handler.spec.ts",
+            "integrity": "sha1:62455609b91c5b3d9ba951b9391b52d86c532531"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/raw-sql/app-health-raw-sql-application-authorizations.query-handler.ts",
+            "integrity": "sha1:ecc4b2bc9c54b294d2903136dc7d4d581324a105"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/raw-sql/app-health-raw-sql-application-authorizations.query.ts",
+            "integrity": "sha1:d6eccca5f3396824a61a6c575ccd1602f48fc3fe"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/raw-sql/app-health-raw-sql-application-authorizations.service.spec.ts",
+            "integrity": "sha1:9a1f1d37a3e5fdd5c146609c5260fcb9cb611431"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/raw-sql/app-health-raw-sql-application-authorizations.service.ts",
+            "integrity": "sha1:66a6ead65ce565c42fdebedabd559d0456c7aa5b"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/sagas/app-health-application-authorization.sagas.ts",
+            "integrity": "sha1:bb24ecffb0e2d0d365879844927a6b92be847585"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorizations.command-handler.spec.ts",
+            "integrity": "sha1:0e663d2d43ce059737e37e16a1cda45edc374115"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorizations.command-handler.ts",
+            "integrity": "sha1:d53e9b2e8de074ea2d176e3e367a2c7d8f2756a3"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorizations.command.ts",
+            "integrity": "sha1:c3241fc4b70d40998c542cf176e079950e40700b"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorizations.service.spec.ts",
+            "integrity": "sha1:2f3ada8fb69fc5ac69f39d55802e02180933bd52"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorizations.service.ts",
+            "integrity": "sha1:726c508d3137c0b19738d02fb6ea160f215e5d29"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorization-by-id.command-handler.spec.ts",
+            "integrity": "sha1:d8adb7e85b323145f62764f6cff8b8a1db2817da"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorization-by-id.command-handler.ts",
+            "integrity": "sha1:3d48ab87cf3e5411d326e514c06ec4155ba19931"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorization-by-id.command.ts",
+            "integrity": "sha1:d2d9df82efa1de4c7a4506bd33df7e736de62af6"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorization-by-id.service.spec.ts",
+            "integrity": "sha1:164c51453ce455d49e05a7bfb02cf003242d1c0f"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/update/app-health-update-application-authorization-by-id.service.ts",
+            "integrity": "sha1:5876bedcb7fb8aa5d8c32c7cf3e1b322f388b0db"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/upsert/app-health-upsert-application-authorization.command-handler.spec.ts",
+            "integrity": "sha1:1315e673233932eca9bc95c7a710953fe5a1612d"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/upsert/app-health-upsert-application-authorization.command-handler.ts",
+            "integrity": "sha1:8f8ed1248e1b5a61f0b599078e8f28cf7428f416"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/upsert/app-health-upsert-application-authorization.command.ts",
+            "integrity": "sha1:85e1da748f90a0232cc6965e170a6450d6cd992e"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/upsert/app-health-upsert-application-authorization.service.spec.ts",
+            "integrity": "sha1:2f8fba65fbd5077b57c8c2c952cec877da9c6222"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/application/upsert/app-health-upsert-application-authorization.service.ts",
+            "integrity": "sha1:721605955f3da55f3096751150e13956d297639b"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/index.ts",
+            "integrity": "sha1:46596631709b97667f13250705113c85b0ac393a"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/app-health-application-authorization.aggregate.ts",
+            "integrity": "sha1:e31f1b7308f95240e4151bfb05997be7eacbac4f"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/app-health-application-authorization.mapper.ts",
+            "integrity": "sha1:194cce658118cb52c0afd27a028dfb4e101dd17b"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/app-health-application-authorization.repository.ts",
+            "integrity": "sha1:7d71e2fcbe773ef5d00d42a537ab05a46d1999ff"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/app-health-application-authorization.response.ts",
+            "integrity": "sha1:4dc23f8f4c93f3b351b10597c00738220f75fb97"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/index.ts",
+            "integrity": "sha1:94135b911e8f747116e126329f32e11c41267296"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/infrastructure/mock/app-health-mock-application-authorization.data.ts",
+            "integrity": "sha1:c159121772add1168a51fe2e31c4f192213a2efb"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/infrastructure/mock/app-health-mock-application-authorization.repository.ts",
+            "integrity": "sha1:6d3039ab0345f035e7a2ba4e701ff32314c301a6"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/infrastructure/mock/app-health-mock-application-authorization.seeder.ts",
+            "integrity": "sha1:786bf2a282c7d3faeeb170573f15d172e5c2d006"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/infrastructure/sequelize/app-health-sequelize-application-authorization.model.ts",
+            "integrity": "sha1:3133498ba00c854cb8052c96ab132b133360e119"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/infrastructure/sequelize/app-health-sequelize-application-authorization.repository.ts",
+            "integrity": "sha1:be6da6e6da0f49d7e2ef097f2c025d5d16a0b463"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-id.ts",
+            "integrity": "sha1:016b6b5452f0d68af14e04d81662daa2d53609b6"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-application-id.ts",
+            "integrity": "sha1:e7f7247844c190f356cfb3d4559c80af6cccb633"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-authorization-interface-id.ts",
+            "integrity": "sha1:318865c82a99cceb452748f1d692122f060616f0"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-total-users.ts",
+            "integrity": "sha1:d9466d19047c376a2429e28abb3c973da9e4d76b"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-score.ts",
+            "integrity": "sha1:90001cb0a80cd92ea3cc4dfe8fdcc044334f091c"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-application-infrastructure-service-id.ts",
+            "integrity": "sha1:980ab17b8c47a1db00a72432508fbcd189a338bc"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-created-at.ts",
+            "integrity": "sha1:d311b4dbe58db80e01139aaa8e64599ef698facd"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-updated-at.ts",
+            "integrity": "sha1:03c05b54aac6257abac211149c005598cc9d47b0"
+        },
+        {
+            "path": "src/@app/app-health/application-authorization/domain/value-objects/app-health-application-authorization-deleted-at.ts",
+            "integrity": "sha1:48da81be3bbe1c19b0c18af3f671b90973d5d5f1"
+        },
+        {
+            "path": "src/@api/app-health/app-health.seeder.ts",
+            "integrity": "sha1:e3486529e671c990a42855d49aebc6c7318032fc"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-create-application-authorizations.controller.spec.ts",
+            "integrity": "sha1:f615343c13b2d9fe4847e1d8edc712cc3f43f7f6"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-create-application-authorizations.controller.ts",
+            "integrity": "sha1:ea20309d2a831cc2ccabcfbe726bfdee0033b26e"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-create-application-authorization.controller.spec.ts",
+            "integrity": "sha1:ccd1bfbc5f0c241ceaac52d988c72ac58d1a6c69"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-create-application-authorization.controller.ts",
+            "integrity": "sha1:21d5e2caf8585ed8f2ae3380c1b15dcc4ed0ad2d"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-delete-application-authorizations.controller.spec.ts",
+            "integrity": "sha1:1e5c951dd76fb686919cbd1674997e69aff25dda"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-delete-application-authorizations.controller.ts",
+            "integrity": "sha1:2cab73c955c9dcd3af422011c5c2ebb2de16e8f7"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-delete-application-authorization-by-id.controller.spec.ts",
+            "integrity": "sha1:250b4e89f9f271fea70d14048cf042b4347e0954"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-delete-application-authorization-by-id.controller.ts",
+            "integrity": "sha1:b7d01b1707d894ee45cd31a391f32b617f3d53ff"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-find-application-authorization-by-id.controller.spec.ts",
+            "integrity": "sha1:142bfca7052708cda3c152129378fd928d34aae1"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-find-application-authorization-by-id.controller.ts",
+            "integrity": "sha1:a4052743655d6e74e81b2a44357363f84deb9be0"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-find-application-authorization.controller.spec.ts",
+            "integrity": "sha1:91fcc6f6b3184564362ed1b27d457f27ef99e90d"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-find-application-authorization.controller.ts",
+            "integrity": "sha1:9feea9859347e43943b9e4ac334318e0eed90fe3"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-get-application-authorizations.controller.spec.ts",
+            "integrity": "sha1:3d97abd94b81465254f9147c283288622f508696"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-get-application-authorizations.controller.ts",
+            "integrity": "sha1:d49db6a373d117dfc418a3814c3abe1b635fd289"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-paginate-application-authorizations.controller.spec.ts",
+            "integrity": "sha1:7d3991fac364ddf5583562490e589be7ac650107"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-paginate-application-authorizations.controller.ts",
+            "integrity": "sha1:3b935e2849cfbbc97fc539e6ec059a9581897621"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-update-application-authorizations.controller.spec.ts",
+            "integrity": "sha1:7e0c2d66ba2a25160c15b02b359123607a1b9dea"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-update-application-authorizations.controller.ts",
+            "integrity": "sha1:0d9d7dba0048a2acde3be7c84643e4ff880bfec8"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-update-application-authorization-by-id.controller.spec.ts",
+            "integrity": "sha1:73135755671d07579504a335fe42d380425b3256"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-update-application-authorization-by-id.controller.ts",
+            "integrity": "sha1:fab4fa81851d0276ed93778d605400053baeda0a"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-upsert-application-authorization.controller.spec.ts",
+            "integrity": "sha1:45ce9ec4f6e5076d98a75ef6193c3f44cc51741c"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/controllers/app-health-upsert-application-authorization.controller.ts",
+            "integrity": "sha1:058cde5d0f2567f38bb39f7e975461fd53f35464"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/dto/index.ts",
+            "integrity": "sha1:3771b8f7b8457f8a332d92cf8540308fcbbc7566"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/dto/app-health-create-application-authorization.dto.ts",
+            "integrity": "sha1:74e056732d1ce87d9cae6cba1b1deb5781f7859f"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/dto/app-health-update-application-authorizations.dto.ts",
+            "integrity": "sha1:930452eae4a26a64ce4a936304c44a92d9139e02"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/dto/app-health-update-application-authorization-by-id.dto.ts",
+            "integrity": "sha1:97056f55d58f25c798fcca248c91c2bc0abc35a5"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/dto/app-health-application-authorization.dto.ts",
+            "integrity": "sha1:ca9a10892124a78c4feafecd1a780bb0485fb7ae"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/graphql/app-health-application-authorization.graphql",
+            "integrity": "sha1:c514a81fc2b471f5da0a4f0cb84ef014812444e8"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-create-application-authorizations.handler.spec.ts",
+            "integrity": "sha1:32e1075e4a1a3605a60138b50768574ff733c706"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-create-application-authorizations.handler.ts",
+            "integrity": "sha1:80f1d3904aba3506b7edd0059d1aa37e52ed9a57"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-create-application-authorization.handler.spec.ts",
+            "integrity": "sha1:1c6d99a4839361d9166dda7d88f3ba9b85ba567b"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-create-application-authorization.handler.ts",
+            "integrity": "sha1:53715d1a55e786beea70c11f66b40f45afa00f40"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-delete-application-authorizations.handler.spec.ts",
+            "integrity": "sha1:c1bcbb0f4a1d6d3678434ec81349ff1f95406cf4"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-delete-application-authorizations.handler.ts",
+            "integrity": "sha1:cf45272fa1e518f3bb8e102e140e69fe92ee7ab8"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-delete-application-authorization-by-id.handler.spec.ts",
+            "integrity": "sha1:49af6c150e7df9556a6ed0fb6e69cdbcfac3af8b"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-delete-application-authorization-by-id.handler.ts",
+            "integrity": "sha1:dc98b009a31e45b95cd31ecc57748881f967a3a9"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-find-application-authorization-by-id.handler.spec.ts",
+            "integrity": "sha1:e47d0fdb0a6af570cc94adc1b4ee127d2533c30a"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-find-application-authorization-by-id.handler.ts",
+            "integrity": "sha1:81948d9f0a127a1d50de233953d67e420d32aade"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-find-application-authorization.handler.spec.ts",
+            "integrity": "sha1:0cb63dc7c7d8c130eddde25cc9bcaaa234336d20"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-find-application-authorization.handler.ts",
+            "integrity": "sha1:fd872ef8f4309fc1bb810b8e14f82e54a75cf8d9"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-get-application-authorizations.handler.spec.ts",
+            "integrity": "sha1:6e51ca575ea2eb2d368d232fcb5735984f45b789"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-get-application-authorizations.handler.ts",
+            "integrity": "sha1:f9de5d8f847def5a63a8aa517c074db04ce8c878"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-paginate-application-authorizations.handler.spec.ts",
+            "integrity": "sha1:be7af4eea0e7dba40ddb7aef77c46e006e92602b"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-paginate-application-authorizations.handler.ts",
+            "integrity": "sha1:3f47cc775dd9b171825e8b1f81f3692b9f9dfe70"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-update-application-authorizations.handler.spec.ts",
+            "integrity": "sha1:03a18741740b5fda40ba09fe3445ff6040f34654"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-update-application-authorizations.handler.ts",
+            "integrity": "sha1:6ae06ff7466d235db74f8b5499880bec6326e23e"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-update-application-authorization-by-id.handler.spec.ts",
+            "integrity": "sha1:476e9026fbb5fda3f16032529be63597b21a8464"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-update-application-authorization-by-id.handler.ts",
+            "integrity": "sha1:017da903152476b06d11f8b29c3fff0e6c0fd107"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-upsert-application-authorization.handler.spec.ts",
+            "integrity": "sha1:a621ae8e85f665a9f257827433a3494b5b0b64d9"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/handlers/app-health-upsert-application-authorization.handler.ts",
+            "integrity": "sha1:94df60d8b2f1b960a7358307c7163d563a8e8d67"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/index.ts",
+            "integrity": "sha1:d8a5280d937ebe8899f06564d65e6dec6b6475dc"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-create-application-authorizations.resolver.spec.ts",
+            "integrity": "sha1:dc369ce9f852f6fea5a3369709b56a49fe9d0dbf"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-create-application-authorizations.resolver.ts",
+            "integrity": "sha1:f00755281767305ba5a7288dfe0aa9fa33b97f74"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-create-application-authorization.resolver.spec.ts",
+            "integrity": "sha1:23d330574294451fa0f337789f799e24b3635b76"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-create-application-authorization.resolver.ts",
+            "integrity": "sha1:4883a46469b5f6ac7e35162df62b7106558580cf"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-delete-application-authorizations.resolver.spec.ts",
+            "integrity": "sha1:f8c984919539647b75c8159ea5775a6a6455c942"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-delete-application-authorizations.resolver.ts",
+            "integrity": "sha1:71aa1e8f38ce35df355a94f002154f1467469676"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-delete-application-authorization-by-id.resolver.spec.ts",
+            "integrity": "sha1:fc160733e8c9ee27682cbb2d26ba8288658e856e"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-delete-application-authorization-by-id.resolver.ts",
+            "integrity": "sha1:6b1a678ad8e1b861651039643e2d5560413cb0bc"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-find-application-authorization-by-id.resolver.spec.ts",
+            "integrity": "sha1:3b119f8f193b5aa72cf6c8ab80fb4f70d7488eb5"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-find-application-authorization-by-id.resolver.ts",
+            "integrity": "sha1:a52d10b54d85b7092ed5a1dfba8e1dbe45723f90"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-find-application-authorization.resolver.spec.ts",
+            "integrity": "sha1:187d843e6b43cad38dd936e8a02d31b3cf1c2272"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-find-application-authorization.resolver.ts",
+            "integrity": "sha1:e51e2147c7e5bc08ad2c45b32e145a01462f0bc8"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-get-application-authorizations.resolver.spec.ts",
+            "integrity": "sha1:a16a276803429170ab829388323ab95907575ca3"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-get-application-authorizations.resolver.ts",
+            "integrity": "sha1:beb78350ac03c7c146878e621a929cb0bda57633"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-paginate-application-authorizations.resolver.spec.ts",
+            "integrity": "sha1:4a93092ad4424179345ca03cc510b654d80d083d"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-paginate-application-authorizations.resolver.ts",
+            "integrity": "sha1:eef61742cb584308310ed5f647abab5e33d9c6e1"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-update-application-authorizations.resolver.spec.ts",
+            "integrity": "sha1:71639fa74261ea8293e89a7f8e3dd31831cf551b"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-update-application-authorizations.resolver.ts",
+            "integrity": "sha1:a4c0c02ac2ec0c7635c711deaefac63bc3fd5a3a"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-update-application-authorization-by-id.resolver.spec.ts",
+            "integrity": "sha1:fc44277fa93016dd92e6e2cae33c0fc7af8bb093"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-update-application-authorization-by-id.resolver.ts",
+            "integrity": "sha1:d84a4bbfe7d8e276c25c2d20d96b3a1ff19e2218"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-upsert-application-authorization.resolver.spec.ts",
+            "integrity": "sha1:7886d39bd4d23a97df92c1509d584c7d5266da38"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/resolvers/app-health-upsert-application-authorization.resolver.ts",
+            "integrity": "sha1:7242b32438fd2f197a37840c174cdfc86843fff9"
+        },
+        {
+            "path": "src/@api/app-health/application-authorization/seeder/app-health-application-authorization.seeder.ts",
+            "integrity": "sha1:c832926d8a558710768f5be37204ebe96535d0de"
+        },
+        {
+            "path": "test/acceptance/app-health/application-authorization.e2e-spec.ts",
+            "integrity": "sha1:f8cf29d318a01ec8a794a4411de401db38058a1a"
+        },
+        {
+            "path": "postman/app-health/app-health.application-authorization.postman.json",
+            "integrity": "sha1:a142f24ba1d93222bf9cc74037390f60e5886bda"
+        }
+    ]
+}

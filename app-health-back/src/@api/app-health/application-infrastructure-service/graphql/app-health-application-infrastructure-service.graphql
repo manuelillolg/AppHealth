@@ -1,0 +1,102 @@
+
+type AppHealthApplicationInfrastructureService
+{
+    id: ID!
+    applicationId: ID!
+    application: AppHealthApplication
+    infrastructureServiceId: ID!
+    infrastructureService: AppHealthInfrastructureService
+    averageCostPerYear: GraphQLInt!
+    score: GraphQLInt!
+    createdAt: GraphQLTimestamp
+    updatedAt: GraphQLTimestamp
+    deletedAt: GraphQLTimestamp
+}
+
+input AppHealthCreateApplicationInfrastructureServiceInput
+{
+    id: ID!
+    applicationId: ID!
+    infrastructureServiceId: ID!
+    averageCostPerYear: GraphQLInt!
+    score: GraphQLInt!
+}
+
+input AppHealthUpdateApplicationInfrastructureServiceByIdInput
+{
+    id: ID!
+    applicationId: ID
+    infrastructureServiceId: ID
+    averageCostPerYear: GraphQLInt
+    score: GraphQLInt
+}
+
+input AppHealthUpdateApplicationInfrastructureServicesInput
+{
+    id: ID
+    applicationId: ID
+    infrastructureServiceId: ID
+    averageCostPerYear: GraphQLInt
+    score: GraphQLInt
+}
+
+type Query
+{
+    appHealthFindApplicationInfrastructureService(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): AppHealthApplicationInfrastructureService
+
+    appHealthFindApplicationInfrastructureServiceById(
+        id: ID
+        constraint: QueryStatement
+    ): AppHealthApplicationInfrastructureService
+
+    appHealthGetApplicationInfrastructureServices(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [AppHealthApplicationInfrastructureService]!
+
+    appHealthPaginateApplicationInfrastructureServices(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): Pagination!
+
+}
+
+type Mutation
+{
+    appHealthCreateApplicationInfrastructureService(
+        payload: AppHealthCreateApplicationInfrastructureServiceInput!
+    ): AppHealthApplicationInfrastructureService
+
+    appHealthCreateApplicationInfrastructureServices(
+        payload: [AppHealthCreateApplicationInfrastructureServiceInput]!
+    ): Boolean!
+
+    appHealthUpdateApplicationInfrastructureServiceById(
+        payload: AppHealthUpdateApplicationInfrastructureServiceByIdInput!
+        constraint: QueryStatement
+    ): AppHealthApplicationInfrastructureService
+
+    appHealthUpdateApplicationInfrastructureServices(
+        payload: AppHealthUpdateApplicationInfrastructureServicesInput!
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [AppHealthApplicationInfrastructureService]!
+
+    appHealthUpsertApplicationInfrastructureService(
+        payload: AppHealthUpdateApplicationInfrastructureServiceByIdInput!
+    ): AppHealthApplicationInfrastructureService
+
+    appHealthDeleteApplicationInfrastructureServiceById(
+        id: ID!
+        constraint: QueryStatement
+    ): AppHealthApplicationInfrastructureService
+
+    appHealthDeleteApplicationInfrastructureServices(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [AppHealthApplicationInfrastructureService]!
+
+}

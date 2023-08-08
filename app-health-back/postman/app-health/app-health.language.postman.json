@@ -1,0 +1,561 @@
+{
+    "info": {
+		"_postman_id"   : "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+		"name"          : "@app - app-health/language",
+		"schema"        : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+			"name": "GraphQL - appHealthCreateLanguage",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:AppHealthCreateLanguageInput!)\n{\n\tappHealthCreateLanguage (payload:$payload)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t}\n}",
+                        "variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"name\": \"Practical Granite Gloves\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthCreateLanguages",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:[AppHealthCreateLanguageInput]!)\n{\n\tappHealthCreateLanguages (payload:$payload)\n}",
+						"variables": "{\n\t\"payload\":\n\t[\n\t\t{\n\t\t\t\"id\": \"084d8272-f73f-46ba-a605-3ffcf12268a9\", \n\t\t\t\"name\": \"Rustic Granite Soap\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"781e05ff-e081-4969-aaad-0a5408ad7125\", \n\t\t\t\"name\": \"Sleek Soft Cheese\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"5f48650e-54f3-437c-bdf8-e7176805b178\", \n\t\t\t\"name\": \"Rustic Fresh Towels\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"f2e996bf-eb4b-4e05-a7d9-e499a92909e1\", \n\t\t\t\"name\": \"Incredible Rubber Towels\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"6d04d3c8-3bc6-4098-b136-5834ef209a9b\", \n\t\t\t\"name\": \"Handmade Rubber Tuna\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"72ec920e-0641-487a-baaa-4f548d503c1f\", \n\t\t\t\"name\": \"Sleek Metal Chicken\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"965a8a62-2e79-4106-af9d-e44faba6d685\", \n\t\t\t\"name\": \"Tasty Soft Towels\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"44c69199-d4f2-41d9-afe4-c4f9e1fcdd04\", \n\t\t\t\"name\": \"Licensed Plastic Tuna\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"9a26f211-e6dc-4b91-9737-2ef7c10c3387\", \n\t\t\t\"name\": \"Refined Wooden Sausages\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"6e470207-bd28-473c-9a7d-260a891e5e5f\", \n\t\t\t\"name\": \"Handmade Concrete Ball\", \n\t\t\t\"versions\": { \"foo\" : \"bar\" }\n\t\t}\n\t]\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthPaginateLanguages",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement $constraint:QueryStatement)\n{\n\tappHealthPaginateLanguages (query:$query constraint:$constraint)\n\t{\n\t\ttotal\n\t\tcount\n\t\trows\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthGetLanguages",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tappHealthGetLanguages (query: $query)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthFindLanguage",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tappHealthFindLanguage (query: $query)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthFindLanguageById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($id:ID)\n{\n\tappHealthFindLanguageById (id:$id)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthUpdateLanguage",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:AppHealthUpdateLanguageInput!)\n{\n\tappHealthUpdateLanguage (payload:$payload)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"name\": \"Sleek Frozen Ball\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthDeleteLanguageById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($id:ID!)\n{\n\tappHealthDeleteLanguageById (id:$id)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - appHealthDeleteLanguages",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($query:QueryStatement)\n{\n\tappHealthDeleteLanguages (query: $query)\n\t{\n\t\tid\n\t\tname\n\t\tversions\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/language/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"name\": \"Awesome Rubber Soap\", \n\t\"versions\": { \"foo\" : \"bar\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/language/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"language",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/languages/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "[\n\t{\n\t\t\"id\": \"02b30134-fe41-4503-8027-4a02691bbeb6\", \n\t\t\"name\": \"Intelligent Frozen Mouse\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"64b30f39-c2d4-40b0-91de-4f07e14c6a8b\", \n\t\t\"name\": \"Refined Cotton Towels\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"0b2e3e51-1578-4591-a6a1-7d9acb62cab7\", \n\t\t\"name\": \"Refined Metal Computer\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"276e991e-a41c-4c94-951d-ce98808e5522\", \n\t\t\"name\": \"Ergonomic Fresh Gloves\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"db9378ad-139c-45aa-ba44-002d2bd19dea\", \n\t\t\"name\": \"Small Cotton Mouse\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"cf12399d-dc2e-4243-8e36-64d993e6cc5a\", \n\t\t\"name\": \"Generic Metal Fish\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"ef68516f-5937-4b53-ac65-78eee0d8d35a\", \n\t\t\"name\": \"Tasty Fresh Shoes\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"1ab6a9fb-fabd-48fa-8816-01038146f64b\", \n\t\t\"name\": \"Fantastic Granite Bike\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"1598448c-8b36-4084-8387-997fdb1474f1\", \n\t\t\"name\": \"Small Plastic Table\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}, \n\t{\n\t\t\"id\": \"7309407c-13c5-4aa2-a6bd-15697adee7b1\", \n\t\t\"name\": \"Practical Metal Towels\", \n\t\t\"versions\": { \"foo\" : \"bar\" }\n\t}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/languages/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"languages",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/languages/paginate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/languages/paginate",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+                        "languages",
+                        "paginate"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/languages/get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/languages/get",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"languages",
+                        "get"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/language/find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/language/find",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"language",
+                        "find"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/language/find/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/language/find/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"language",
+                        "find",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/language/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"name\": \"Unbranded Steel Bacon\", \n\t\"versions\": { \"foo\" : \"bar\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/language/update",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"language",
+                        "update"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - app-health/language/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/language/delete/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"language",
+                        "delete",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "REST - app-health/languages/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/app-health/languages/delete",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"app-health",
+						"languages",
+                        "delete"
+					]
+				}
+			},
+			"response": []
+		}
+    ],
+    "variable": [
+		{
+			"id": "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

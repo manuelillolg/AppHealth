@@ -1,0 +1,163 @@
+version: 0.0.1
+boundedContextName: app-health
+moduleName: application
+moduleNames: applications
+aggregateName: AppHealthApplication
+hasOAuth: false
+hasTenant: false
+hasAuditing: false
+aggregateProperties:
+  - name: id
+    type: id
+    primaryKey: true
+    length: 36
+    nullable: false
+  - name: technicalSolutionId
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthTechnicalSolution
+      modulePath: app-health/technical-solution
+      key: id
+      field: technicalSolution
+      avoidConstraint: true
+  - name: name
+    type: varchar
+    maxLength: 255
+    nullable: false
+  - name: description
+    type: text
+    nullable: true
+  - name: businessImpact
+    type: text
+    nullable: true
+  - name: type
+    type: enum
+    enumOptions:
+      - FRONTEND
+      - SERVER
+      - MOBILE
+      - EMBEDDED
+    nullable: false
+  - name: releaseDate
+    type: date
+    nullable: false
+  - name: architectureDiagram
+    type: varchar
+    maxLength: 255
+    nullable: false
+  - name: hasTenants
+    type: boolean
+    nullable: false
+  - name: hasLicensing
+    type: boolean
+    nullable: false
+  - name: costLicensesPerYear
+    type: int.unsigned
+    maxLength: 10
+    nullable: false
+  - name: requestsPerDay
+    type: int.unsigned
+    maxLength: 10
+    nullable: false
+  - name: views
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationView
+      modulePath: app-health/application-view
+      key: id
+      field: applicationView
+      avoidConstraint: true
+  - name: authentications
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationAuthentication
+      modulePath: app-health/application-authentication
+      key: id
+      field: applicationAuthentication
+      avoidConstraint: true
+  - name: authorizations
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationAuthorization
+      modulePath: app-health/application-authorization
+      key: id
+      field: applicationAuthorization
+      avoidConstraint: true
+  - name: languages
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationLanguage
+      modulePath: app-health/application-language
+      key: id
+      field: applicationLanguage
+      avoidConstraint: true
+  - name: infrastructureServices
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationInfrastructureService
+      modulePath: app-health/application-infrastructure-service
+      key: id
+      field: applicationInfrastructureService
+      avoidConstraint: true
+  - name: databases
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationDatabase
+      modulePath: app-health/application-database
+      key: id
+      field: applicationDatabase
+      avoidConstraint: true
+  - name: apis
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationApi
+      modulePath: app-health/application-api
+      key: id
+      field: applicationApi
+      avoidConstraint: true
+  - name: integrations
+    type: id
+    length: 36
+    nullable: false
+    relationship:
+      type: many-to-one
+      aggregate: AppHealthApplicationIntegration
+      modulePath: app-health/application-integration
+      key: id
+      field: applicationIntegration
+      avoidConstraint: true
+  - name: createdAt
+    type: timestamp
+    nullable: true
+  - name: updatedAt
+    type: timestamp
+    nullable: true
+  - name: deletedAt
+    type: timestamp
+    nullable: true
+aggregateI18nProperties: []
+additionalApis: []
