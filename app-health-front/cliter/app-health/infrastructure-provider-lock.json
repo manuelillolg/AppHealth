@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider-detail.component.html",
+            "integrity": "sha1:3d3310dceb9cb4cb85a57db812bb0522d7bf966a"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider-detail.component.ts",
+            "integrity": "sha1:7ea89a358976a3864e78b303e0bf62691cb56a94"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider-list.component.html",
+            "integrity": "sha1:273c60546f9476f5689684fc6114866551d87a38"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider-list.component.ts",
+            "integrity": "sha1:ec9e58c608a727865766c794a32fce76c6341a3a"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider.columns-config.ts",
+            "integrity": "sha1:dce9b96dc85461c43b7c6c7c41098f9c0389e860"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider.graphql.ts",
+            "integrity": "sha1:e30070f318a7b5e20dedd50bac3217369dcdd21e"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider.resolvers.ts",
+            "integrity": "sha1:9fb1f2c1cb04c63e64fe1476be4555847439ca9c"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-provider/infrastructure-provider.service.ts",
+            "integrity": "sha1:8ce6181948f16a35db7224a5a1a7ef290ae5e242"
+        }
+    ]
+}

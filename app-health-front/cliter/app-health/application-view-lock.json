@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view-detail.component.html",
+            "integrity": "sha1:8c566b9a25136f1bda8fa6c8ed6e07feccf34ec9"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view-detail.component.ts",
+            "integrity": "sha1:d4777f04262eab78cfc469ef0a010c3410c6823c"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view-list.component.html",
+            "integrity": "sha1:32be0d8c61796520fd8a7c044dacce6f9686d6ab"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view-list.component.ts",
+            "integrity": "sha1:bb23c4f5d59441dd17f9229ff2cd1c6e1075c06f"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view.columns-config.ts",
+            "integrity": "sha1:b59fa9de5b13f796d81a29f3b634331334485cca"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view.graphql.ts",
+            "integrity": "sha1:d3c396dd8e866593d60f26dcf90d3598e7c3de73"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view.resolvers.ts",
+            "integrity": "sha1:f2af936aa320e6f52b4ed7379844aae5bcea19cf"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-view/application-view.service.ts",
+            "integrity": "sha1:0f5e36c3e66e8f3b8819926d3ddf4f3c3369ac23"
+        }
+    ]
+}

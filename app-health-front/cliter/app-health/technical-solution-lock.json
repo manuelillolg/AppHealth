@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-detail.component.html",
+            "integrity": "sha1:12388d92bde11c4fa17ad80966576ec51cd26304"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-detail.component.ts",
+            "integrity": "sha1:f8e37f8b15abd0245450c2789bbb6fba3d53efd3"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-list.component.html",
+            "integrity": "sha1:b909410c400d0589b882b0e80502b2ed1a8c5250"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-list.component.ts",
+            "integrity": "sha1:9a8e03ca51001c76c03dbd24c7a24993c3926a93"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.columns-config.ts",
+            "integrity": "sha1:06cef5a7c58a1a51d7bc52e0072d115d4e08c9a4"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.graphql.ts",
+            "integrity": "sha1:d94217cc42367fdde0307fa70e471644fd53acac"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.resolvers.ts",
+            "integrity": "sha1:b1768f56b5c2845265794910c1a903406041cea3"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.service.ts",
+            "integrity": "sha1:2533c2389de181f70e4b176057307901263550b5"
+        }
+    ]
+}

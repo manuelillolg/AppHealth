@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language-detail.component.html",
+            "integrity": "sha1:45117b2cd42abb15040cca73d0eb9d77382fe51c"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language-detail.component.ts",
+            "integrity": "sha1:96a3de5da1bd2b62fa4916d91e32ba188b1d3ae1"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language-list.component.html",
+            "integrity": "sha1:290edda90058e7b9de4cf3ae089a1d178b9ef373"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language-list.component.ts",
+            "integrity": "sha1:896ad1ffd67783c2cb21fde3a8a21040586fe237"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language.columns-config.ts",
+            "integrity": "sha1:35fbb96a8805fcba70104e3a72cdb6124ced4be5"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language.graphql.ts",
+            "integrity": "sha1:65f44718dde69e6537e3eec4424ef5449826449e"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language.resolvers.ts",
+            "integrity": "sha1:f8c968010dc7b9029a28cd0978ba957b3461cdd9"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/language/language.service.ts",
+            "integrity": "sha1:c24119994cf4eaa8e655512f0dc0f370bce8ec9c"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database-detail.component.html",
+            "integrity": "sha1:05bcdd7b9676da4ef9a42193e388eb8c2f4187e5"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database-detail.component.ts",
+            "integrity": "sha1:866e3a9119dc1bed4b1d28ba397b277d51243b9e"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database-list.component.html",
+            "integrity": "sha1:1c4373cec3a21c491c17aad772cdbfe3e311786c"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database-list.component.ts",
+            "integrity": "sha1:f2bd5bacd353391af53c87b6ee080ed7844c5273"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database.columns-config.ts",
+            "integrity": "sha1:2a5df69fdd4382be7aae8612ccd09e1a397bbc27"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database.graphql.ts",
+            "integrity": "sha1:9c39c26bf0174eff56647bf1ac5f63364bf97ef3"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database.resolvers.ts",
+            "integrity": "sha1:16bba3a5a17457390dc5eacab53eec1c2552efb5"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-database/application-database.service.ts",
+            "integrity": "sha1:6d99f6309a5b65efa0cd79dedeb004d95d33c523"
+        }
+    ]
+}

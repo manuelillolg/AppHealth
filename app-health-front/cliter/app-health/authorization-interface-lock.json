@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface-detail.component.html",
+            "integrity": "sha1:5843ceb419a6d08b88232a5617c104d723fc7277"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface-detail.component.ts",
+            "integrity": "sha1:f53b9669a7e582e3920600b77e3dc20323d000ff"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface-list.component.html",
+            "integrity": "sha1:92fd55f802bc443ecd5d2398c8924912e7737604"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface-list.component.ts",
+            "integrity": "sha1:95d05c2c8c8265c09ac7fde79727e928dc0aba05"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface.columns-config.ts",
+            "integrity": "sha1:cd4783812ddbf303a62fc62aadec797ef58fe4cd"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface.graphql.ts",
+            "integrity": "sha1:033fb285d6c69d50f37999319c112e9efc8b1db2"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface.resolvers.ts",
+            "integrity": "sha1:395de2fe9d1a836853ef84ceb89338d1d325e34b"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/authorization-interface/authorization-interface.service.ts",
+            "integrity": "sha1:470fa373629309ee79c58188a50d8087d2d24e54"
+        }
+    ]
+}

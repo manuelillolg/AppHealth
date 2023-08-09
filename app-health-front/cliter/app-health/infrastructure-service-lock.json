@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service-detail.component.html",
+            "integrity": "sha1:392021c5475d8840015b637343ac8255319c365d"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service-detail.component.ts",
+            "integrity": "sha1:53079adf2b45bce9907c9311f61f826c9132aa59"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service-list.component.html",
+            "integrity": "sha1:2f0b831d762faaeb0f8e41e7eaba9e34c7829595"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service-list.component.ts",
+            "integrity": "sha1:3332b0d089cd0340111fe7e17df79393087ca076"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service.columns-config.ts",
+            "integrity": "sha1:91434a92d52cca6d3d1233dde371f8e7b76afbb8"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service.graphql.ts",
+            "integrity": "sha1:caad9027d1a1be09a511a1204b90f6161f272404"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service.resolvers.ts",
+            "integrity": "sha1:739a158ac820e2f65f090ac79909d068d9a9b3b4"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/infrastructure-service/infrastructure-service.service.ts",
+            "integrity": "sha1:ea81851c58266cb6aa96095220da608aec846de6"
+        }
+    ]
+}

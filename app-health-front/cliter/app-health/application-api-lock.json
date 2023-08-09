@@ -1,0 +1,45 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.html",
+            "integrity": "sha1:67404a161486df15c48cc64ace3ebafc7edd1503"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/app-health.component.ts",
+            "integrity": "sha1:1942699685935355aca383bd4742564761d3ac86"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api-detail.component.html",
+            "integrity": "sha1:195888c6d375908fab2b8ccb9ea65b0cf9858000"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api-detail.component.ts",
+            "integrity": "sha1:e184475938d0cefd644952cc5247eab85017da7b"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api-list.component.html",
+            "integrity": "sha1:b87db1382ae560a1698158b1449c48359bb3bf5c"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api-list.component.ts",
+            "integrity": "sha1:088be9a7057af98693aa11c8fb3b30b33004eac0"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api.columns-config.ts",
+            "integrity": "sha1:99fa3de0b0678d7298a2df67ef18cfcc8e915a25"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api.graphql.ts",
+            "integrity": "sha1:2400e72e073c0378fdb9c8aab33ad629a4ae890f"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api.resolvers.ts",
+            "integrity": "sha1:22734017e49d0fe6088a58727bedf848f8ef3b1f"
+        },
+        {
+            "path": "src/app/modules/admin/apps/app-health/application-api/application-api.service.ts",
+            "integrity": "sha1:d8942f53d23c314cbe355b13223e666955eb1fea"
+        }
+    ]
+}
