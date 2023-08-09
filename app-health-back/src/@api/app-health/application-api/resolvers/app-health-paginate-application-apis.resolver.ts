@@ -1,9 +1,7 @@
-import { Resolver, Args, Query } from '@nestjs/graphql';
-import { QueryStatement, Timezone } from '@aurorajs.dev/core';
-
-// @app
-import { AppHealthPaginateApplicationApisHandler } from '../handlers/app-health-paginate-application-apis.handler';
+import { AppHealthPaginateApplicationApisHandler } from '@api/app-health/application-api';
 import { Pagination } from '@api/graphql';
+import { QueryStatement, Timezone } from '@aurorajs.dev/core';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
 @Resolver()
 export class AppHealthPaginateApplicationApisResolver

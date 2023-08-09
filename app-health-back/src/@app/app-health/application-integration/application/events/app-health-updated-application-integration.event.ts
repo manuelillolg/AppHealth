@@ -10,7 +10,7 @@ export class AppHealthUpdatedApplicationIntegrationEvent
         public readonly interfaceNumbers: number,
         public readonly modality: string,
         public readonly score: number,
-        public readonly documentations: string,
+        public readonly documentations: any,
         public readonly updatedAt: string,
         public readonly deletedAt: string,
     ) {}

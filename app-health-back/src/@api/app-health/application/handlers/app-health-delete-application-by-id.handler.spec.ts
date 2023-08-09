@@ -8,7 +8,6 @@ describe('AppHealthDeleteApplicationByIdController', () =>
 {
     let handler: AppHealthDeleteApplicationByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthDeleteApplicationByIdController', () =>
 
         handler = module.get<AppHealthDeleteApplicationByIdHandler>(AppHealthDeleteApplicationByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,14 @@ describe('AppHealthDeleteApplicationByIdController', () =>
         test('should return an application deleted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationData[0])));
-            expect(await handler.main(appHealthMockApplicationData[0].id)).toBe(appHealthMockApplicationData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationData[0].id,
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationData[0]);
         });
     });
 });

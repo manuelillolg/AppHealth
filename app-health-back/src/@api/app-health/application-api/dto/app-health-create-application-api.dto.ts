@@ -1,6 +1,5 @@
 /* eslint-disable indent */
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationApiDocumentations } from '@api/graphql';
 
 export class AppHealthCreateApplicationApiDto
 {
@@ -31,17 +30,16 @@ export class AppHealthCreateApplicationApiDto
     score: number;
 
     @ApiProperty({
-        type       : AppHealthApplicationApiDocumentations,
-        enum       : ['OPENAPI','GRAPGQL','HTML','DOCS'],
+        type       : Object,
         description: 'documentations [input here api field description]',
     })
-    documentations?: AppHealthApplicationApiDocumentations;
+    documentations?: any;
 
     @ApiProperty({
         type       : Number,
         description: 'requestsPerDay [input here api field description]',
     })
-    requestsPerDay: number;
+    requestsPerDay?: number;
 
     @ApiProperty({
         type       : String,

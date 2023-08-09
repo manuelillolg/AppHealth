@@ -22,8 +22,6 @@ import { AppHealthMockApplicationAuthenticationRepository } from '../../infrastr
 describe('AppHealthUpdateApplicationAuthenticationsService', () =>
 {
     let service: AppHealthUpdateApplicationAuthenticationsService;
-    let repository: AppHealthIApplicationAuthenticationRepository;
-    let mockRepository: AppHealthMockApplicationAuthenticationRepository;
 
     beforeAll(async () =>
     {
@@ -47,8 +45,6 @@ describe('AppHealthUpdateApplicationAuthenticationsService', () =>
             .compile();
 
         service = module.get(AppHealthUpdateApplicationAuthenticationsService);
-        repository = module.get(AppHealthIApplicationAuthenticationRepository);
-        mockRepository = module.get(AppHealthMockApplicationAuthenticationRepository);
     });
 
     describe('main', () =>
@@ -60,16 +56,21 @@ describe('AppHealthUpdateApplicationAuthenticationsService', () =>
 
         test('should update a applicationAuthentications and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationAuthenticationId(appHealthMockApplicationAuthenticationData[0].id),
-                    applicationId: new AppHealthApplicationAuthenticationApplicationId(appHealthMockApplicationAuthenticationData[0].applicationId),
-                    authenticationInterfaceId: new AppHealthApplicationAuthenticationAuthenticationInterfaceId(appHealthMockApplicationAuthenticationData[0].authenticationInterfaceId),
-                    totalUsers: new AppHealthApplicationAuthenticationTotalUsers(appHealthMockApplicationAuthenticationData[0].totalUsers),
-                    score: new AppHealthApplicationAuthenticationScore(appHealthMockApplicationAuthenticationData[0].score),
-                    applicationInfrastructureServiceId: new AppHealthApplicationAuthenticationApplicationInfrastructureServiceId(appHealthMockApplicationAuthenticationData[0].applicationInfrastructureServiceId),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationAuthenticationId(appHealthMockApplicationAuthenticationData[0].id),
+                        applicationId: new AppHealthApplicationAuthenticationApplicationId(appHealthMockApplicationAuthenticationData[0].applicationId),
+                        authenticationInterfaceId: new AppHealthApplicationAuthenticationAuthenticationInterfaceId(appHealthMockApplicationAuthenticationData[0].authenticationInterfaceId),
+                        totalUsers: new AppHealthApplicationAuthenticationTotalUsers(appHealthMockApplicationAuthenticationData[0].totalUsers),
+                        score: new AppHealthApplicationAuthenticationScore(appHealthMockApplicationAuthenticationData[0].score),
+                        applicationInfrastructureServiceId: new AppHealthApplicationAuthenticationApplicationInfrastructureServiceId(appHealthMockApplicationAuthenticationData[0].applicationInfrastructureServiceId),
+                    },
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

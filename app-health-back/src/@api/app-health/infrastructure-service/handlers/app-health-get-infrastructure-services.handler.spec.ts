@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthGetInfrastructureServicesHandler } from '@api/app-health/infrastructure-service';
 import { appHealthMockInfrastructureServiceData } from '@app/app-health/infrastructure-service';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthGetInfrastructureServicesHandler', () =>
 {
     let handler: AppHealthGetInfrastructureServicesHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthGetInfrastructureServicesHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthGetInfrastructureServicesHandler>(AppHealthGetInfrastructureServicesHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthGetInfrastructureServicesHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthGetInfrastructureServicesHandler', () =>
         test('should return a appHealthMockInfrastructureServiceData', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockInfrastructureServiceData)));
-            expect(await handler.main()).toBe(appHealthMockInfrastructureServiceData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockInfrastructureServiceData);
         });
     });
 });

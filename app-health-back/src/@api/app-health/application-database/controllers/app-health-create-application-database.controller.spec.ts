@@ -1,6 +1,5 @@
 import { AppHealthCreateApplicationDatabaseController, AppHealthCreateApplicationDatabaseHandler } from '@api/app-health/application-database';
 import { appHealthMockApplicationDatabaseData } from '@app/app-health/application-database';
-import { CacheModule } from '@nestjs/cache-manager';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationDatabaseController', () =>
@@ -41,7 +40,12 @@ describe('AppHealthCreateApplicationDatabaseController', () =>
         test('should return an applicationDatabase created', async () =>
         {
             jest.spyOn(handler, 'main').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationDatabaseData[0])));
-            expect(await controller.main(appHealthMockApplicationDatabaseData[0])).toBe(appHealthMockApplicationDatabaseData[0]);
+            expect(
+                await controller.main(
+                    appHealthMockApplicationDatabaseData[0],
+                ),
+            )
+                .toBe(appHealthMockApplicationDatabaseData[0]);
         });
     });
 });

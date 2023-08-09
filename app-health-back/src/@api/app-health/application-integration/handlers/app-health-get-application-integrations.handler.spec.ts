@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthGetApplicationIntegrationsHandler } from '@api/app-health/application-integration';
 import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthGetApplicationIntegrationsHandler', () =>
 {
     let handler: AppHealthGetApplicationIntegrationsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthGetApplicationIntegrationsHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthGetApplicationIntegrationsHandler>(AppHealthGetApplicationIntegrationsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthGetApplicationIntegrationsHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthGetApplicationIntegrationsHandler', () =>
         test('should return a appHealthMockApplicationIntegrationData', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationIntegrationData)));
-            expect(await handler.main()).toBe(appHealthMockApplicationIntegrationData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationIntegrationData);
         });
     });
 });

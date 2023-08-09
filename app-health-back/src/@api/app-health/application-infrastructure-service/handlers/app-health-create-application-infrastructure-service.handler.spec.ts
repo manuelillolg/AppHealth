@@ -8,7 +8,6 @@ describe('AppHealthCreateApplicationInfrastructureServiceHandler', () =>
 {
     let handler: AppHealthCreateApplicationInfrastructureServiceHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthCreateApplicationInfrastructureServiceHandler', () =>
 
         handler = module.get<AppHealthCreateApplicationInfrastructureServiceHandler>(AppHealthCreateApplicationInfrastructureServiceHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,13 @@ describe('AppHealthCreateApplicationInfrastructureServiceHandler', () =>
         test('should return an applicationInfrastructureService created', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationInfrastructureServiceData[0])));
-            expect(await handler.main(appHealthMockApplicationInfrastructureServiceData[0])).toBe(appHealthMockApplicationInfrastructureServiceData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationInfrastructureServiceData[0],
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationInfrastructureServiceData[0]);
         });
     });
 });

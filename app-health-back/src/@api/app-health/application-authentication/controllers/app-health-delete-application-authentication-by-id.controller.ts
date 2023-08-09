@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { AppHealthApplicationAuthenticationDto, AppHealthDeleteApplicationAuthenticationByIdHandler } from '@api/app-health/application-authentication';
-import { Auditing, AuditingMeta, QueryStatement, Timezone } from '@aurorajs.dev/core';
+import { QueryStatement, Timezone } from '@aurorajs.dev/core';
 import { Body, Controller, Delete, Param } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 

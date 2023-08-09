@@ -9,7 +9,6 @@ describe('AppHealthUpdateInfrastructureServiceByIdHandler', () =>
 {
     let handler: AppHealthUpdateInfrastructureServiceByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthUpdateInfrastructureServiceByIdHandler', () =>
 
         handler = module.get<AppHealthUpdateInfrastructureServiceByIdHandler>(AppHealthUpdateInfrastructureServiceByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthUpdateInfrastructureServiceByIdHandler should be defined', () =>
@@ -54,7 +52,13 @@ describe('AppHealthUpdateInfrastructureServiceByIdHandler', () =>
         test('should return a infrastructureService updated', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockInfrastructureServiceData[0])));
-            expect(await handler.main(<AppHealthUpdateInfrastructureServiceByIdInput>appHealthMockInfrastructureServiceData[0])).toBe(appHealthMockInfrastructureServiceData[0]);
+            expect(
+                await handler.main(
+                    <AppHealthUpdateInfrastructureServiceByIdInput>appHealthMockInfrastructureServiceData[0],
+                    {},
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockInfrastructureServiceData[0]);
         });
     });
 });

@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthCreateApplicationResolver } from './app-health-create-application.resolver';
-import { AppHealthCreateApplicationHandler } from '../handlers/app-health-create-application.handler';
+import { AppHealthCreateApplicationHandler, AppHealthCreateApplicationResolver } from '@api/app-health/application';
 import { AppHealthCreateApplicationInput } from '@api/graphql';
-
-// sources
-import { appHealthMockApplicationData } from '@app/app-health/application/infrastructure/mock/app-health-mock-application.data';
+import { appHealthMockApplicationData } from '@app/app-health/application';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationResolver', () =>
 {

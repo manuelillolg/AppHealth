@@ -2,12 +2,12 @@ import { IntValueObject, ValidationRules } from '@aurorajs.dev/core';
 
 export class AppHealthApplicationViewTotalViews extends IntValueObject
 {
-    public readonly type: string = 'ApplicationViewTotalViews';
+    public readonly type: string = 'AppHealthApplicationViewTotalViews';
 
     constructor(value: number, validationRules: ValidationRules = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationViewTotalViews',
+            name       : 'AppHealthApplicationViewTotalViews',
             nullable   : false,
             undefinable: false,
             maxLength  : 10,

@@ -3,13 +3,6 @@ enum AppHealthApplicationIntegrationModality {
     BIDIRECTIONAL
 }
 
-enum AppHealthApplicationIntegrationDocumentations {
-    OPENAPI
-    GRAPHQL
-    HTML
-    DOCS
-}
-
 
 type AppHealthApplicationIntegration
 {
@@ -18,14 +11,14 @@ type AppHealthApplicationIntegration
     description: GraphQLString
     sourceApplicationId: ID!
     sourceApplication: AppHealthApplication
-    targetApplicationId: ID!
+    targetApplicationId: ID
     targetApplication: AppHealthApplication
     apiInterfaceTypeId: ID!
     apiInterfaceType: AppHealthApiInterfaceType
-    interfaceNumbers: GraphQLInt!
+    interfaceNumbers: GraphQLInt
     modality: AppHealthApplicationIntegrationModality!
     score: GraphQLInt!
-    documentations: AppHealthApplicationIntegrationDocumentations
+    documentations: JSON
     updatedAt: GraphQLTimestamp
     deletedAt: GraphQLTimestamp
 }
@@ -36,12 +29,12 @@ input AppHealthCreateApplicationIntegrationInput
     name: GraphQLString!
     description: GraphQLString
     sourceApplicationId: ID!
-    targetApplicationId: ID!
+    targetApplicationId: ID
     apiInterfaceTypeId: ID!
-    interfaceNumbers: GraphQLInt!
+    interfaceNumbers: GraphQLInt
     modality: AppHealthApplicationIntegrationModality!
     score: GraphQLInt!
-    documentations: AppHealthApplicationIntegrationDocumentations
+    documentations: JSON
 }
 
 input AppHealthUpdateApplicationIntegrationByIdInput
@@ -55,7 +48,7 @@ input AppHealthUpdateApplicationIntegrationByIdInput
     interfaceNumbers: GraphQLInt
     modality: AppHealthApplicationIntegrationModality
     score: GraphQLInt
-    documentations: AppHealthApplicationIntegrationDocumentations
+    documentations: JSON
 }
 
 input AppHealthUpdateApplicationIntegrationsInput
@@ -69,7 +62,7 @@ input AppHealthUpdateApplicationIntegrationsInput
     interfaceNumbers: GraphQLInt
     modality: AppHealthApplicationIntegrationModality
     score: GraphQLInt
-    documentations: AppHealthApplicationIntegrationDocumentations
+    documentations: JSON
 }
 
 type Query

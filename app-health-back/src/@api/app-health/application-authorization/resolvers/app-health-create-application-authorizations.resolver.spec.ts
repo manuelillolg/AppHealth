@@ -1,17 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthCreateApplicationAuthorizationsResolver } from './app-health-create-application-authorizations.resolver';
-import { AppHealthCreateApplicationAuthorizationsHandler } from '../handlers/app-health-create-application-authorizations.handler';
+import { AppHealthCreateApplicationAuthorizationsHandler, AppHealthCreateApplicationAuthorizationsResolver } from '@api/app-health/application-authorization';
 import { AppHealthCreateApplicationAuthorizationInput } from '@api/graphql';
-
-// sources
-import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization/infrastructure/mock/app-health-mock-application-authorization.data';
+import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationAuthorizationsResolver', () =>
 {
     let resolver: AppHealthCreateApplicationAuthorizationsResolver;
-    let handler: AppHealthCreateApplicationAuthorizationsHandler;
 
     beforeAll(async () =>
     {
@@ -29,7 +23,6 @@ describe('AppHealthCreateApplicationAuthorizationsResolver', () =>
             .compile();
 
         resolver = module.get<AppHealthCreateApplicationAuthorizationsResolver>(AppHealthCreateApplicationAuthorizationsResolver);
-        handler = module.get<AppHealthCreateApplicationAuthorizationsHandler>(AppHealthCreateApplicationAuthorizationsHandler);
     });
 
     test('AppHealthCreateApplicationAuthorizationsResolver should be defined', () =>

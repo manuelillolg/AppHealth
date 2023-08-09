@@ -2,12 +2,12 @@ import { DataValueObject, UuidValueObject, ValidationRules } from '@aurorajs.dev
 
 export class AppHealthApplicationAuthenticationAuthenticationInterfaceId extends UuidValueObject
 {
-    public readonly type: string = 'ApplicationAuthenticationAuthenticationInterfaceId';
+    public readonly type: string = 'AppHealthApplicationAuthenticationAuthenticationInterfaceId';
 
     constructor(value: string, validationRules: ValidationRules = {}, data: DataValueObject = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationAuthenticationAuthenticationInterfaceId',
+            name       : 'AppHealthApplicationAuthenticationAuthenticationInterfaceId',
             nullable   : false,
             undefinable: false,
             length     : 36,

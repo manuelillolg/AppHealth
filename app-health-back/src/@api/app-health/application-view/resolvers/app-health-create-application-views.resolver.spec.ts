@@ -1,17 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthCreateApplicationViewsResolver } from './app-health-create-application-views.resolver';
-import { AppHealthCreateApplicationViewsHandler } from '../handlers/app-health-create-application-views.handler';
+import { AppHealthCreateApplicationViewsHandler, AppHealthCreateApplicationViewsResolver } from '@api/app-health/application-view';
 import { AppHealthCreateApplicationViewInput } from '@api/graphql';
-
-// sources
-import { appHealthMockApplicationViewData } from '@app/app-health/application-view/infrastructure/mock/app-health-mock-application-view.data';
+import { appHealthMockApplicationViewData } from '@app/app-health/application-view';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationViewsResolver', () =>
 {
     let resolver: AppHealthCreateApplicationViewsResolver;
-    let handler: AppHealthCreateApplicationViewsHandler;
 
     beforeAll(async () =>
     {
@@ -29,7 +23,6 @@ describe('AppHealthCreateApplicationViewsResolver', () =>
             .compile();
 
         resolver = module.get<AppHealthCreateApplicationViewsResolver>(AppHealthCreateApplicationViewsResolver);
-        handler = module.get<AppHealthCreateApplicationViewsHandler>(AppHealthCreateApplicationViewsHandler);
     });
 
     test('AppHealthCreateApplicationViewsResolver should be defined', () =>

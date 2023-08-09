@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthPaginateApplicationInfrastructureServicesHandler } from '@api/app-health/application-infrastructure-service';
 import { appHealthMockApplicationInfrastructureServiceData } from '@app/app-health/application-infrastructure-service';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthPaginateApplicationInfrastructureServicesHandler', () =>
 {
     let handler: AppHealthPaginateApplicationInfrastructureServicesHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthPaginateApplicationInfrastructureServicesHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthPaginateApplicationInfrastructureServicesHandler>(AppHealthPaginateApplicationInfrastructureServicesHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthPaginateApplicationInfrastructureServicesHandler should be defined', () =>
@@ -57,11 +49,17 @@ describe('AppHealthPaginateApplicationInfrastructureServicesHandler', () =>
                 count: appHealthMockApplicationInfrastructureServiceData.length,
                 rows : appHealthMockApplicationInfrastructureServiceData,
             })));
-            expect(await handler.main()).toEqual({
-                total: appHealthMockApplicationInfrastructureServiceData.length,
-                count: appHealthMockApplicationInfrastructureServiceData.length,
-                rows : appHealthMockApplicationInfrastructureServiceData,
-            });
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                ),
+            )
+                .toEqual({
+                    total: appHealthMockApplicationInfrastructureServiceData.length,
+                    count: appHealthMockApplicationInfrastructureServiceData.length,
+                    rows : appHealthMockApplicationInfrastructureServiceData,
+                });
         });
     });
 });

@@ -30,6 +30,19 @@ export { AppHealthUpsertInfrastructureServiceController } from './controllers/ap
 export { AppHealthDeleteInfrastructureServiceByIdController } from './controllers/app-health-delete-infrastructure-service-by-id.controller';
 export { AppHealthDeleteInfrastructureServicesController } from './controllers/app-health-delete-infrastructure-services.controller';
 
+// exports resolvers
+export { AppHealthCreateInfrastructureServiceResolver } from './resolvers/app-health-create-infrastructure-service.resolver';
+export { AppHealthCreateInfrastructureServicesResolver } from './resolvers/app-health-create-infrastructure-services.resolver';
+export { AppHealthPaginateInfrastructureServicesResolver } from './resolvers/app-health-paginate-infrastructure-services.resolver';
+export { AppHealthGetInfrastructureServicesResolver } from './resolvers/app-health-get-infrastructure-services.resolver';
+export { AppHealthFindInfrastructureServiceByIdResolver } from './resolvers/app-health-find-infrastructure-service-by-id.resolver';
+export { AppHealthFindInfrastructureServiceResolver } from './resolvers/app-health-find-infrastructure-service.resolver';
+export { AppHealthUpdateInfrastructureServiceByIdResolver } from './resolvers/app-health-update-infrastructure-service-by-id.resolver';
+export { AppHealthUpdateInfrastructureServicesResolver } from './resolvers/app-health-update-infrastructure-services.resolver';
+export { AppHealthUpsertInfrastructureServiceResolver } from './resolvers/app-health-upsert-infrastructure-service.resolver';
+export { AppHealthDeleteInfrastructureServiceByIdResolver } from './resolvers/app-health-delete-infrastructure-service-by-id.resolver';
+export { AppHealthDeleteInfrastructureServicesResolver } from './resolvers/app-health-delete-infrastructure-services.resolver';
+
 // controllers
 import { AppHealthCreateInfrastructureServiceController } from './controllers/app-health-create-infrastructure-service.controller';
 import { AppHealthCreateInfrastructureServicesController } from './controllers/app-health-create-infrastructure-services.controller';

@@ -59,13 +59,13 @@ export class AppHealthApplicationApiModel extends Model<AppHealthApplicationApiM
     @Column({
         field: 'documentations',
         allowNull: true,
-        type: DataTypes.ENUM('OPENAPI','GRAPGQL','HTML','DOCS'),
+        type: DataTypes.JSON,
     })
-    documentations: string;
+    documentations: any;
 
     @Column({
         field: 'requestsPerDay',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     requestsPerDay: number;

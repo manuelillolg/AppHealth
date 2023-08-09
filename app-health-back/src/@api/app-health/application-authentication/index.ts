@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationAuthenticationController } from './controller
 export { AppHealthDeleteApplicationAuthenticationByIdController } from './controllers/app-health-delete-application-authentication-by-id.controller';
 export { AppHealthDeleteApplicationAuthenticationsController } from './controllers/app-health-delete-application-authentications.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationAuthenticationResolver } from './resolvers/app-health-create-application-authentication.resolver';
+export { AppHealthCreateApplicationAuthenticationsResolver } from './resolvers/app-health-create-application-authentications.resolver';
+export { AppHealthPaginateApplicationAuthenticationsResolver } from './resolvers/app-health-paginate-application-authentications.resolver';
+export { AppHealthGetApplicationAuthenticationsResolver } from './resolvers/app-health-get-application-authentications.resolver';
+export { AppHealthFindApplicationAuthenticationByIdResolver } from './resolvers/app-health-find-application-authentication-by-id.resolver';
+export { AppHealthFindApplicationAuthenticationResolver } from './resolvers/app-health-find-application-authentication.resolver';
+export { AppHealthUpdateApplicationAuthenticationByIdResolver } from './resolvers/app-health-update-application-authentication-by-id.resolver';
+export { AppHealthUpdateApplicationAuthenticationsResolver } from './resolvers/app-health-update-application-authentications.resolver';
+export { AppHealthUpsertApplicationAuthenticationResolver } from './resolvers/app-health-upsert-application-authentication.resolver';
+export { AppHealthDeleteApplicationAuthenticationByIdResolver } from './resolvers/app-health-delete-application-authentication-by-id.resolver';
+export { AppHealthDeleteApplicationAuthenticationsResolver } from './resolvers/app-health-delete-application-authentications.resolver';
+
 // controllers
 import { AppHealthCreateApplicationAuthenticationController } from './controllers/app-health-create-application-authentication.controller';
 import { AppHealthCreateApplicationAuthenticationsController } from './controllers/app-health-create-application-authentications.controller';

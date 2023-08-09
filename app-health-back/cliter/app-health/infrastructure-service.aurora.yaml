@@ -21,7 +21,7 @@ aggregateProperties:
       aggregate: AppHealthInfrastructureProvider
       modulePath: app-health/infrastructure-provider
       key: id
-      field: infrastructureProvider
+      field: provider
       avoidConstraint: true
   - name: name
     type: varchar

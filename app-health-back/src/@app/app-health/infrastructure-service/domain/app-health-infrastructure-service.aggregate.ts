@@ -26,7 +26,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
     deletedAt: AppHealthInfrastructureServiceDeletedAt;
 
     // eager relationship
-    infrastructureProvider: AppHealthInfrastructureProvider;
+    provider: AppHealthInfrastructureProvider;
 
     constructor(
         id: AppHealthInfrastructureServiceId,
@@ -37,7 +37,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
         updatedAt: AppHealthInfrastructureServiceUpdatedAt,
         deletedAt: AppHealthInfrastructureServiceDeletedAt,
 
-        infrastructureProvider?: AppHealthInfrastructureProvider,
+        provider?: AppHealthInfrastructureProvider,
     )
     {
         super();
@@ -50,7 +50,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
         this.deletedAt = deletedAt;
 
         // eager relationship
-        this.infrastructureProvider = infrastructureProvider;
+        this.provider = provider;
     }
 
     static register (
@@ -62,7 +62,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
         updatedAt: AppHealthInfrastructureServiceUpdatedAt,
         deletedAt: AppHealthInfrastructureServiceDeletedAt,
 
-        infrastructureProvider?: AppHealthInfrastructureProvider,
+        provider?: AppHealthInfrastructureProvider,
     ): AppHealthInfrastructureService
     {
         return new AppHealthInfrastructureService(
@@ -74,7 +74,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
             updatedAt,
             deletedAt,
 
-            infrastructureProvider,
+            provider,
         );
     }
 
@@ -135,7 +135,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
             deletedAt: this.deletedAt?.value,
 
             // eager relationship
-            infrastructureProvider: this.infrastructureProvider?.toDTO(),
+            provider: this.provider?.toDTO(),
         };
     }
 
@@ -152,7 +152,7 @@ export class AppHealthInfrastructureService extends AggregateRoot
             deletedAt: this.deletedAt?.value,
 
             // eager relationship
-            infrastructureProvider: this.infrastructureProvider?.toDTO(),
+            provider: this.provider?.toDTO(),
         };
     }
 }

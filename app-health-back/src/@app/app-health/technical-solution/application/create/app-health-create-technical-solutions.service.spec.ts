@@ -10,7 +10,6 @@ import { AppHealthMockTechnicalSolutionRepository } from '../../infrastructure/m
 describe('AppHealthCreateTechnicalSolutionsService', () =>
 {
     let service: AppHealthCreateTechnicalSolutionsService;
-    let repository: AppHealthITechnicalSolutionRepository;
     let mockRepository: AppHealthMockTechnicalSolutionRepository;
 
     beforeAll(async () =>
@@ -34,7 +33,6 @@ describe('AppHealthCreateTechnicalSolutionsService', () =>
             .compile();
 
         service = module.get(AppHealthCreateTechnicalSolutionsService);
-        repository = module.get(AppHealthITechnicalSolutionRepository);
         mockRepository = module.get(AppHealthMockTechnicalSolutionRepository);
     });
 
@@ -47,9 +45,12 @@ describe('AppHealthCreateTechnicalSolutionsService', () =>
 
         test('should create technicalSolutions and emit event', async () =>
         {
-            expect(await service.main(
-                mockRepository.collectionSource,
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    mockRepository.collectionSource,
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

@@ -43,11 +43,11 @@ aggregateProperties:
     nullable: false
   - name: releaseDate
     type: date
-    nullable: false
+    nullable: true
   - name: architectureDiagram
     type: varchar
     maxLength: 255
-    nullable: false
+    nullable: true
   - name: hasTenants
     type: boolean
     nullable: false
@@ -57,98 +57,82 @@ aggregateProperties:
   - name: costLicensesPerYear
     type: int.unsigned
     maxLength: 10
-    nullable: false
+    nullable: true
   - name: requestsPerDay
     type: int.unsigned
     maxLength: 10
-    nullable: false
+    nullable: true
   - name: views
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: view
       aggregate: AppHealthApplicationView
       modulePath: app-health/application-view
-      key: id
-      field: applicationView
       avoidConstraint: true
   - name: authentications
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: authentication
       aggregate: AppHealthApplicationAuthentication
       modulePath: app-health/application-authentication
-      key: id
-      field: applicationAuthentication
       avoidConstraint: true
   - name: authorizations
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: authorization
       aggregate: AppHealthApplicationAuthorization
       modulePath: app-health/application-authorization
-      key: id
-      field: applicationAuthorization
       avoidConstraint: true
   - name: languages
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: language
       aggregate: AppHealthApplicationLanguage
       modulePath: app-health/application-language
-      key: id
-      field: applicationLanguage
       avoidConstraint: true
   - name: infrastructureServices
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: infrastructureService
       aggregate: AppHealthApplicationInfrastructureService
       modulePath: app-health/application-infrastructure-service
-      key: id
-      field: applicationInfrastructureService
       avoidConstraint: true
   - name: databases
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: database
       aggregate: AppHealthApplicationDatabase
       modulePath: app-health/application-database
-      key: id
-      field: applicationDatabase
       avoidConstraint: true
   - name: apis
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: api
       aggregate: AppHealthApplicationApi
       modulePath: app-health/application-api
-      key: id
-      field: applicationApi
       avoidConstraint: true
   - name: integrations
-    type: id
-    length: 36
-    nullable: false
+    type: relationship
+    nullable: true
     relationship:
-      type: many-to-one
+      type: one-to-many
+      singularName: integration
       aggregate: AppHealthApplicationIntegration
       modulePath: app-health/application-integration
-      key: id
-      field: applicationIntegration
       avoidConstraint: true
   - name: createdAt
     type: timestamp

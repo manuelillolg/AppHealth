@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthFindInfrastructureServiceByIdHandler } from '@api/app-health/infrastructure-service';
 import { appHealthMockInfrastructureServiceData } from '@app/app-health/infrastructure-service';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthFindInfrastructureServiceByIdHandler', () =>
 {
     let handler: AppHealthFindInfrastructureServiceByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthFindInfrastructureServiceByIdHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthFindInfrastructureServiceByIdHandler>(AppHealthFindInfrastructureServiceByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthFindInfrastructureServiceByIdHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthFindInfrastructureServiceByIdHandler', () =>
         test('should return an infrastructureService by id', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockInfrastructureServiceData[0])));
-            expect(await handler.main(appHealthMockInfrastructureServiceData[0].id)).toBe(appHealthMockInfrastructureServiceData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockInfrastructureServiceData[0].id,
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockInfrastructureServiceData[0]);
         });
     });
 });

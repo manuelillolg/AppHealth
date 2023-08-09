@@ -58,7 +58,7 @@ export class AppHealthApplicationDatabaseModel extends Model<AppHealthApplicatio
 
     @Column({
         field: 'size',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.SMALLINT.UNSIGNED,
     })
     size: number;
@@ -72,14 +72,14 @@ export class AppHealthApplicationDatabaseModel extends Model<AppHealthApplicatio
 
     @Column({
         field: 'totalCollectionsTables',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     totalCollectionsTables: number;
 
     @Column({
         field: 'totalFields',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     totalFields: number;

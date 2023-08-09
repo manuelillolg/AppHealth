@@ -1,8 +1,8 @@
 /* eslint-disable indent */
+import { AppHealthApplicationDto } from '@api/app-health/application';
+import { AppHealthApplicationInfrastructureServiceDto } from '@api/app-health/application-infrastructure-service';
+import { AppHealthDatabaseDto } from '@api/app-health/database';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationDto } from '../../../app-health/application/dto/app-health-application.dto';
-import { AppHealthDatabaseDto } from '../../../app-health/database/dto/app-health-database.dto';
-import { AppHealthApplicationInfrastructureServiceDto } from '../../../app-health/application-infrastructure-service/dto/app-health-application-infrastructure-service.dto';
 
 export class AppHealthApplicationDatabaseDto
 {
@@ -48,7 +48,7 @@ export class AppHealthApplicationDatabaseDto
         type       : Number,
         description: 'size [input here api field description]',
     })
-    size: number;
+    size?: number;
 
     @ApiProperty({
         type       : Number,
@@ -60,13 +60,13 @@ export class AppHealthApplicationDatabaseDto
         type       : Number,
         description: 'totalCollectionsTables [input here api field description]',
     })
-    totalCollectionsTables: number;
+    totalCollectionsTables?: number;
 
     @ApiProperty({
         type       : Number,
         description: 'totalFields [input here api field description]',
     })
-    totalFields: number;
+    totalFields?: number;
 
     @ApiProperty({
         type       : String,

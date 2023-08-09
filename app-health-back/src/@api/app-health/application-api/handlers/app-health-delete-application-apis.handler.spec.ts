@@ -8,7 +8,6 @@ describe('AppHealthDeleteApplicationApisHandler', () =>
 {
     let handler: AppHealthDeleteApplicationApisHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthDeleteApplicationApisHandler', () =>
 
         handler = module.get<AppHealthDeleteApplicationApisHandler>(AppHealthDeleteApplicationApisHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthDeleteApplicationApisHandler should be defined', () =>
@@ -53,7 +51,14 @@ describe('AppHealthDeleteApplicationApisHandler', () =>
         test('should return an appHealthMockApplicationApiData deleted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationApiData)));
-            expect(await handler.main()).toBe(appHealthMockApplicationApiData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationApiData);
         });
     });
 });

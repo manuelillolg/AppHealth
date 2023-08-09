@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthDeleteApplicationAuthorizationByIdHandler, AppHealthDeleteApplicationAuthorizationByIdResolver } from '@api/app-health/application-authorization';
+import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthDeleteApplicationAuthorizationByIdResolver } from './app-health-delete-application-authorization-by-id.resolver';
-import { AppHealthDeleteApplicationAuthorizationByIdHandler } from '../handlers/app-health-delete-application-authorization-by-id.handler';
-
-// sources
-import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization/infrastructure/mock/app-health-mock-application-authorization.data';
 
 describe('AppHealthDeleteApplicationAuthorizationByIdResolver', () =>
 {

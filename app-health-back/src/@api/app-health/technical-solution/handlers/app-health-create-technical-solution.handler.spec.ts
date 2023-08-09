@@ -8,7 +8,6 @@ describe('AppHealthCreateTechnicalSolutionHandler', () =>
 {
     let handler: AppHealthCreateTechnicalSolutionHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthCreateTechnicalSolutionHandler', () =>
 
         handler = module.get<AppHealthCreateTechnicalSolutionHandler>(AppHealthCreateTechnicalSolutionHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,13 @@ describe('AppHealthCreateTechnicalSolutionHandler', () =>
         test('should return an technicalSolution created', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockTechnicalSolutionData[0])));
-            expect(await handler.main(appHealthMockTechnicalSolutionData[0])).toBe(appHealthMockTechnicalSolutionData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockTechnicalSolutionData[0],
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockTechnicalSolutionData[0]);
         });
     });
 });

@@ -1,9 +1,7 @@
-import { Resolver, Args, Mutation } from '@nestjs/graphql';
-import { Auditing, AuditingMeta, Timezone } from '@aurorajs.dev/core';
-
-// @app
-import { AppHealthCreateTechnicalSolutionsHandler } from '../handlers/app-health-create-technical-solutions.handler';
+import { AppHealthCreateTechnicalSolutionsHandler } from '@api/app-health/technical-solution';
 import { AppHealthCreateTechnicalSolutionInput } from '@api/graphql';
+import { Auditing, AuditingMeta, Timezone } from '@aurorajs.dev/core';
+import { Args, Mutation, Resolver } from '@nestjs/graphql';
 
 @Resolver()
 export class AppHealthCreateTechnicalSolutionsResolver

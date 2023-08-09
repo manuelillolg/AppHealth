@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthPaginateApplicationIntegrationsHandler, AppHealthPaginateApplicationIntegrationsResolver } from '@api/app-health/application-integration';
+import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthPaginateApplicationIntegrationsResolver } from './app-health-paginate-application-integrations.resolver';
-import { AppHealthPaginateApplicationIntegrationsHandler } from '../handlers/app-health-paginate-application-integrations.handler';
-
-// sources
-import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration/infrastructure/mock/app-health-mock-application-integration.data';
 
 describe('AppHealthPaginateApplicationIntegrationsResolver', () =>
 {

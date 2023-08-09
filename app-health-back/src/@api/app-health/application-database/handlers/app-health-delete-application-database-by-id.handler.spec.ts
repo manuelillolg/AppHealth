@@ -8,7 +8,6 @@ describe('AppHealthDeleteApplicationDatabaseByIdController', () =>
 {
     let handler: AppHealthDeleteApplicationDatabaseByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthDeleteApplicationDatabaseByIdController', () =>
 
         handler = module.get<AppHealthDeleteApplicationDatabaseByIdHandler>(AppHealthDeleteApplicationDatabaseByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,14 @@ describe('AppHealthDeleteApplicationDatabaseByIdController', () =>
         test('should return an applicationDatabase deleted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationDatabaseData[0])));
-            expect(await handler.main(appHealthMockApplicationDatabaseData[0].id)).toBe(appHealthMockApplicationDatabaseData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationDatabaseData[0].id,
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationDatabaseData[0]);
         });
     });
 });

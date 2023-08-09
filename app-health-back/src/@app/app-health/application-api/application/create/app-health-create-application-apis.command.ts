@@ -8,8 +8,8 @@ export class  AppHealthCreateApplicationApisCommand
             applicationId: string;
             apiInterfaceTypeId: string;
             score: number;
-            documentations?: string;
-            requestsPerDay: number;
+            documentations?: any;
+            requestsPerDay?: number;
             applicationInfrastructureServiceId: string;
         } [],
         public readonly cQMetadata?: CQMetadata,

@@ -10,6 +10,6 @@ export class AppHealthInfrastructureServiceResponse
         public readonly createdAt: string,
         public readonly updatedAt: string,
         public readonly deletedAt: string,
-        public readonly infrastructureProvider: AppHealthInfrastructureProviderResponse,
+        public readonly provider: AppHealthInfrastructureProviderResponse,
     ) {}
 }

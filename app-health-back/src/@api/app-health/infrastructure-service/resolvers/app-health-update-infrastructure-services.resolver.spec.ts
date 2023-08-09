@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthUpdateInfrastructureServicesResolver } from './app-health-update-infrastructure-services.resolver';
-import { AppHealthUpdateInfrastructureServicesHandler } from '../handlers/app-health-update-infrastructure-services.handler';
+import { AppHealthUpdateInfrastructureServicesHandler, AppHealthUpdateInfrastructureServicesResolver } from '@api/app-health/infrastructure-service';
 import { AppHealthUpdateInfrastructureServicesInput } from '@api/graphql';
-
-// sources
-import { appHealthMockInfrastructureServiceData } from '@app/app-health/infrastructure-service/infrastructure/mock/app-health-mock-infrastructure-service.data';
+import { appHealthMockInfrastructureServiceData } from '@app/app-health/infrastructure-service';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthUpdateInfrastructureServicesResolver', () =>
 {

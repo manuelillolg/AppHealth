@@ -29,7 +29,7 @@ export class AppHealthUpdateApplicationAuthenticationsCommandHandler implements 
                 id: new AppHealthApplicationAuthenticationId(command.payload.id, { undefinable: true }),
                 applicationId: new AppHealthApplicationAuthenticationApplicationId(command.payload.applicationId, { undefinable: true }),
                 authenticationInterfaceId: new AppHealthApplicationAuthenticationAuthenticationInterfaceId(command.payload.authenticationInterfaceId, { undefinable: true }),
-                totalUsers: new AppHealthApplicationAuthenticationTotalUsers(command.payload.totalUsers, { undefinable: true }),
+                totalUsers: new AppHealthApplicationAuthenticationTotalUsers(command.payload.totalUsers),
                 score: new AppHealthApplicationAuthenticationScore(command.payload.score, { undefinable: true }),
                 applicationInfrastructureServiceId: new AppHealthApplicationAuthenticationApplicationInfrastructureServiceId(command.payload.applicationInfrastructureServiceId, { undefinable: true }),
             },

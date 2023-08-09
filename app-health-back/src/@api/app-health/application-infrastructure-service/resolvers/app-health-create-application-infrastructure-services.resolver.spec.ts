@@ -1,17 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthCreateApplicationInfrastructureServicesResolver } from './app-health-create-application-infrastructure-services.resolver';
-import { AppHealthCreateApplicationInfrastructureServicesHandler } from '../handlers/app-health-create-application-infrastructure-services.handler';
+import { AppHealthCreateApplicationInfrastructureServicesHandler, AppHealthCreateApplicationInfrastructureServicesResolver } from '@api/app-health/application-infrastructure-service';
 import { AppHealthCreateApplicationInfrastructureServiceInput } from '@api/graphql';
-
-// sources
-import { appHealthMockApplicationInfrastructureServiceData } from '@app/app-health/application-infrastructure-service/infrastructure/mock/app-health-mock-application-infrastructure-service.data';
+import { appHealthMockApplicationInfrastructureServiceData } from '@app/app-health/application-infrastructure-service';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationInfrastructureServicesResolver', () =>
 {
     let resolver: AppHealthCreateApplicationInfrastructureServicesResolver;
-    let handler: AppHealthCreateApplicationInfrastructureServicesHandler;
 
     beforeAll(async () =>
     {
@@ -29,7 +23,6 @@ describe('AppHealthCreateApplicationInfrastructureServicesResolver', () =>
             .compile();
 
         resolver = module.get<AppHealthCreateApplicationInfrastructureServicesResolver>(AppHealthCreateApplicationInfrastructureServicesResolver);
-        handler = module.get<AppHealthCreateApplicationInfrastructureServicesHandler>(AppHealthCreateApplicationInfrastructureServicesHandler);
     });
 
     test('AppHealthCreateApplicationInfrastructureServicesResolver should be defined', () =>

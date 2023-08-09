@@ -1,9 +1,7 @@
-import { Resolver, Args, Query } from '@nestjs/graphql';
-import { QueryStatement, Timezone } from '@aurorajs.dev/core';
-
-// @app
-import { AppHealthFindApplicationAuthorizationHandler } from '../handlers/app-health-find-application-authorization.handler';
+import { AppHealthFindApplicationAuthorizationHandler } from '@api/app-health/application-authorization';
 import { AppHealthApplicationAuthorization } from '@api/graphql';
+import { QueryStatement, Timezone } from '@aurorajs.dev/core';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
 @Resolver()
 export class AppHealthFindApplicationAuthorizationResolver

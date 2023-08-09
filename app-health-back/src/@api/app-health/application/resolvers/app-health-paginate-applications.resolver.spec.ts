@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthPaginateApplicationsHandler, AppHealthPaginateApplicationsResolver } from '@api/app-health/application';
+import { appHealthMockApplicationData } from '@app/app-health/application';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthPaginateApplicationsResolver } from './app-health-paginate-applications.resolver';
-import { AppHealthPaginateApplicationsHandler } from '../handlers/app-health-paginate-applications.handler';
-
-// sources
-import { appHealthMockApplicationData } from '@app/app-health/application/infrastructure/mock/app-health-mock-application.data';
 
 describe('AppHealthPaginateApplicationsResolver', () =>
 {

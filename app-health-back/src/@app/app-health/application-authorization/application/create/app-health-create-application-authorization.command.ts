@@ -7,7 +7,7 @@ export class AppHealthCreateApplicationAuthorizationCommand
             id: string;
             applicationId: string;
             authorizationInterfaceId: string;
-            totalUsers: number;
+            totalUsers?: number;
             score: number;
             applicationInfrastructureServiceId: string;
         },

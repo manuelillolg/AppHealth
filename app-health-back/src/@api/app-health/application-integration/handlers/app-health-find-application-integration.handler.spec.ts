@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthFindApplicationIntegrationHandler } from '@api/app-health/application-integration';
 import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthFindApplicationIntegrationHandler', () =>
 {
     let handler: AppHealthFindApplicationIntegrationHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthFindApplicationIntegrationHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthFindApplicationIntegrationHandler>(AppHealthFindApplicationIntegrationHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthFindApplicationIntegrationHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthFindApplicationIntegrationHandler', () =>
         test('should return a applicationIntegration', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationIntegrationData[0])));
-            expect(await handler.main()).toBe(appHealthMockApplicationIntegrationData[0]);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationIntegrationData[0]);
         });
     });
 });

@@ -8,7 +8,6 @@ describe('AppHealthCreateApplicationAuthorizationHandler', () =>
 {
     let handler: AppHealthCreateApplicationAuthorizationHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthCreateApplicationAuthorizationHandler', () =>
 
         handler = module.get<AppHealthCreateApplicationAuthorizationHandler>(AppHealthCreateApplicationAuthorizationHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,13 @@ describe('AppHealthCreateApplicationAuthorizationHandler', () =>
         test('should return an applicationAuthorization created', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthorizationData[0])));
-            expect(await handler.main(appHealthMockApplicationAuthorizationData[0])).toBe(appHealthMockApplicationAuthorizationData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationAuthorizationData[0],
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationAuthorizationData[0]);
         });
     });
 });

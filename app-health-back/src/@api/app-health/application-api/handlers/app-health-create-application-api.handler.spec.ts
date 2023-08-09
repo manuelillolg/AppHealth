@@ -8,7 +8,6 @@ describe('AppHealthCreateApplicationApiHandler', () =>
 {
     let handler: AppHealthCreateApplicationApiHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthCreateApplicationApiHandler', () =>
 
         handler = module.get<AppHealthCreateApplicationApiHandler>(AppHealthCreateApplicationApiHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,13 @@ describe('AppHealthCreateApplicationApiHandler', () =>
         test('should return an applicationApi created', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationApiData[0])));
-            expect(await handler.main(appHealthMockApplicationApiData[0])).toBe(appHealthMockApplicationApiData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationApiData[0],
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationApiData[0]);
         });
     });
 });

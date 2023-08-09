@@ -1,28 +1,20 @@
 import { AppHealthAddApplicationsContextEvent, AppHealthApplication, AppHealthIApplicationRepository } from '@app/app-health/application';
 import {
-    AppHealthApplicationApis,
     AppHealthApplicationArchitectureDiagram,
-    AppHealthApplicationAuthentications,
-    AppHealthApplicationAuthorizations,
     AppHealthApplicationBusinessImpact,
     AppHealthApplicationCostLicensesPerYear,
     AppHealthApplicationCreatedAt,
-    AppHealthApplicationDatabases,
     AppHealthApplicationDeletedAt,
     AppHealthApplicationDescription,
     AppHealthApplicationHasLicensing,
     AppHealthApplicationHasTenants,
     AppHealthApplicationId,
-    AppHealthApplicationInfrastructureServices,
-    AppHealthApplicationIntegrations,
-    AppHealthApplicationLanguages,
     AppHealthApplicationName,
     AppHealthApplicationReleaseDate,
     AppHealthApplicationRequestsPerDay,
     AppHealthApplicationTechnicalSolutionId,
     AppHealthApplicationType,
     AppHealthApplicationUpdatedAt,
-    AppHealthApplicationViews,
 } from '@app/app-health/application/domain/value-objects';
 import { CQMetadata } from '@aurorajs.dev/core';
 import { Injectable } from '@nestjs/common';
@@ -50,14 +42,6 @@ export class AppHealthCreateApplicationsService
             hasLicensing: AppHealthApplicationHasLicensing;
             costLicensesPerYear: AppHealthApplicationCostLicensesPerYear;
             requestsPerDay: AppHealthApplicationRequestsPerDay;
-            views: AppHealthApplicationViews;
-            authentications: AppHealthApplicationAuthentications;
-            authorizations: AppHealthApplicationAuthorizations;
-            languages: AppHealthApplicationLanguages;
-            infrastructureServices: AppHealthApplicationInfrastructureServices;
-            databases: AppHealthApplicationDatabases;
-            apis: AppHealthApplicationApis;
-            integrations: AppHealthApplicationIntegrations;
         } [],
         cQMetadata?: CQMetadata,
     ): Promise<void>
@@ -76,14 +60,6 @@ export class AppHealthCreateApplicationsService
             application.hasLicensing,
             application.costLicensesPerYear,
             application.requestsPerDay,
-            application.views,
-            application.authentications,
-            application.authorizations,
-            application.languages,
-            application.infrastructureServices,
-            application.databases,
-            application.apis,
-            application.integrations,
             new AppHealthApplicationCreatedAt({ currentTimestamp: true }),
             new AppHealthApplicationUpdatedAt({ currentTimestamp: true }),
             null, // deleteAt

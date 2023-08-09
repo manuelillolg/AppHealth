@@ -1,10 +1,3 @@
-enum AppHealthApplicationApiDocumentations {
-    OPENAPI
-    GRAPGQL
-    HTML
-    DOCS
-}
-
 
 type AppHealthApplicationApi
 {
@@ -14,8 +7,8 @@ type AppHealthApplicationApi
     apiInterfaceTypeId: ID!
     apiInterfaceType: AppHealthApiInterfaceType
     score: GraphQLInt!
-    documentations: AppHealthApplicationApiDocumentations
-    requestsPerDay: GraphQLInt!
+    documentations: JSON
+    requestsPerDay: GraphQLInt
     applicationInfrastructureServiceId: ID!
     applicationInfrastructureService: AppHealthApplicationInfrastructureService
     createdAt: GraphQLTimestamp
@@ -29,8 +22,8 @@ input AppHealthCreateApplicationApiInput
     applicationId: ID!
     apiInterfaceTypeId: ID!
     score: GraphQLInt!
-    documentations: AppHealthApplicationApiDocumentations
-    requestsPerDay: GraphQLInt!
+    documentations: JSON
+    requestsPerDay: GraphQLInt
     applicationInfrastructureServiceId: ID!
 }
 
@@ -40,7 +33,7 @@ input AppHealthUpdateApplicationApiByIdInput
     applicationId: ID
     apiInterfaceTypeId: ID
     score: GraphQLInt
-    documentations: AppHealthApplicationApiDocumentations
+    documentations: JSON
     requestsPerDay: GraphQLInt
     applicationInfrastructureServiceId: ID
 }
@@ -51,7 +44,7 @@ input AppHealthUpdateApplicationApisInput
     applicationId: ID
     apiInterfaceTypeId: ID
     score: GraphQLInt
-    documentations: AppHealthApplicationApiDocumentations
+    documentations: JSON
     requestsPerDay: GraphQLInt
     applicationInfrastructureServiceId: ID
 }

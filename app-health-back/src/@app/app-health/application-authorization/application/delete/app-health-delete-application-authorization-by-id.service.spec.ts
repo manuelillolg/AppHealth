@@ -51,9 +51,13 @@ describe('AppHealthDeleteApplicationAuthorizationByIdService', () =>
         test('should delete applicationAuthorization and emit event', async () =>
         {
             jest.spyOn(repository, 'findById').mockImplementation(() => new Promise(resolve => resolve(mockRepository.collectionSource[0])));
-            expect(await service.main(
-                new AppHealthApplicationAuthorizationId(appHealthMockApplicationAuthorizationData[0].id),
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    new AppHealthApplicationAuthorizationId(appHealthMockApplicationAuthorizationData[0].id),
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

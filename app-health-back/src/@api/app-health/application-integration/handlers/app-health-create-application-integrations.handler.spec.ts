@@ -1,27 +1,17 @@
+import { AppHealthCreateApplicationIntegrationsHandler } from '@api/app-health/application-integration';
+import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration';
+import { ICommandBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
-
-// custom items
-import { AppHealthCreateApplicationIntegrationsHandler } from './app-health-create-application-integrations.handler';
-import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration/infrastructure/mock/app-health-mock-application-integration.data';
 
 describe('AppHealthCreateApplicationIntegrationsHandler', () =>
 {
     let handler: AppHealthCreateApplicationIntegrationsHandler;
-    let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
         const module: TestingModule = await Test.createTestingModule({
             providers: [
                 AppHealthCreateApplicationIntegrationsHandler,
-                {
-                    provide : IQueryBus,
-                    useValue: {
-                        ask: () => { /**/ },
-                    },
-                },
                 {
                     provide : ICommandBus,
                     useValue: {
@@ -33,8 +23,6 @@ describe('AppHealthCreateApplicationIntegrationsHandler', () =>
             .compile();
 
         handler = module.get<AppHealthCreateApplicationIntegrationsHandler>(AppHealthCreateApplicationIntegrationsHandler);
-        queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>

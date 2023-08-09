@@ -9,7 +9,6 @@ describe('AppHealthUpdateApplicationViewsHandler', () =>
 {
     let handler: AppHealthUpdateApplicationViewsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthUpdateApplicationViewsHandler', () =>
 
         handler = module.get<AppHealthUpdateApplicationViewsHandler>(AppHealthUpdateApplicationViewsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthUpdateApplicationViewsHandler should be defined', () =>
@@ -54,7 +52,15 @@ describe('AppHealthUpdateApplicationViewsHandler', () =>
         test('should return a applicationViews updated', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationViewData[0])));
-            expect(await handler.main(<AppHealthUpdateApplicationViewsInput>appHealthMockApplicationViewData[0])).toBe(appHealthMockApplicationViewData[0]);
+            expect(
+                await handler.main(
+                    <AppHealthUpdateApplicationViewsInput>appHealthMockApplicationViewData[0],
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationViewData[0]);
         });
     });
 });

@@ -135,22 +135,6 @@ describe('application-view', () =>
             });
     });
 
-    test('/REST:POST app-health/application-view/create - Got 400 Conflict, ApplicationViewDescription property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-view/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                description: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationViewDescription must be defined, can not be null');
-            });
-    });
-
     test('/REST:POST app-health/application-view/create - Got 400 Conflict, ApplicationViewScore property can not to be null', () =>
     {
         return request(app.getHttpServer())
@@ -228,22 +212,6 @@ describe('application-view', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationViewComplexity must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/application-view/create - Got 400 Conflict, ApplicationViewDescription property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-view/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                description: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationViewDescription must be defined, can not be undefined');
             });
     });
 

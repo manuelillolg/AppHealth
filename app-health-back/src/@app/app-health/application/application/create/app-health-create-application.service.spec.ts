@@ -18,14 +18,6 @@ import {
     AppHealthApplicationHasLicensing,
     AppHealthApplicationCostLicensesPerYear,
     AppHealthApplicationRequestsPerDay,
-    AppHealthApplicationViews,
-    AppHealthApplicationAuthentications,
-    AppHealthApplicationAuthorizations,
-    AppHealthApplicationLanguages,
-    AppHealthApplicationInfrastructureServices,
-    AppHealthApplicationDatabases,
-    AppHealthApplicationApis,
-    AppHealthApplicationIntegrations,
     AppHealthApplicationCreatedAt,
     AppHealthApplicationUpdatedAt,
     AppHealthApplicationDeletedAt,
@@ -37,8 +29,6 @@ describe('AppHealthCreateApplicationService', () =>
 
 {
     let service: AppHealthCreateApplicationService;
-    let repository: AppHealthIApplicationRepository;
-    let mockRepository: AppHealthMockApplicationRepository;
 
     beforeAll(async () =>
     {
@@ -61,8 +51,6 @@ describe('AppHealthCreateApplicationService', () =>
             .compile();
 
         service = module.get(AppHealthCreateApplicationService);
-        repository = module.get(AppHealthIApplicationRepository);
-        mockRepository = module.get(AppHealthMockApplicationRepository);
     });
 
     describe('main', () =>
@@ -74,30 +62,25 @@ describe('AppHealthCreateApplicationService', () =>
 
         test('should create a application and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationId(appHealthMockApplicationData[0].id),
-                    technicalSolutionId: new AppHealthApplicationTechnicalSolutionId(appHealthMockApplicationData[0].technicalSolutionId),
-                    name: new AppHealthApplicationName(appHealthMockApplicationData[0].name),
-                    description: new AppHealthApplicationDescription(appHealthMockApplicationData[0].description),
-                    businessImpact: new AppHealthApplicationBusinessImpact(appHealthMockApplicationData[0].businessImpact),
-                    type: new AppHealthApplicationType(appHealthMockApplicationData[0].type),
-                    releaseDate: new AppHealthApplicationReleaseDate(appHealthMockApplicationData[0].releaseDate),
-                    architectureDiagram: new AppHealthApplicationArchitectureDiagram(appHealthMockApplicationData[0].architectureDiagram),
-                    hasTenants: new AppHealthApplicationHasTenants(appHealthMockApplicationData[0].hasTenants),
-                    hasLicensing: new AppHealthApplicationHasLicensing(appHealthMockApplicationData[0].hasLicensing),
-                    costLicensesPerYear: new AppHealthApplicationCostLicensesPerYear(appHealthMockApplicationData[0].costLicensesPerYear),
-                    requestsPerDay: new AppHealthApplicationRequestsPerDay(appHealthMockApplicationData[0].requestsPerDay),
-                    views: new AppHealthApplicationViews(appHealthMockApplicationData[0].views),
-                    authentications: new AppHealthApplicationAuthentications(appHealthMockApplicationData[0].authentications),
-                    authorizations: new AppHealthApplicationAuthorizations(appHealthMockApplicationData[0].authorizations),
-                    languages: new AppHealthApplicationLanguages(appHealthMockApplicationData[0].languages),
-                    infrastructureServices: new AppHealthApplicationInfrastructureServices(appHealthMockApplicationData[0].infrastructureServices),
-                    databases: new AppHealthApplicationDatabases(appHealthMockApplicationData[0].databases),
-                    apis: new AppHealthApplicationApis(appHealthMockApplicationData[0].apis),
-                    integrations: new AppHealthApplicationIntegrations(appHealthMockApplicationData[0].integrations),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationId(appHealthMockApplicationData[0].id),
+                        technicalSolutionId: new AppHealthApplicationTechnicalSolutionId(appHealthMockApplicationData[0].technicalSolutionId),
+                        name: new AppHealthApplicationName(appHealthMockApplicationData[0].name),
+                        description: new AppHealthApplicationDescription(appHealthMockApplicationData[0].description),
+                        businessImpact: new AppHealthApplicationBusinessImpact(appHealthMockApplicationData[0].businessImpact),
+                        type: new AppHealthApplicationType(appHealthMockApplicationData[0].type),
+                        releaseDate: new AppHealthApplicationReleaseDate(appHealthMockApplicationData[0].releaseDate),
+                        architectureDiagram: new AppHealthApplicationArchitectureDiagram(appHealthMockApplicationData[0].architectureDiagram),
+                        hasTenants: new AppHealthApplicationHasTenants(appHealthMockApplicationData[0].hasTenants),
+                        hasLicensing: new AppHealthApplicationHasLicensing(appHealthMockApplicationData[0].hasLicensing),
+                        costLicensesPerYear: new AppHealthApplicationCostLicensesPerYear(appHealthMockApplicationData[0].costLicensesPerYear),
+                        requestsPerDay: new AppHealthApplicationRequestsPerDay(appHealthMockApplicationData[0].requestsPerDay),
+                    },
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

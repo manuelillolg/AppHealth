@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthPaginateApplicationAuthorizationsHandler } from '@api/app-health/application-authorization';
 import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthPaginateApplicationAuthorizationsHandler', () =>
 {
     let handler: AppHealthPaginateApplicationAuthorizationsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthPaginateApplicationAuthorizationsHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthPaginateApplicationAuthorizationsHandler>(AppHealthPaginateApplicationAuthorizationsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthPaginateApplicationAuthorizationsHandler should be defined', () =>
@@ -57,11 +49,17 @@ describe('AppHealthPaginateApplicationAuthorizationsHandler', () =>
                 count: appHealthMockApplicationAuthorizationData.length,
                 rows : appHealthMockApplicationAuthorizationData,
             })));
-            expect(await handler.main()).toEqual({
-                total: appHealthMockApplicationAuthorizationData.length,
-                count: appHealthMockApplicationAuthorizationData.length,
-                rows : appHealthMockApplicationAuthorizationData,
-            });
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                ),
+            )
+                .toEqual({
+                    total: appHealthMockApplicationAuthorizationData.length,
+                    count: appHealthMockApplicationAuthorizationData.length,
+                    rows : appHealthMockApplicationAuthorizationData,
+                });
         });
     });
 });

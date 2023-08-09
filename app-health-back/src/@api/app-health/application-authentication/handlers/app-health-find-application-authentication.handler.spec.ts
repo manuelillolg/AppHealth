@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthFindApplicationAuthenticationHandler } from '@api/app-health/application-authentication';
 import { appHealthMockApplicationAuthenticationData } from '@app/app-health/application-authentication';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthFindApplicationAuthenticationHandler', () =>
 {
     let handler: AppHealthFindApplicationAuthenticationHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthFindApplicationAuthenticationHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthFindApplicationAuthenticationHandler>(AppHealthFindApplicationAuthenticationHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthFindApplicationAuthenticationHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthFindApplicationAuthenticationHandler', () =>
         test('should return a applicationAuthentication', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthenticationData[0])));
-            expect(await handler.main()).toBe(appHealthMockApplicationAuthenticationData[0]);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationAuthenticationData[0]);
         });
     });
 });

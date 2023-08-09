@@ -25,8 +25,6 @@ import { AppHealthMockApplicationIntegrationRepository } from '../../infrastruct
 describe('AppHealthUpdateApplicationIntegrationByIdService', () =>
 {
     let service: AppHealthUpdateApplicationIntegrationByIdService;
-    let repository: AppHealthIApplicationIntegrationRepository;
-    let mockRepository: AppHealthMockApplicationIntegrationRepository;
 
     beforeAll(async () =>
     {
@@ -49,8 +47,6 @@ describe('AppHealthUpdateApplicationIntegrationByIdService', () =>
             .compile();
 
         service = module.get(AppHealthUpdateApplicationIntegrationByIdService);
-        repository = module.get(AppHealthIApplicationIntegrationRepository);
-        mockRepository = module.get(AppHealthMockApplicationIntegrationRepository);
     });
 
     describe('main', () =>
@@ -62,20 +58,23 @@ describe('AppHealthUpdateApplicationIntegrationByIdService', () =>
 
         test('should update a applicationIntegration and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationIntegrationId(appHealthMockApplicationIntegrationData[0].id),
-                    name: new AppHealthApplicationIntegrationName(appHealthMockApplicationIntegrationData[0].name),
-                    description: new AppHealthApplicationIntegrationDescription(appHealthMockApplicationIntegrationData[0].description),
-                    sourceApplicationId: new AppHealthApplicationIntegrationSourceApplicationId(appHealthMockApplicationIntegrationData[0].sourceApplicationId),
-                    targetApplicationId: new AppHealthApplicationIntegrationTargetApplicationId(appHealthMockApplicationIntegrationData[0].targetApplicationId),
-                    apiInterfaceTypeId: new AppHealthApplicationIntegrationApiInterfaceTypeId(appHealthMockApplicationIntegrationData[0].apiInterfaceTypeId),
-                    interfaceNumbers: new AppHealthApplicationIntegrationInterfaceNumbers(appHealthMockApplicationIntegrationData[0].interfaceNumbers),
-                    modality: new AppHealthApplicationIntegrationModality(appHealthMockApplicationIntegrationData[0].modality),
-                    score: new AppHealthApplicationIntegrationScore(appHealthMockApplicationIntegrationData[0].score),
-                    documentations: new AppHealthApplicationIntegrationDocumentations(appHealthMockApplicationIntegrationData[0].documentations),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationIntegrationId(appHealthMockApplicationIntegrationData[0].id),
+                        name: new AppHealthApplicationIntegrationName(appHealthMockApplicationIntegrationData[0].name),
+                        description: new AppHealthApplicationIntegrationDescription(appHealthMockApplicationIntegrationData[0].description),
+                        sourceApplicationId: new AppHealthApplicationIntegrationSourceApplicationId(appHealthMockApplicationIntegrationData[0].sourceApplicationId),
+                        targetApplicationId: new AppHealthApplicationIntegrationTargetApplicationId(appHealthMockApplicationIntegrationData[0].targetApplicationId),
+                        apiInterfaceTypeId: new AppHealthApplicationIntegrationApiInterfaceTypeId(appHealthMockApplicationIntegrationData[0].apiInterfaceTypeId),
+                        interfaceNumbers: new AppHealthApplicationIntegrationInterfaceNumbers(appHealthMockApplicationIntegrationData[0].interfaceNumbers),
+                        modality: new AppHealthApplicationIntegrationModality(appHealthMockApplicationIntegrationData[0].modality),
+                        score: new AppHealthApplicationIntegrationScore(appHealthMockApplicationIntegrationData[0].score),
+                        documentations: new AppHealthApplicationIntegrationDocumentations(appHealthMockApplicationIntegrationData[0].documentations),
+                    },
+                    {},
+                ),
+            ).toBe(undefined);
         });
     });
 });

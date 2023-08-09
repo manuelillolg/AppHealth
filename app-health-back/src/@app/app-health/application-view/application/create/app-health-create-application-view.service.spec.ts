@@ -23,8 +23,6 @@ describe('AppHealthCreateApplicationViewService', () =>
 
 {
     let service: AppHealthCreateApplicationViewService;
-    let repository: AppHealthIApplicationViewRepository;
-    let mockRepository: AppHealthMockApplicationViewRepository;
 
     beforeAll(async () =>
     {
@@ -47,8 +45,6 @@ describe('AppHealthCreateApplicationViewService', () =>
             .compile();
 
         service = module.get(AppHealthCreateApplicationViewService);
-        repository = module.get(AppHealthIApplicationViewRepository);
-        mockRepository = module.get(AppHealthMockApplicationViewRepository);
     });
 
     describe('main', () =>
@@ -60,16 +56,19 @@ describe('AppHealthCreateApplicationViewService', () =>
 
         test('should create a applicationView and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationViewId(appHealthMockApplicationViewData[0].id),
-                    applicationId: new AppHealthApplicationViewApplicationId(appHealthMockApplicationViewData[0].applicationId),
-                    totalViews: new AppHealthApplicationViewTotalViews(appHealthMockApplicationViewData[0].totalViews),
-                    complexity: new AppHealthApplicationViewComplexity(appHealthMockApplicationViewData[0].complexity),
-                    description: new AppHealthApplicationViewDescription(appHealthMockApplicationViewData[0].description),
-                    score: new AppHealthApplicationViewScore(appHealthMockApplicationViewData[0].score),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationViewId(appHealthMockApplicationViewData[0].id),
+                        applicationId: new AppHealthApplicationViewApplicationId(appHealthMockApplicationViewData[0].applicationId),
+                        totalViews: new AppHealthApplicationViewTotalViews(appHealthMockApplicationViewData[0].totalViews),
+                        complexity: new AppHealthApplicationViewComplexity(appHealthMockApplicationViewData[0].complexity),
+                        description: new AppHealthApplicationViewDescription(appHealthMockApplicationViewData[0].description),
+                        score: new AppHealthApplicationViewScore(appHealthMockApplicationViewData[0].score),
+                    },
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

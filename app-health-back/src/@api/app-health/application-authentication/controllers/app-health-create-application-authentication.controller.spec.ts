@@ -1,6 +1,5 @@
 import { AppHealthCreateApplicationAuthenticationController, AppHealthCreateApplicationAuthenticationHandler } from '@api/app-health/application-authentication';
 import { appHealthMockApplicationAuthenticationData } from '@app/app-health/application-authentication';
-import { CacheModule } from '@nestjs/cache-manager';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationAuthenticationController', () =>
@@ -41,7 +40,12 @@ describe('AppHealthCreateApplicationAuthenticationController', () =>
         test('should return an applicationAuthentication created', async () =>
         {
             jest.spyOn(handler, 'main').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthenticationData[0])));
-            expect(await controller.main(appHealthMockApplicationAuthenticationData[0])).toBe(appHealthMockApplicationAuthenticationData[0]);
+            expect(
+                await controller.main(
+                    appHealthMockApplicationAuthenticationData[0],
+                ),
+            )
+                .toBe(appHealthMockApplicationAuthenticationData[0]);
         });
     });
 });

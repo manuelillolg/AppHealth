@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthGetTechnicalSolutionsHandler } from '@api/app-health/technical-solution';
 import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthGetTechnicalSolutionsHandler', () =>
 {
     let handler: AppHealthGetTechnicalSolutionsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthGetTechnicalSolutionsHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthGetTechnicalSolutionsHandler>(AppHealthGetTechnicalSolutionsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthGetTechnicalSolutionsHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthGetTechnicalSolutionsHandler', () =>
         test('should return a appHealthMockTechnicalSolutionData', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockTechnicalSolutionData)));
-            expect(await handler.main()).toBe(appHealthMockTechnicalSolutionData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockTechnicalSolutionData);
         });
     });
 });

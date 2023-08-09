@@ -11,7 +11,6 @@ describe('AppHealthDeleteTechnicalSolutionsService', () =>
 {
     let service: AppHealthDeleteTechnicalSolutionsService;
     let repository: AppHealthITechnicalSolutionRepository;
-    let mockRepository: AppHealthMockTechnicalSolutionRepository;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthDeleteTechnicalSolutionsService', () =>
 
         service = module.get(AppHealthDeleteTechnicalSolutionsService);
         repository = module.get(AppHealthITechnicalSolutionRepository);
-        mockRepository = module.get(AppHealthMockTechnicalSolutionRepository);
     });
 
     describe('main', () =>
@@ -49,7 +47,13 @@ describe('AppHealthDeleteTechnicalSolutionsService', () =>
         test('should delete technicalSolution and emit event', async () =>
         {
             jest.spyOn(repository, 'get').mockImplementation(() => new Promise(resolve => resolve([])));
-            expect(await service.main()).toBe(undefined);
+            expect(
+                await service.main(
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

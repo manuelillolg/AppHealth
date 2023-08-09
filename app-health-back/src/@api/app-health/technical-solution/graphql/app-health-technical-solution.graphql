@@ -6,8 +6,8 @@ type AppHealthTechnicalSolution
     customer: AppHealthCustomer
     name: GraphQLString!
     description: GraphQLString
-    architectureDiagram: GraphQLString!
-    proposal: GraphQLString!
+    architectureDiagram: GraphQLString
+    proposal: GraphQLString
     createdAt: GraphQLTimestamp
     updatedAt: GraphQLTimestamp
     deletedAt: GraphQLTimestamp
@@ -19,8 +19,8 @@ input AppHealthCreateTechnicalSolutionInput
     customerId: ID!
     name: GraphQLString!
     description: GraphQLString
-    architectureDiagram: GraphQLString!
-    proposal: GraphQLString!
+    architectureDiagram: GraphQLString
+    proposal: GraphQLString
 }
 
 input AppHealthUpdateTechnicalSolutionByIdInput

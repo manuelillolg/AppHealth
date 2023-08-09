@@ -8,7 +8,6 @@ describe('AppHealthDeleteApplicationAuthenticationByIdController', () =>
 {
     let handler: AppHealthDeleteApplicationAuthenticationByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthDeleteApplicationAuthenticationByIdController', () =>
 
         handler = module.get<AppHealthDeleteApplicationAuthenticationByIdHandler>(AppHealthDeleteApplicationAuthenticationByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,14 @@ describe('AppHealthDeleteApplicationAuthenticationByIdController', () =>
         test('should return an applicationAuthentication deleted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthenticationData[0])));
-            expect(await handler.main(appHealthMockApplicationAuthenticationData[0].id)).toBe(appHealthMockApplicationAuthenticationData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationAuthenticationData[0].id,
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationAuthenticationData[0]);
         });
     });
 });

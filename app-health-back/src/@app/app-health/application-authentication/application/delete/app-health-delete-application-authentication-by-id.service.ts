@@ -19,23 +19,25 @@ export class AppHealthDeleteApplicationAuthenticationByIdService
     ): Promise<void>
     {
         // get object to delete
-        const applicationAuthentication = await this.repository.findById(
-            id,
-            {
-                constraint,
-                cQMetadata,
-            },
-        );
+        const applicationAuthentication = await this.repository
+            .findById(
+                id,
+                {
+                    constraint,
+                    cQMetadata,
+                },
+            );
 
         // it is not necessary to pass the constraint in the delete, if the object
         // is not found in the findById, an exception will be thrown.
-        await this.repository.deleteById(
-            applicationAuthentication.id,
-            {
-                deleteOptions: cQMetadata?.repositoryOptions,
-                cQMetadata,
-            },
-        );
+        await this.repository
+            .deleteById(
+                applicationAuthentication.id,
+                {
+                    deleteOptions: cQMetadata?.repositoryOptions,
+                    cQMetadata,
+                },
+            );
 
         // insert EventBus in object, to be able to apply and commit events
         const applicationAuthenticationRegister = this.publisher.mergeObjectContext(applicationAuthentication);

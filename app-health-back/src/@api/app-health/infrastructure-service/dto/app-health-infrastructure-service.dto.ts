@@ -1,6 +1,6 @@
 /* eslint-disable indent */
+import { AppHealthInfrastructureProviderDto } from '@api/app-health/infrastructure-provider';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthInfrastructureProviderDto } from '../../../app-health/infrastructure-provider/dto/app-health-infrastructure-provider.dto';
 
 export class AppHealthInfrastructureServiceDto
 {
@@ -21,7 +21,7 @@ export class AppHealthInfrastructureServiceDto
         type       : () => AppHealthInfrastructureProviderDto,
         description: 'AppHealthInfrastructureProvider [input here api field description]',
     })
-    infrastructureProvider?: AppHealthInfrastructureProviderDto;
+    provider?: AppHealthInfrastructureProviderDto;
 
     @ApiProperty({
         type       : String,

@@ -8,7 +8,6 @@ describe('AppHealthUpsertInfrastructureServiceHandler', () =>
 {
     let handler: AppHealthUpsertInfrastructureServiceHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthUpsertInfrastructureServiceHandler', () =>
 
         handler = module.get<AppHealthUpsertInfrastructureServiceHandler>(AppHealthUpsertInfrastructureServiceHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,12 @@ describe('AppHealthUpsertInfrastructureServiceHandler', () =>
         test('should return an infrastructureService upserted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockInfrastructureServiceData[0])));
-            expect(await handler.main(appHealthMockInfrastructureServiceData[0])).toBe(appHealthMockInfrastructureServiceData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockInfrastructureServiceData[0],
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockInfrastructureServiceData[0]);
         });
     });
 });

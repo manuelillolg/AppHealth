@@ -1,15 +1,15 @@
 /* eslint-disable indent */
-import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthTechnicalSolutionDto } from '../../../app-health/technical-solution/dto/app-health-technical-solution.dto';
-import { AppHealthApplicationViewDto } from '../../../app-health/application-view/dto/app-health-application-view.dto';
-import { AppHealthApplicationAuthenticationDto } from '../../../app-health/application-authentication/dto/app-health-application-authentication.dto';
-import { AppHealthApplicationAuthorizationDto } from '../../../app-health/application-authorization/dto/app-health-application-authorization.dto';
-import { AppHealthApplicationLanguageDto } from '../../../app-health/application-language/dto/app-health-application-language.dto';
-import { AppHealthApplicationInfrastructureServiceDto } from '../../../app-health/application-infrastructure-service/dto/app-health-application-infrastructure-service.dto';
-import { AppHealthApplicationDatabaseDto } from '../../../app-health/application-database/dto/app-health-application-database.dto';
-import { AppHealthApplicationApiDto } from '../../../app-health/application-api/dto/app-health-application-api.dto';
-import { AppHealthApplicationIntegrationDto } from '../../../app-health/application-integration/dto/app-health-application-integration.dto';
+import { AppHealthApplicationApiDto } from '@api/app-health/application-api';
+import { AppHealthApplicationAuthenticationDto } from '@api/app-health/application-authentication';
+import { AppHealthApplicationAuthorizationDto } from '@api/app-health/application-authorization';
+import { AppHealthApplicationDatabaseDto } from '@api/app-health/application-database';
+import { AppHealthApplicationInfrastructureServiceDto } from '@api/app-health/application-infrastructure-service';
+import { AppHealthApplicationIntegrationDto } from '@api/app-health/application-integration';
+import { AppHealthApplicationLanguageDto } from '@api/app-health/application-language';
+import { AppHealthApplicationViewDto } from '@api/app-health/application-view';
+import { AppHealthTechnicalSolutionDto } from '@api/app-health/technical-solution';
 import { AppHealthApplicationType } from '@api/graphql';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class AppHealthApplicationDto
 {
@@ -61,13 +61,13 @@ export class AppHealthApplicationDto
         type       : String,
         description: 'releaseDate [input here api field description]',
     })
-    releaseDate: string;
+    releaseDate?: string;
 
     @ApiProperty({
         type       : String,
         description: 'architectureDiagram [input here api field description]',
     })
-    architectureDiagram: string;
+    architectureDiagram?: string;
 
     @ApiProperty({
         type       : Boolean,
@@ -85,117 +85,61 @@ export class AppHealthApplicationDto
         type       : Number,
         description: 'costLicensesPerYear [input here api field description]',
     })
-    costLicensesPerYear: number;
+    costLicensesPerYear?: number;
 
     @ApiProperty({
         type       : Number,
         description: 'requestsPerDay [input here api field description]',
     })
-    requestsPerDay: number;
+    requestsPerDay?: number;
 
     @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationViewDto],
         description: 'views [input here api field description]',
-        example    : '4234cd66-f01e-51ba-8876-a6b2c54eca61',
     })
-    views: string;
+    views?: AppHealthApplicationViewDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationViewDto,
-        description: 'AppHealthApplicationView [input here api field description]',
-    })
-    applicationView?: AppHealthApplicationViewDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationAuthenticationDto],
         description: 'authentications [input here api field description]',
-        example    : 'a2c169a0-6693-5d6d-afb9-137a15633dfb',
     })
-    authentications: string;
+    authentications?: AppHealthApplicationAuthenticationDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationAuthenticationDto,
-        description: 'AppHealthApplicationAuthentication [input here api field description]',
-    })
-    applicationAuthentication?: AppHealthApplicationAuthenticationDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationAuthorizationDto],
         description: 'authorizations [input here api field description]',
-        example    : 'be2a4af2-9a62-50ed-b720-f0cceb6de92c',
     })
-    authorizations: string;
+    authorizations?: AppHealthApplicationAuthorizationDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationAuthorizationDto,
-        description: 'AppHealthApplicationAuthorization [input here api field description]',
-    })
-    applicationAuthorization?: AppHealthApplicationAuthorizationDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationLanguageDto],
         description: 'languages [input here api field description]',
-        example    : '7e0591fe-ab33-579d-ab6a-9a696c5aa255',
     })
-    languages: string;
+    languages?: AppHealthApplicationLanguageDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationLanguageDto,
-        description: 'AppHealthApplicationLanguage [input here api field description]',
-    })
-    applicationLanguage?: AppHealthApplicationLanguageDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationInfrastructureServiceDto],
         description: 'infrastructureServices [input here api field description]',
-        example    : '13da2399-a261-5399-9b47-8490e864eec5',
     })
-    infrastructureServices: string;
+    infrastructureServices?: AppHealthApplicationInfrastructureServiceDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationInfrastructureServiceDto,
-        description: 'AppHealthApplicationInfrastructureService [input here api field description]',
-    })
-    applicationInfrastructureService?: AppHealthApplicationInfrastructureServiceDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationDatabaseDto],
         description: 'databases [input here api field description]',
-        example    : '2fb5c3b8-8528-580f-9983-67ce8f40828c',
     })
-    databases: string;
+    databases?: AppHealthApplicationDatabaseDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationDatabaseDto,
-        description: 'AppHealthApplicationDatabase [input here api field description]',
-    })
-    applicationDatabase?: AppHealthApplicationDatabaseDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationApiDto],
         description: 'apis [input here api field description]',
-        example    : '2ef8fb03-d58f-54f5-9c3e-1013bbd9cc48',
     })
-    apis: string;
+    apis?: AppHealthApplicationApiDto[];
 
     @ApiProperty({
-        type       : () => AppHealthApplicationApiDto,
-        description: 'AppHealthApplicationApi [input here api field description]',
-    })
-    applicationApi?: AppHealthApplicationApiDto;
-
-    @ApiProperty({
-        type       : String,
+        type       : () => [AppHealthApplicationIntegrationDto],
         description: 'integrations [input here api field description]',
-        example    : '6621c381-1d78-5ec4-b99f-34090fe522ae',
     })
-    integrations: string;
-
-    @ApiProperty({
-        type       : () => AppHealthApplicationIntegrationDto,
-        description: 'AppHealthApplicationIntegration [input here api field description]',
-    })
-    applicationIntegration?: AppHealthApplicationIntegrationDto;
+    integrations?: AppHealthApplicationIntegrationDto[];
 
     @ApiProperty({
         type       : String,

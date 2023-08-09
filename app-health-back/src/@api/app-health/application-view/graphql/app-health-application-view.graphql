@@ -12,7 +12,7 @@ type AppHealthApplicationView
     application: AppHealthApplication
     totalViews: GraphQLInt!
     complexity: AppHealthApplicationViewComplexity!
-    description: GraphQLInt!
+    description: GraphQLInt
     score: GraphQLInt!
     createdAt: GraphQLTimestamp
     updatedAt: GraphQLTimestamp
@@ -25,7 +25,7 @@ input AppHealthCreateApplicationViewInput
     applicationId: ID!
     totalViews: GraphQLInt!
     complexity: AppHealthApplicationViewComplexity!
-    description: GraphQLInt!
+    description: GraphQLInt
     score: GraphQLInt!
 }
 

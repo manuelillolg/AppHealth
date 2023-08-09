@@ -2,14 +2,14 @@ import { StringValueObject, ValidationRules } from '@aurorajs.dev/core';
 
 export class AppHealthApplicationArchitectureDiagram extends StringValueObject
 {
-    public readonly type: string = 'ApplicationArchitectureDiagram';
+    public readonly type: string = 'AppHealthApplicationArchitectureDiagram';
 
     constructor(value: string, validationRules: ValidationRules = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationArchitectureDiagram',
-            nullable   : false,
-            undefinable: false,
+            name       : 'AppHealthApplicationArchitectureDiagram',
+            nullable   : true,
+            undefinable: true,
             maxLength  : 255,
         }, validationRules));
     }

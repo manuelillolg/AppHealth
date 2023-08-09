@@ -51,9 +51,13 @@ describe('AppHealthDeleteApplicationInfrastructureServiceByIdService', () =>
         test('should delete applicationInfrastructureService and emit event', async () =>
         {
             jest.spyOn(repository, 'findById').mockImplementation(() => new Promise(resolve => resolve(mockRepository.collectionSource[0])));
-            expect(await service.main(
-                new AppHealthApplicationInfrastructureServiceId(appHealthMockApplicationInfrastructureServiceData[0].id),
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    new AppHealthApplicationInfrastructureServiceId(appHealthMockApplicationInfrastructureServiceData[0].id),
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

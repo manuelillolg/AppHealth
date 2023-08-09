@@ -2,12 +2,12 @@ import { DataValueObject, TimestampValueObject, ValidationRules } from '@auroraj
 
 export class AppHealthInfrastructureServiceDeletedAt extends TimestampValueObject
 {
-    public readonly type: string = 'InfrastructureServiceDeletedAt';
+    public readonly type: string = 'AppHealthInfrastructureServiceDeletedAt';
 
     constructor(value: string | DataValueObject, validationRules: ValidationRules = {}, data: DataValueObject = {})
     {
         super(value, Object.assign({
-            name       : 'InfrastructureServiceDeletedAt',
+            name       : 'AppHealthInfrastructureServiceDeletedAt',
             nullable   : true,
             undefinable: true,
         }, validationRules), data);

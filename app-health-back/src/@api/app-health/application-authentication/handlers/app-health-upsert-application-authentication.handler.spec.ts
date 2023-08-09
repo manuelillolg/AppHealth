@@ -8,7 +8,6 @@ describe('AppHealthUpsertApplicationAuthenticationHandler', () =>
 {
     let handler: AppHealthUpsertApplicationAuthenticationHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthUpsertApplicationAuthenticationHandler', () =>
 
         handler = module.get<AppHealthUpsertApplicationAuthenticationHandler>(AppHealthUpsertApplicationAuthenticationHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,12 @@ describe('AppHealthUpsertApplicationAuthenticationHandler', () =>
         test('should return an applicationAuthentication upserted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthenticationData[0])));
-            expect(await handler.main(appHealthMockApplicationAuthenticationData[0])).toBe(appHealthMockApplicationAuthenticationData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationAuthenticationData[0],
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockApplicationAuthenticationData[0]);
         });
     });
 });

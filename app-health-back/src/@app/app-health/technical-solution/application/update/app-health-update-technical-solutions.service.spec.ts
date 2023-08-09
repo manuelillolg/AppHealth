@@ -22,8 +22,6 @@ import { AppHealthMockTechnicalSolutionRepository } from '../../infrastructure/m
 describe('AppHealthUpdateTechnicalSolutionsService', () =>
 {
     let service: AppHealthUpdateTechnicalSolutionsService;
-    let repository: AppHealthITechnicalSolutionRepository;
-    let mockRepository: AppHealthMockTechnicalSolutionRepository;
 
     beforeAll(async () =>
     {
@@ -47,8 +45,6 @@ describe('AppHealthUpdateTechnicalSolutionsService', () =>
             .compile();
 
         service = module.get(AppHealthUpdateTechnicalSolutionsService);
-        repository = module.get(AppHealthITechnicalSolutionRepository);
-        mockRepository = module.get(AppHealthMockTechnicalSolutionRepository);
     });
 
     describe('main', () =>
@@ -60,16 +56,21 @@ describe('AppHealthUpdateTechnicalSolutionsService', () =>
 
         test('should update a technicalSolutions and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthTechnicalSolutionId(appHealthMockTechnicalSolutionData[0].id),
-                    customerId: new AppHealthTechnicalSolutionCustomerId(appHealthMockTechnicalSolutionData[0].customerId),
-                    name: new AppHealthTechnicalSolutionName(appHealthMockTechnicalSolutionData[0].name),
-                    description: new AppHealthTechnicalSolutionDescription(appHealthMockTechnicalSolutionData[0].description),
-                    architectureDiagram: new AppHealthTechnicalSolutionArchitectureDiagram(appHealthMockTechnicalSolutionData[0].architectureDiagram),
-                    proposal: new AppHealthTechnicalSolutionProposal(appHealthMockTechnicalSolutionData[0].proposal),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthTechnicalSolutionId(appHealthMockTechnicalSolutionData[0].id),
+                        customerId: new AppHealthTechnicalSolutionCustomerId(appHealthMockTechnicalSolutionData[0].customerId),
+                        name: new AppHealthTechnicalSolutionName(appHealthMockTechnicalSolutionData[0].name),
+                        description: new AppHealthTechnicalSolutionDescription(appHealthMockTechnicalSolutionData[0].description),
+                        architectureDiagram: new AppHealthTechnicalSolutionArchitectureDiagram(appHealthMockTechnicalSolutionData[0].architectureDiagram),
+                        proposal: new AppHealthTechnicalSolutionProposal(appHealthMockTechnicalSolutionData[0].proposal),
+                    },
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

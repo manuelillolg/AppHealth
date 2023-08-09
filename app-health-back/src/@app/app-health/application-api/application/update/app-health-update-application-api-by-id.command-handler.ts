@@ -32,7 +32,7 @@ export class AppHealthUpdateApplicationApiByIdCommandHandler implements ICommand
                 apiInterfaceTypeId: new AppHealthApplicationApiApiInterfaceTypeId(command.payload.apiInterfaceTypeId, { undefinable: true }),
                 score: new AppHealthApplicationApiScore(command.payload.score, { undefinable: true }),
                 documentations: new AppHealthApplicationApiDocumentations(command.payload.documentations),
-                requestsPerDay: new AppHealthApplicationApiRequestsPerDay(command.payload.requestsPerDay, { undefinable: true }),
+                requestsPerDay: new AppHealthApplicationApiRequestsPerDay(command.payload.requestsPerDay),
                 applicationInfrastructureServiceId: new AppHealthApplicationApiApplicationInfrastructureServiceId(command.payload.applicationInfrastructureServiceId, { undefinable: true }),
             },
             command.constraint,

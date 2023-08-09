@@ -27,7 +27,7 @@ export class AppHealthCreateApplicationInfrastructureServiceDto
         type       : Number,
         description: 'averageCostPerYear [input here api field description]',
     })
-    averageCostPerYear: number;
+    averageCostPerYear?: number;
 
     @ApiProperty({
         type       : Number,

@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthFindApplicationAuthorizationHandler, AppHealthFindApplicationAuthorizationResolver } from '@api/app-health/application-authorization';
+import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthFindApplicationAuthorizationResolver } from './app-health-find-application-authorization.resolver';
-import { AppHealthFindApplicationAuthorizationHandler } from '../handlers/app-health-find-application-authorization.handler';
-
-// sources
-import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization/infrastructure/mock/app-health-mock-application-authorization.data';
 
 describe('AppHealthFindApplicationAuthorizationResolver', () =>
 {

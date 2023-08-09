@@ -119,22 +119,6 @@ describe('application-integration', () =>
             });
     });
 
-    test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationTargetApplicationId property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-integration/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                targetApplicationId: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationIntegrationTargetApplicationId must be defined, can not be null');
-            });
-    });
-
     test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationApiInterfaceTypeId property can not to be null', () =>
     {
         return request(app.getHttpServer())
@@ -148,22 +132,6 @@ describe('application-integration', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationIntegrationApiInterfaceTypeId must be defined, can not be null');
-            });
-    });
-
-    test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationInterfaceNumbers property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-integration/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                interfaceNumbers: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationIntegrationInterfaceNumbers must be defined, can not be null');
             });
     });
 
@@ -247,22 +215,6 @@ describe('application-integration', () =>
             });
     });
 
-    test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationTargetApplicationId property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-integration/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                targetApplicationId: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationIntegrationTargetApplicationId must be defined, can not be undefined');
-            });
-    });
-
     test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationApiInterfaceTypeId property can not to be undefined', () =>
     {
         return request(app.getHttpServer())
@@ -276,22 +228,6 @@ describe('application-integration', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationIntegrationApiInterfaceTypeId must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationInterfaceNumbers property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-integration/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                interfaceNumbers: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationIntegrationInterfaceNumbers must be defined, can not be undefined');
             });
     });
 
@@ -467,21 +403,6 @@ describe('application-integration', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationIntegrationModality has to be any of this options: UNIDIRECTIONAL, BIDIRECTIONAL');
-            });
-    });
-    test('/REST:POST app-health/application-integration/create - Got 400 Conflict, ApplicationIntegrationDocumentations has to be a enum option of OPENAPI, GRAPHQL, HTML, DOCS', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-integration/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                documentations: '****',
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationIntegrationDocumentations has to be any of this options: OPENAPI, GRAPHQL, HTML, DOCS');
             });
     });
 

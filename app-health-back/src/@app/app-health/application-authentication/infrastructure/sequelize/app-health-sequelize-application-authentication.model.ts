@@ -51,7 +51,7 @@ export class AppHealthApplicationAuthenticationModel extends Model<AppHealthAppl
 
     @Column({
         field: 'totalUsers',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     totalUsers: number;

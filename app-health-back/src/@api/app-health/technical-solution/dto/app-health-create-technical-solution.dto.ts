@@ -32,12 +32,12 @@ export class AppHealthCreateTechnicalSolutionDto
         type       : String,
         description: 'architectureDiagram [input here api field description]',
     })
-    architectureDiagram: string;
+    architectureDiagram?: string;
 
     @ApiProperty({
         type       : String,
         description: 'proposal [input here api field description]',
     })
-    proposal: string;
+    proposal?: string;
 
 }

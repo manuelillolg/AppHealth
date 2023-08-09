@@ -30,7 +30,7 @@ export class AppHealthUpdateApplicationViewsCommandHandler implements ICommandHa
                 applicationId: new AppHealthApplicationViewApplicationId(command.payload.applicationId, { undefinable: true }),
                 totalViews: new AppHealthApplicationViewTotalViews(command.payload.totalViews, { undefinable: true }),
                 complexity: new AppHealthApplicationViewComplexity(command.payload.complexity, { undefinable: true }),
-                description: new AppHealthApplicationViewDescription(command.payload.description, { undefinable: true }),
+                description: new AppHealthApplicationViewDescription(command.payload.description),
                 score: new AppHealthApplicationViewScore(command.payload.score, { undefinable: true }),
             },
             command.queryStatement,

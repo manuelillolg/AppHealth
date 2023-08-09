@@ -10,20 +10,12 @@ export class AppHealthCreateApplicationCommand
             description?: string;
             businessImpact?: string;
             type: string;
-            releaseDate: string;
-            architectureDiagram: string;
+            releaseDate?: string;
+            architectureDiagram?: string;
             hasTenants: boolean;
             hasLicensing: boolean;
-            costLicensesPerYear: number;
-            requestsPerDay: number;
-            views: string;
-            authentications: string;
-            authorizations: string;
-            languages: string;
-            infrastructureServices: string;
-            databases: string;
-            apis: string;
-            integrations: string;
+            costLicensesPerYear?: number;
+            requestsPerDay?: number;
         },
         public readonly cQMetadata?: CQMetadata,
     ) {}

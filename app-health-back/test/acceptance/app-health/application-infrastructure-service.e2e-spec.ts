@@ -119,22 +119,6 @@ describe('application-infrastructure-service', () =>
             });
     });
 
-    test('/REST:POST app-health/application-infrastructure-service/create - Got 400 Conflict, ApplicationInfrastructureServiceAverageCostPerYear property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-infrastructure-service/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                averageCostPerYear: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationInfrastructureServiceAverageCostPerYear must be defined, can not be null');
-            });
-    });
-
     test('/REST:POST app-health/application-infrastructure-service/create - Got 400 Conflict, ApplicationInfrastructureServiceScore property can not to be null', () =>
     {
         return request(app.getHttpServer())
@@ -196,22 +180,6 @@ describe('application-infrastructure-service', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationInfrastructureServiceInfrastructureServiceId must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/application-infrastructure-service/create - Got 400 Conflict, ApplicationInfrastructureServiceAverageCostPerYear property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-infrastructure-service/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                averageCostPerYear: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationInfrastructureServiceAverageCostPerYear must be defined, can not be undefined');
             });
     });
 

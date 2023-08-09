@@ -2,12 +2,12 @@ import { SmallintValueObject, ValidationRules } from '@aurorajs.dev/core';
 
 export class AppHealthApplicationDatabaseScore extends SmallintValueObject
 {
-    public readonly type: string = 'ApplicationDatabaseScore';
+    public readonly type: string = 'AppHealthApplicationDatabaseScore';
 
     constructor(value: number, validationRules: ValidationRules = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationDatabaseScore',
+            name       : 'AppHealthApplicationDatabaseScore',
             nullable   : false,
             undefinable: false,
             maxLength  : 6,

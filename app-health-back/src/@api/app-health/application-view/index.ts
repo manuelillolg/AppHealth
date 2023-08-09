@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationViewController } from './controllers/app-heal
 export { AppHealthDeleteApplicationViewByIdController } from './controllers/app-health-delete-application-view-by-id.controller';
 export { AppHealthDeleteApplicationViewsController } from './controllers/app-health-delete-application-views.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationViewResolver } from './resolvers/app-health-create-application-view.resolver';
+export { AppHealthCreateApplicationViewsResolver } from './resolvers/app-health-create-application-views.resolver';
+export { AppHealthPaginateApplicationViewsResolver } from './resolvers/app-health-paginate-application-views.resolver';
+export { AppHealthGetApplicationViewsResolver } from './resolvers/app-health-get-application-views.resolver';
+export { AppHealthFindApplicationViewByIdResolver } from './resolvers/app-health-find-application-view-by-id.resolver';
+export { AppHealthFindApplicationViewResolver } from './resolvers/app-health-find-application-view.resolver';
+export { AppHealthUpdateApplicationViewByIdResolver } from './resolvers/app-health-update-application-view-by-id.resolver';
+export { AppHealthUpdateApplicationViewsResolver } from './resolvers/app-health-update-application-views.resolver';
+export { AppHealthUpsertApplicationViewResolver } from './resolvers/app-health-upsert-application-view.resolver';
+export { AppHealthDeleteApplicationViewByIdResolver } from './resolvers/app-health-delete-application-view-by-id.resolver';
+export { AppHealthDeleteApplicationViewsResolver } from './resolvers/app-health-delete-application-views.resolver';
+
 // controllers
 import { AppHealthCreateApplicationViewController } from './controllers/app-health-create-application-view.controller';
 import { AppHealthCreateApplicationViewsController } from './controllers/app-health-create-application-views.controller';

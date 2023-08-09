@@ -17,14 +17,6 @@ export class AppHealthUpdateApplicationsCommand
             hasLicensing?: boolean;
             costLicensesPerYear?: number;
             requestsPerDay?: number;
-            views?: string;
-            authentications?: string;
-            authorizations?: string;
-            languages?: string;
-            infrastructureServices?: string;
-            databases?: string;
-            apis?: string;
-            integrations?: string;
         },
         public readonly queryStatement?: QueryStatement,
         public readonly constraint?: QueryStatement,

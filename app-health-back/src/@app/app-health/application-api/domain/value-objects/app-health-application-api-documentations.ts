@@ -1,16 +1,15 @@
-import { EnumValueObject, ValidationRules } from '@aurorajs.dev/core';
+import { JsonValueObject, ValidationRules } from '@aurorajs.dev/core';
 
-export class AppHealthApplicationApiDocumentations extends EnumValueObject
+export class AppHealthApplicationApiDocumentations extends JsonValueObject
 {
-    public readonly type: string = 'ApplicationApiDocumentations';
+    public readonly type: string = 'AppHealthApplicationApiDocumentations';
 
-    constructor(value: string, validationRules: ValidationRules = {})
+    constructor(value: any, validationRules: ValidationRules = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationApiDocumentations',
+            name       : 'AppHealthApplicationApiDocumentations',
             nullable   : true,
             undefinable: true,
-            enumOptions: ['OPENAPI','GRAPGQL','HTML','DOCS'],
         }, validationRules));
     }
 }

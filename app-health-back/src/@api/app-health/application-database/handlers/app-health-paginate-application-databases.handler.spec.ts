@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthPaginateApplicationDatabasesHandler } from '@api/app-health/application-database';
 import { appHealthMockApplicationDatabaseData } from '@app/app-health/application-database';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthPaginateApplicationDatabasesHandler', () =>
 {
     let handler: AppHealthPaginateApplicationDatabasesHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthPaginateApplicationDatabasesHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthPaginateApplicationDatabasesHandler>(AppHealthPaginateApplicationDatabasesHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthPaginateApplicationDatabasesHandler should be defined', () =>
@@ -57,11 +49,17 @@ describe('AppHealthPaginateApplicationDatabasesHandler', () =>
                 count: appHealthMockApplicationDatabaseData.length,
                 rows : appHealthMockApplicationDatabaseData,
             })));
-            expect(await handler.main()).toEqual({
-                total: appHealthMockApplicationDatabaseData.length,
-                count: appHealthMockApplicationDatabaseData.length,
-                rows : appHealthMockApplicationDatabaseData,
-            });
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                ),
+            )
+                .toEqual({
+                    total: appHealthMockApplicationDatabaseData.length,
+                    count: appHealthMockApplicationDatabaseData.length,
+                    rows : appHealthMockApplicationDatabaseData,
+                });
         });
     });
 });

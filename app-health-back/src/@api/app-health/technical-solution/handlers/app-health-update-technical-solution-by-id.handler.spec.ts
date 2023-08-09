@@ -9,7 +9,6 @@ describe('AppHealthUpdateTechnicalSolutionByIdHandler', () =>
 {
     let handler: AppHealthUpdateTechnicalSolutionByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthUpdateTechnicalSolutionByIdHandler', () =>
 
         handler = module.get<AppHealthUpdateTechnicalSolutionByIdHandler>(AppHealthUpdateTechnicalSolutionByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthUpdateTechnicalSolutionByIdHandler should be defined', () =>
@@ -54,7 +52,13 @@ describe('AppHealthUpdateTechnicalSolutionByIdHandler', () =>
         test('should return a technicalSolution updated', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockTechnicalSolutionData[0])));
-            expect(await handler.main(<AppHealthUpdateTechnicalSolutionByIdInput>appHealthMockTechnicalSolutionData[0])).toBe(appHealthMockTechnicalSolutionData[0]);
+            expect(
+                await handler.main(
+                    <AppHealthUpdateTechnicalSolutionByIdInput>appHealthMockTechnicalSolutionData[0],
+                    {},
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockTechnicalSolutionData[0]);
         });
     });
 });

@@ -49,7 +49,7 @@ export class AppHealthApplicationViewModel extends Model<AppHealthApplicationVie
 
     @Column({
         field: 'description',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.SMALLINT.UNSIGNED,
     })
     description: number;

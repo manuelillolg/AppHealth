@@ -51,7 +51,7 @@ export class AppHealthApplicationIntegrationModel extends Model<AppHealthApplica
     @ForeignKey(() => AppHealthApplicationModel)
     @Column({
         field: 'targetApplicationId',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.UUID,
     })
     targetApplicationId: string;
@@ -78,7 +78,7 @@ export class AppHealthApplicationIntegrationModel extends Model<AppHealthApplica
 
     @Column({
         field: 'interfaceNumbers',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     interfaceNumbers: number;
@@ -100,9 +100,9 @@ export class AppHealthApplicationIntegrationModel extends Model<AppHealthApplica
     @Column({
         field: 'documentations',
         allowNull: true,
-        type: DataTypes.ENUM('OPENAPI','GRAPHQL','HTML','DOCS'),
+        type: DataTypes.JSON,
     })
-    documentations: string;
+    documentations: any;
 
     @Column({
         field: 'updatedAt',

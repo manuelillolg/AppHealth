@@ -8,7 +8,6 @@ describe('AppHealthDeleteApplicationIntegrationsHandler', () =>
 {
     let handler: AppHealthDeleteApplicationIntegrationsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthDeleteApplicationIntegrationsHandler', () =>
 
         handler = module.get<AppHealthDeleteApplicationIntegrationsHandler>(AppHealthDeleteApplicationIntegrationsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthDeleteApplicationIntegrationsHandler should be defined', () =>
@@ -53,7 +51,14 @@ describe('AppHealthDeleteApplicationIntegrationsHandler', () =>
         test('should return an appHealthMockApplicationIntegrationData deleted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationIntegrationData)));
-            expect(await handler.main()).toBe(appHealthMockApplicationIntegrationData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationIntegrationData);
         });
     });
 });

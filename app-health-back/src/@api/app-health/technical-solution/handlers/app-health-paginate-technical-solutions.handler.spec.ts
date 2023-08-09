@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthPaginateTechnicalSolutionsHandler } from '@api/app-health/technical-solution';
 import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthPaginateTechnicalSolutionsHandler', () =>
 {
     let handler: AppHealthPaginateTechnicalSolutionsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthPaginateTechnicalSolutionsHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthPaginateTechnicalSolutionsHandler>(AppHealthPaginateTechnicalSolutionsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthPaginateTechnicalSolutionsHandler should be defined', () =>
@@ -57,11 +49,17 @@ describe('AppHealthPaginateTechnicalSolutionsHandler', () =>
                 count: appHealthMockTechnicalSolutionData.length,
                 rows : appHealthMockTechnicalSolutionData,
             })));
-            expect(await handler.main()).toEqual({
-                total: appHealthMockTechnicalSolutionData.length,
-                count: appHealthMockTechnicalSolutionData.length,
-                rows : appHealthMockTechnicalSolutionData,
-            });
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                ),
+            )
+                .toEqual({
+                    total: appHealthMockTechnicalSolutionData.length,
+                    count: appHealthMockTechnicalSolutionData.length,
+                    rows : appHealthMockTechnicalSolutionData,
+                });
         });
     });
 });

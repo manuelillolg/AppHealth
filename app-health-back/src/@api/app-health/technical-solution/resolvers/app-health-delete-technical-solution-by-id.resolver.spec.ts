@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthDeleteTechnicalSolutionByIdHandler, AppHealthDeleteTechnicalSolutionByIdResolver } from '@api/app-health/technical-solution';
+import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthDeleteTechnicalSolutionByIdResolver } from './app-health-delete-technical-solution-by-id.resolver';
-import { AppHealthDeleteTechnicalSolutionByIdHandler } from '../handlers/app-health-delete-technical-solution-by-id.handler';
-
-// sources
-import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution/infrastructure/mock/app-health-mock-technical-solution.data';
 
 describe('AppHealthDeleteTechnicalSolutionByIdResolver', () =>
 {

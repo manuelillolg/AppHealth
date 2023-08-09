@@ -15,14 +15,6 @@ import {
     AppHealthApplicationHasLicensing,
     AppHealthApplicationCostLicensesPerYear,
     AppHealthApplicationRequestsPerDay,
-    AppHealthApplicationViews,
-    AppHealthApplicationAuthentications,
-    AppHealthApplicationAuthorizations,
-    AppHealthApplicationLanguages,
-    AppHealthApplicationInfrastructureServices,
-    AppHealthApplicationDatabases,
-    AppHealthApplicationApis,
-    AppHealthApplicationIntegrations,
     AppHealthApplicationCreatedAt,
     AppHealthApplicationUpdatedAt,
     AppHealthApplicationDeletedAt,
@@ -53,14 +45,6 @@ export class AppHealthUpdateApplicationsService
             hasLicensing?: AppHealthApplicationHasLicensing;
             costLicensesPerYear?: AppHealthApplicationCostLicensesPerYear;
             requestsPerDay?: AppHealthApplicationRequestsPerDay;
-            views?: AppHealthApplicationViews;
-            authentications?: AppHealthApplicationAuthentications;
-            authorizations?: AppHealthApplicationAuthorizations;
-            languages?: AppHealthApplicationLanguages;
-            infrastructureServices?: AppHealthApplicationInfrastructureServices;
-            databases?: AppHealthApplicationDatabases;
-            apis?: AppHealthApplicationApis;
-            integrations?: AppHealthApplicationIntegrations;
         },
         queryStatement?: QueryStatement,
         constraint?: QueryStatement,
@@ -81,14 +65,6 @@ export class AppHealthUpdateApplicationsService
             payload.hasLicensing,
             payload.costLicensesPerYear,
             payload.requestsPerDay,
-            payload.views,
-            payload.authentications,
-            payload.authorizations,
-            payload.languages,
-            payload.infrastructureServices,
-            payload.databases,
-            payload.apis,
-            payload.integrations,
             null, // createdAt
             new AppHealthApplicationUpdatedAt({ currentTimestamp: true }),
             null, // deletedAt

@@ -37,7 +37,7 @@ aggregateProperties:
   - name: description
     type: smallint.unsigned
     maxLength: 6
-    nullable: false
+    nullable: true
   - name: score
     type: smallint.unsigned
     maxLength: 6

@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationAuthorizationController } from './controllers
 export { AppHealthDeleteApplicationAuthorizationByIdController } from './controllers/app-health-delete-application-authorization-by-id.controller';
 export { AppHealthDeleteApplicationAuthorizationsController } from './controllers/app-health-delete-application-authorizations.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationAuthorizationResolver } from './resolvers/app-health-create-application-authorization.resolver';
+export { AppHealthCreateApplicationAuthorizationsResolver } from './resolvers/app-health-create-application-authorizations.resolver';
+export { AppHealthPaginateApplicationAuthorizationsResolver } from './resolvers/app-health-paginate-application-authorizations.resolver';
+export { AppHealthGetApplicationAuthorizationsResolver } from './resolvers/app-health-get-application-authorizations.resolver';
+export { AppHealthFindApplicationAuthorizationByIdResolver } from './resolvers/app-health-find-application-authorization-by-id.resolver';
+export { AppHealthFindApplicationAuthorizationResolver } from './resolvers/app-health-find-application-authorization.resolver';
+export { AppHealthUpdateApplicationAuthorizationByIdResolver } from './resolvers/app-health-update-application-authorization-by-id.resolver';
+export { AppHealthUpdateApplicationAuthorizationsResolver } from './resolvers/app-health-update-application-authorizations.resolver';
+export { AppHealthUpsertApplicationAuthorizationResolver } from './resolvers/app-health-upsert-application-authorization.resolver';
+export { AppHealthDeleteApplicationAuthorizationByIdResolver } from './resolvers/app-health-delete-application-authorization-by-id.resolver';
+export { AppHealthDeleteApplicationAuthorizationsResolver } from './resolvers/app-health-delete-application-authorizations.resolver';
+
 // controllers
 import { AppHealthCreateApplicationAuthorizationController } from './controllers/app-health-create-application-authorization.controller';
 import { AppHealthCreateApplicationAuthorizationsController } from './controllers/app-health-create-application-authorizations.controller';

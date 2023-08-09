@@ -59,7 +59,6 @@ export class SelectionModel<T>
      */
     select(...values: T[]): void
     {
-
         this._verifyValueAssignment(values);
         values.forEach(value => this._markSelected(value));
         this._emitChangeEvent();
@@ -306,7 +305,6 @@ export class SelectionModel<T>
     {
         if (values.length > 1 && !this._multiple)
         {
-            
             throw getMultipleValuesInSingleSelectionError();
         }
     }

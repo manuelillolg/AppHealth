@@ -2,12 +2,12 @@ import { BooleanValueObject, DataValueObject, ValidationRules } from '@aurorajs.
 
 export class AppHealthApplicationHasTenants extends BooleanValueObject
 {
-    public readonly type: string = 'ApplicationHasTenants';
+    public readonly type: string = 'AppHealthApplicationHasTenants';
 
     constructor(value: boolean, validationRules: ValidationRules = {}, data: DataValueObject = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationHasTenants',
+            name       : 'AppHealthApplicationHasTenants',
             nullable   : false,
             undefinable: false,
         }, validationRules), data);

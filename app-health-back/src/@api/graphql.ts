@@ -8,23 +8,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export enum AppHealthApplicationApiDocumentations {
-    OPENAPI = "OPENAPI",
-    GRAPGQL = "GRAPGQL",
-    HTML = "HTML",
-    DOCS = "DOCS"
-}
-
 export enum AppHealthApplicationIntegrationModality {
     UNIDIRECTIONAL = "UNIDIRECTIONAL",
     BIDIRECTIONAL = "BIDIRECTIONAL"
-}
-
-export enum AppHealthApplicationIntegrationDocumentations {
-    OPENAPI = "OPENAPI",
-    GRAPHQL = "GRAPHQL",
-    HTML = "HTML",
-    DOCS = "DOCS"
 }
 
 export enum AppHealthApplicationViewComplexity {
@@ -82,8 +68,8 @@ export interface AppHealthCreateApplicationApiInput {
     applicationId: string;
     apiInterfaceTypeId: string;
     score: GraphQLInt;
-    documentations?: Nullable<AppHealthApplicationApiDocumentations>;
-    requestsPerDay: GraphQLInt;
+    documentations?: Nullable<JSON>;
+    requestsPerDay?: Nullable<GraphQLInt>;
     applicationInfrastructureServiceId: string;
 }
 
@@ -92,7 +78,7 @@ export interface AppHealthUpdateApplicationApiByIdInput {
     applicationId?: Nullable<string>;
     apiInterfaceTypeId?: Nullable<string>;
     score?: Nullable<GraphQLInt>;
-    documentations?: Nullable<AppHealthApplicationApiDocumentations>;
+    documentations?: Nullable<JSON>;
     requestsPerDay?: Nullable<GraphQLInt>;
     applicationInfrastructureServiceId?: Nullable<string>;
 }
@@ -102,7 +88,7 @@ export interface AppHealthUpdateApplicationApisInput {
     applicationId?: Nullable<string>;
     apiInterfaceTypeId?: Nullable<string>;
     score?: Nullable<GraphQLInt>;
-    documentations?: Nullable<AppHealthApplicationApiDocumentations>;
+    documentations?: Nullable<JSON>;
     requestsPerDay?: Nullable<GraphQLInt>;
     applicationInfrastructureServiceId?: Nullable<string>;
 }
@@ -111,7 +97,7 @@ export interface AppHealthCreateApplicationAuthenticationInput {
     id: string;
     applicationId: string;
     authenticationInterfaceId: string;
-    totalUsers: GraphQLInt;
+    totalUsers?: Nullable<GraphQLInt>;
     score: GraphQLInt;
     applicationInfrastructureServiceId: string;
 }
@@ -138,7 +124,7 @@ export interface AppHealthCreateApplicationAuthorizationInput {
     id: string;
     applicationId: string;
     authorizationInterfaceId: string;
-    totalUsers: GraphQLInt;
+    totalUsers?: Nullable<GraphQLInt>;
     score: GraphQLInt;
     applicationInfrastructureServiceId: string;
 }
@@ -166,10 +152,10 @@ export interface AppHealthCreateApplicationDatabaseInput {
     applicationId: string;
     databaseId: string;
     version: GraphQLString;
-    size: GraphQLInt;
+    size?: Nullable<GraphQLInt>;
     score: GraphQLInt;
-    totalCollectionsTables: GraphQLInt;
-    totalFields: GraphQLInt;
+    totalCollectionsTables?: Nullable<GraphQLInt>;
+    totalFields?: Nullable<GraphQLInt>;
     applicationInfrastructureServiceId: string;
 }
 
@@ -201,7 +187,7 @@ export interface AppHealthCreateApplicationInfrastructureServiceInput {
     id: string;
     applicationId: string;
     infrastructureServiceId: string;
-    averageCostPerYear: GraphQLInt;
+    averageCostPerYear?: Nullable<GraphQLInt>;
     score: GraphQLInt;
 }
 
@@ -226,12 +212,12 @@ export interface AppHealthCreateApplicationIntegrationInput {
     name: GraphQLString;
     description?: Nullable<GraphQLString>;
     sourceApplicationId: string;
-    targetApplicationId: string;
+    targetApplicationId?: Nullable<string>;
     apiInterfaceTypeId: string;
-    interfaceNumbers: GraphQLInt;
+    interfaceNumbers?: Nullable<GraphQLInt>;
     modality: AppHealthApplicationIntegrationModality;
     score: GraphQLInt;
-    documentations?: Nullable<AppHealthApplicationIntegrationDocumentations>;
+    documentations?: Nullable<JSON>;
 }
 
 export interface AppHealthUpdateApplicationIntegrationByIdInput {
@@ -244,7 +230,7 @@ export interface AppHealthUpdateApplicationIntegrationByIdInput {
     interfaceNumbers?: Nullable<GraphQLInt>;
     modality?: Nullable<AppHealthApplicationIntegrationModality>;
     score?: Nullable<GraphQLInt>;
-    documentations?: Nullable<AppHealthApplicationIntegrationDocumentations>;
+    documentations?: Nullable<JSON>;
 }
 
 export interface AppHealthUpdateApplicationIntegrationsInput {
@@ -257,7 +243,7 @@ export interface AppHealthUpdateApplicationIntegrationsInput {
     interfaceNumbers?: Nullable<GraphQLInt>;
     modality?: Nullable<AppHealthApplicationIntegrationModality>;
     score?: Nullable<GraphQLInt>;
-    documentations?: Nullable<AppHealthApplicationIntegrationDocumentations>;
+    documentations?: Nullable<JSON>;
 }
 
 export interface AppHealthCreateApplicationLanguageInput {
@@ -292,7 +278,7 @@ export interface AppHealthCreateApplicationViewInput {
     applicationId: string;
     totalViews: GraphQLInt;
     complexity: AppHealthApplicationViewComplexity;
-    description: GraphQLInt;
+    description?: Nullable<GraphQLInt>;
     score: GraphQLInt;
 }
 
@@ -321,20 +307,12 @@ export interface AppHealthCreateApplicationInput {
     description?: Nullable<GraphQLString>;
     businessImpact?: Nullable<GraphQLString>;
     type: AppHealthApplicationType;
-    releaseDate: GraphQLISODateTime;
-    architectureDiagram: GraphQLString;
+    releaseDate?: Nullable<GraphQLISODateTime>;
+    architectureDiagram?: Nullable<GraphQLString>;
     hasTenants: GraphQLBoolean;
     hasLicensing: GraphQLBoolean;
-    costLicensesPerYear: GraphQLInt;
-    requestsPerDay: GraphQLInt;
-    views: string;
-    authentications: string;
-    authorizations: string;
-    languages: string;
-    infrastructureServices: string;
-    databases: string;
-    apis: string;
-    integrations: string;
+    costLicensesPerYear?: Nullable<GraphQLInt>;
+    requestsPerDay?: Nullable<GraphQLInt>;
 }
 
 export interface AppHealthUpdateApplicationByIdInput {
@@ -350,14 +328,6 @@ export interface AppHealthUpdateApplicationByIdInput {
     hasLicensing?: Nullable<GraphQLBoolean>;
     costLicensesPerYear?: Nullable<GraphQLInt>;
     requestsPerDay?: Nullable<GraphQLInt>;
-    views?: Nullable<string>;
-    authentications?: Nullable<string>;
-    authorizations?: Nullable<string>;
-    languages?: Nullable<string>;
-    infrastructureServices?: Nullable<string>;
-    databases?: Nullable<string>;
-    apis?: Nullable<string>;
-    integrations?: Nullable<string>;
 }
 
 export interface AppHealthUpdateApplicationsInput {
@@ -373,14 +343,6 @@ export interface AppHealthUpdateApplicationsInput {
     hasLicensing?: Nullable<GraphQLBoolean>;
     costLicensesPerYear?: Nullable<GraphQLInt>;
     requestsPerDay?: Nullable<GraphQLInt>;
-    views?: Nullable<string>;
-    authentications?: Nullable<string>;
-    authorizations?: Nullable<string>;
-    languages?: Nullable<string>;
-    infrastructureServices?: Nullable<string>;
-    databases?: Nullable<string>;
-    apis?: Nullable<string>;
-    integrations?: Nullable<string>;
 }
 
 export interface AppHealthCreateAuthenticationInterfaceInput {
@@ -517,8 +479,8 @@ export interface AppHealthCreateTechnicalSolutionInput {
     customerId: string;
     name: GraphQLString;
     description?: Nullable<GraphQLString>;
-    architectureDiagram: GraphQLString;
-    proposal: GraphQLString;
+    architectureDiagram?: Nullable<GraphQLString>;
+    proposal?: Nullable<GraphQLString>;
 }
 
 export interface AppHealthUpdateTechnicalSolutionByIdInput {
@@ -775,8 +737,8 @@ export interface AppHealthApplicationApi {
     apiInterfaceTypeId: string;
     apiInterfaceType?: Nullable<AppHealthApiInterfaceType>;
     score: GraphQLInt;
-    documentations?: Nullable<AppHealthApplicationApiDocumentations>;
-    requestsPerDay: GraphQLInt;
+    documentations?: Nullable<JSON>;
+    requestsPerDay?: Nullable<GraphQLInt>;
     applicationInfrastructureServiceId: string;
     applicationInfrastructureService?: Nullable<AppHealthApplicationInfrastructureService>;
     createdAt?: Nullable<GraphQLTimestamp>;
@@ -790,7 +752,7 @@ export interface AppHealthApplicationAuthentication {
     application?: Nullable<AppHealthApplication>;
     authenticationInterfaceId: string;
     authenticationInterface?: Nullable<AppHealthAuthenticationInterface>;
-    totalUsers: GraphQLInt;
+    totalUsers?: Nullable<GraphQLInt>;
     score: GraphQLInt;
     applicationInfrastructureServiceId: string;
     applicationInfrastructureService?: Nullable<AppHealthApplicationInfrastructureService>;
@@ -805,7 +767,7 @@ export interface AppHealthApplicationAuthorization {
     application?: Nullable<AppHealthApplication>;
     authorizationInterfaceId: string;
     authenticationInterface?: Nullable<AppHealthAuthenticationInterface>;
-    totalUsers: GraphQLInt;
+    totalUsers?: Nullable<GraphQLInt>;
     score: GraphQLInt;
     applicationInfrastructureServiceId: string;
     applicationInfrastructureService?: Nullable<AppHealthApplicationInfrastructureService>;
@@ -821,10 +783,10 @@ export interface AppHealthApplicationDatabase {
     databaseId: string;
     database?: Nullable<AppHealthDatabase>;
     version: GraphQLString;
-    size: GraphQLInt;
+    size?: Nullable<GraphQLInt>;
     score: GraphQLInt;
-    totalCollectionsTables: GraphQLInt;
-    totalFields: GraphQLInt;
+    totalCollectionsTables?: Nullable<GraphQLInt>;
+    totalFields?: Nullable<GraphQLInt>;
     applicationInfrastructureServiceId: string;
     applicationInfrastructureService?: Nullable<AppHealthApplicationInfrastructureService>;
     createdAt?: Nullable<GraphQLTimestamp>;
@@ -838,7 +800,7 @@ export interface AppHealthApplicationInfrastructureService {
     application?: Nullable<AppHealthApplication>;
     infrastructureServiceId: string;
     infrastructureService?: Nullable<AppHealthInfrastructureService>;
-    averageCostPerYear: GraphQLInt;
+    averageCostPerYear?: Nullable<GraphQLInt>;
     score: GraphQLInt;
     createdAt?: Nullable<GraphQLTimestamp>;
     updatedAt?: Nullable<GraphQLTimestamp>;
@@ -851,14 +813,14 @@ export interface AppHealthApplicationIntegration {
     description?: Nullable<GraphQLString>;
     sourceApplicationId: string;
     sourceApplication?: Nullable<AppHealthApplication>;
-    targetApplicationId: string;
+    targetApplicationId?: Nullable<string>;
     targetApplication?: Nullable<AppHealthApplication>;
     apiInterfaceTypeId: string;
     apiInterfaceType?: Nullable<AppHealthApiInterfaceType>;
-    interfaceNumbers: GraphQLInt;
+    interfaceNumbers?: Nullable<GraphQLInt>;
     modality: AppHealthApplicationIntegrationModality;
     score: GraphQLInt;
-    documentations?: Nullable<AppHealthApplicationIntegrationDocumentations>;
+    documentations?: Nullable<JSON>;
     updatedAt?: Nullable<GraphQLTimestamp>;
     deletedAt?: Nullable<GraphQLTimestamp>;
 }
@@ -883,7 +845,7 @@ export interface AppHealthApplicationView {
     application?: Nullable<AppHealthApplication>;
     totalViews: GraphQLInt;
     complexity: AppHealthApplicationViewComplexity;
-    description: GraphQLInt;
+    description?: Nullable<GraphQLInt>;
     score: GraphQLInt;
     createdAt?: Nullable<GraphQLTimestamp>;
     updatedAt?: Nullable<GraphQLTimestamp>;
@@ -898,28 +860,20 @@ export interface AppHealthApplication {
     description?: Nullable<GraphQLString>;
     businessImpact?: Nullable<GraphQLString>;
     type: AppHealthApplicationType;
-    releaseDate: GraphQLISODateTime;
-    architectureDiagram: GraphQLString;
+    releaseDate?: Nullable<GraphQLISODateTime>;
+    architectureDiagram?: Nullable<GraphQLString>;
     hasTenants: GraphQLBoolean;
     hasLicensing: GraphQLBoolean;
-    costLicensesPerYear: GraphQLInt;
-    requestsPerDay: GraphQLInt;
-    views: string;
-    applicationView?: Nullable<AppHealthApplicationView>;
-    authentications: string;
-    applicationAuthentication?: Nullable<AppHealthApplicationAuthentication>;
-    authorizations: string;
-    applicationAuthorization?: Nullable<AppHealthApplicationAuthorization>;
-    languages: string;
-    applicationLanguage?: Nullable<AppHealthApplicationLanguage>;
-    infrastructureServices: string;
-    applicationInfrastructureService?: Nullable<AppHealthApplicationInfrastructureService>;
-    databases: string;
-    applicationDatabase?: Nullable<AppHealthApplicationDatabase>;
-    apis: string;
-    applicationApi?: Nullable<AppHealthApplicationApi>;
-    integrations: string;
-    applicationIntegration?: Nullable<AppHealthApplicationIntegration>;
+    costLicensesPerYear?: Nullable<GraphQLInt>;
+    requestsPerDay?: Nullable<GraphQLInt>;
+    views?: Nullable<Nullable<AppHealthApplicationView>[]>;
+    authentications?: Nullable<Nullable<AppHealthApplicationAuthentication>[]>;
+    authorizations?: Nullable<Nullable<AppHealthApplicationAuthorization>[]>;
+    languages?: Nullable<Nullable<AppHealthApplicationLanguage>[]>;
+    infrastructureServices?: Nullable<Nullable<AppHealthApplicationInfrastructureService>[]>;
+    databases?: Nullable<Nullable<AppHealthApplicationDatabase>[]>;
+    apis?: Nullable<Nullable<AppHealthApplicationApi>[]>;
+    integrations?: Nullable<Nullable<AppHealthApplicationIntegration>[]>;
     createdAt?: Nullable<GraphQLTimestamp>;
     updatedAt?: Nullable<GraphQLTimestamp>;
     deletedAt?: Nullable<GraphQLTimestamp>;
@@ -973,7 +927,7 @@ export interface AppHealthInfrastructureProvider {
 export interface AppHealthInfrastructureService {
     id: string;
     providerId: string;
-    infrastructureProvider?: Nullable<AppHealthInfrastructureProvider>;
+    provider?: Nullable<AppHealthInfrastructureProvider>;
     name: GraphQLString;
     score: GraphQLInt;
     createdAt?: Nullable<GraphQLTimestamp>;
@@ -996,8 +950,8 @@ export interface AppHealthTechnicalSolution {
     customer?: Nullable<AppHealthCustomer>;
     name: GraphQLString;
     description?: Nullable<GraphQLString>;
-    architectureDiagram: GraphQLString;
-    proposal: GraphQLString;
+    architectureDiagram?: Nullable<GraphQLString>;
+    proposal?: Nullable<GraphQLString>;
     createdAt?: Nullable<GraphQLTimestamp>;
     updatedAt?: Nullable<GraphQLTimestamp>;
     deletedAt?: Nullable<GraphQLTimestamp>;

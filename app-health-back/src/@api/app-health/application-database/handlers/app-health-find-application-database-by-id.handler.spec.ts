@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthFindApplicationDatabaseByIdHandler } from '@api/app-health/application-database';
 import { appHealthMockApplicationDatabaseData } from '@app/app-health/application-database';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthFindApplicationDatabaseByIdHandler', () =>
 {
     let handler: AppHealthFindApplicationDatabaseByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthFindApplicationDatabaseByIdHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthFindApplicationDatabaseByIdHandler>(AppHealthFindApplicationDatabaseByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthFindApplicationDatabaseByIdHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthFindApplicationDatabaseByIdHandler', () =>
         test('should return an applicationDatabase by id', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationDatabaseData[0])));
-            expect(await handler.main(appHealthMockApplicationDatabaseData[0].id)).toBe(appHealthMockApplicationDatabaseData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationDatabaseData[0].id,
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationDatabaseData[0]);
         });
     });
 });

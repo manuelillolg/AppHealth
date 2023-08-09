@@ -22,8 +22,6 @@ describe('AppHealthUpsertApplicationInfrastructureServiceService', () =>
 
 {
     let service: AppHealthUpsertApplicationInfrastructureServiceService;
-    let repository: AppHealthIApplicationInfrastructureServiceRepository;
-    let mockRepository: AppHealthMockApplicationInfrastructureServiceRepository;
 
     beforeAll(async () =>
     {
@@ -46,8 +44,6 @@ describe('AppHealthUpsertApplicationInfrastructureServiceService', () =>
             .compile();
 
         service = module.get(AppHealthUpsertApplicationInfrastructureServiceService);
-        repository = module.get(AppHealthIApplicationInfrastructureServiceRepository);
-        mockRepository = module.get(AppHealthMockApplicationInfrastructureServiceRepository);
     });
 
     describe('main', () =>
@@ -59,15 +55,18 @@ describe('AppHealthUpsertApplicationInfrastructureServiceService', () =>
 
         test('should upsert a applicationInfrastructureService and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationInfrastructureServiceId(appHealthMockApplicationInfrastructureServiceData[0].id),
-                    applicationId: new AppHealthApplicationInfrastructureServiceApplicationId(appHealthMockApplicationInfrastructureServiceData[0].applicationId),
-                    infrastructureServiceId: new AppHealthApplicationInfrastructureServiceInfrastructureServiceId(appHealthMockApplicationInfrastructureServiceData[0].infrastructureServiceId),
-                    averageCostPerYear: new AppHealthApplicationInfrastructureServiceAverageCostPerYear(appHealthMockApplicationInfrastructureServiceData[0].averageCostPerYear),
-                    score: new AppHealthApplicationInfrastructureServiceScore(appHealthMockApplicationInfrastructureServiceData[0].score),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationInfrastructureServiceId(appHealthMockApplicationInfrastructureServiceData[0].id),
+                        applicationId: new AppHealthApplicationInfrastructureServiceApplicationId(appHealthMockApplicationInfrastructureServiceData[0].applicationId),
+                        infrastructureServiceId: new AppHealthApplicationInfrastructureServiceInfrastructureServiceId(appHealthMockApplicationInfrastructureServiceData[0].infrastructureServiceId),
+                        averageCostPerYear: new AppHealthApplicationInfrastructureServiceAverageCostPerYear(appHealthMockApplicationInfrastructureServiceData[0].averageCostPerYear),
+                        score: new AppHealthApplicationInfrastructureServiceScore(appHealthMockApplicationInfrastructureServiceData[0].score),
+                    },
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

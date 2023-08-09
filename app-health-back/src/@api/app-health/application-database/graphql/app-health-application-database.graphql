@@ -7,10 +7,10 @@ type AppHealthApplicationDatabase
     databaseId: ID!
     database: AppHealthDatabase
     version: GraphQLString!
-    size: GraphQLInt!
+    size: GraphQLInt
     score: GraphQLInt!
-    totalCollectionsTables: GraphQLInt!
-    totalFields: GraphQLInt!
+    totalCollectionsTables: GraphQLInt
+    totalFields: GraphQLInt
     applicationInfrastructureServiceId: ID!
     applicationInfrastructureService: AppHealthApplicationInfrastructureService
     createdAt: GraphQLTimestamp
@@ -24,10 +24,10 @@ input AppHealthCreateApplicationDatabaseInput
     applicationId: ID!
     databaseId: ID!
     version: GraphQLString!
-    size: GraphQLInt!
+    size: GraphQLInt
     score: GraphQLInt!
-    totalCollectionsTables: GraphQLInt!
-    totalFields: GraphQLInt!
+    totalCollectionsTables: GraphQLInt
+    totalFields: GraphQLInt
     applicationInfrastructureServiceId: ID!
 }
 

@@ -37,7 +37,7 @@ aggregateProperties:
   - name: averageCostPerYear
     type: int.unsigned
     maxLength: 10
-    nullable: false
+    nullable: true
   - name: score
     type: smallint.unsigned
     maxLength: 6

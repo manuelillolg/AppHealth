@@ -26,8 +26,6 @@ describe('AppHealthUpsertApplicationDatabaseService', () =>
 
 {
     let service: AppHealthUpsertApplicationDatabaseService;
-    let repository: AppHealthIApplicationDatabaseRepository;
-    let mockRepository: AppHealthMockApplicationDatabaseRepository;
 
     beforeAll(async () =>
     {
@@ -50,8 +48,6 @@ describe('AppHealthUpsertApplicationDatabaseService', () =>
             .compile();
 
         service = module.get(AppHealthUpsertApplicationDatabaseService);
-        repository = module.get(AppHealthIApplicationDatabaseRepository);
-        mockRepository = module.get(AppHealthMockApplicationDatabaseRepository);
     });
 
     describe('main', () =>
@@ -63,19 +59,22 @@ describe('AppHealthUpsertApplicationDatabaseService', () =>
 
         test('should upsert a applicationDatabase and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationDatabaseId(appHealthMockApplicationDatabaseData[0].id),
-                    applicationId: new AppHealthApplicationDatabaseApplicationId(appHealthMockApplicationDatabaseData[0].applicationId),
-                    databaseId: new AppHealthApplicationDatabaseDatabaseId(appHealthMockApplicationDatabaseData[0].databaseId),
-                    version: new AppHealthApplicationDatabaseVersion(appHealthMockApplicationDatabaseData[0].version),
-                    size: new AppHealthApplicationDatabaseSize(appHealthMockApplicationDatabaseData[0].size),
-                    score: new AppHealthApplicationDatabaseScore(appHealthMockApplicationDatabaseData[0].score),
-                    totalCollectionsTables: new AppHealthApplicationDatabaseTotalCollectionsTables(appHealthMockApplicationDatabaseData[0].totalCollectionsTables),
-                    totalFields: new AppHealthApplicationDatabaseTotalFields(appHealthMockApplicationDatabaseData[0].totalFields),
-                    applicationInfrastructureServiceId: new AppHealthApplicationDatabaseApplicationInfrastructureServiceId(appHealthMockApplicationDatabaseData[0].applicationInfrastructureServiceId),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationDatabaseId(appHealthMockApplicationDatabaseData[0].id),
+                        applicationId: new AppHealthApplicationDatabaseApplicationId(appHealthMockApplicationDatabaseData[0].applicationId),
+                        databaseId: new AppHealthApplicationDatabaseDatabaseId(appHealthMockApplicationDatabaseData[0].databaseId),
+                        version: new AppHealthApplicationDatabaseVersion(appHealthMockApplicationDatabaseData[0].version),
+                        size: new AppHealthApplicationDatabaseSize(appHealthMockApplicationDatabaseData[0].size),
+                        score: new AppHealthApplicationDatabaseScore(appHealthMockApplicationDatabaseData[0].score),
+                        totalCollectionsTables: new AppHealthApplicationDatabaseTotalCollectionsTables(appHealthMockApplicationDatabaseData[0].totalCollectionsTables),
+                        totalFields: new AppHealthApplicationDatabaseTotalFields(appHealthMockApplicationDatabaseData[0].totalFields),
+                        applicationInfrastructureServiceId: new AppHealthApplicationDatabaseApplicationInfrastructureServiceId(appHealthMockApplicationDatabaseData[0].applicationInfrastructureServiceId),
+                    },
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

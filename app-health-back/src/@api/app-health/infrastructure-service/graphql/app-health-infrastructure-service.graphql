@@ -3,7 +3,7 @@ type AppHealthInfrastructureService
 {
     id: ID!
     providerId: ID!
-    infrastructureProvider: AppHealthInfrastructureProvider
+    provider: AppHealthInfrastructureProvider
     name: GraphQLString!
     score: GraphQLInt!
     createdAt: GraphQLTimestamp

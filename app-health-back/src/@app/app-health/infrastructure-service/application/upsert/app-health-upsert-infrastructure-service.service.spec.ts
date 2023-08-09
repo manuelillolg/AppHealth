@@ -21,8 +21,6 @@ describe('AppHealthUpsertInfrastructureServiceService', () =>
 
 {
     let service: AppHealthUpsertInfrastructureServiceService;
-    let repository: AppHealthIInfrastructureServiceRepository;
-    let mockRepository: AppHealthMockInfrastructureServiceRepository;
 
     beforeAll(async () =>
     {
@@ -45,8 +43,6 @@ describe('AppHealthUpsertInfrastructureServiceService', () =>
             .compile();
 
         service = module.get(AppHealthUpsertInfrastructureServiceService);
-        repository = module.get(AppHealthIInfrastructureServiceRepository);
-        mockRepository = module.get(AppHealthMockInfrastructureServiceRepository);
     });
 
     describe('main', () =>
@@ -58,14 +54,17 @@ describe('AppHealthUpsertInfrastructureServiceService', () =>
 
         test('should upsert a infrastructureService and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthInfrastructureServiceId(appHealthMockInfrastructureServiceData[0].id),
-                    providerId: new AppHealthInfrastructureServiceProviderId(appHealthMockInfrastructureServiceData[0].providerId),
-                    name: new AppHealthInfrastructureServiceName(appHealthMockInfrastructureServiceData[0].name),
-                    score: new AppHealthInfrastructureServiceScore(appHealthMockInfrastructureServiceData[0].score),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthInfrastructureServiceId(appHealthMockInfrastructureServiceData[0].id),
+                        providerId: new AppHealthInfrastructureServiceProviderId(appHealthMockInfrastructureServiceData[0].providerId),
+                        name: new AppHealthInfrastructureServiceName(appHealthMockInfrastructureServiceData[0].name),
+                        score: new AppHealthInfrastructureServiceScore(appHealthMockInfrastructureServiceData[0].score),
+                    },
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

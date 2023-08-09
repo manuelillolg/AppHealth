@@ -5,7 +5,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 describe('AppHealthCreateInfrastructureServicesController', () =>
 {
     let controller: AppHealthCreateInfrastructureServicesController;
-    let handler: AppHealthCreateInfrastructureServicesHandler;
 
     beforeAll(async () =>
     {
@@ -25,7 +24,6 @@ describe('AppHealthCreateInfrastructureServicesController', () =>
             .compile();
 
         controller = module.get<AppHealthCreateInfrastructureServicesController>(AppHealthCreateInfrastructureServicesController);
-        handler = module.get<AppHealthCreateInfrastructureServicesHandler>(AppHealthCreateInfrastructureServicesHandler);
     });
 
     describe('main', () =>
@@ -37,7 +35,12 @@ describe('AppHealthCreateInfrastructureServicesController', () =>
 
         test('should return an appHealthMockInfrastructureServiceData created', async () =>
         {
-            expect(await controller.main(appHealthMockInfrastructureServiceData)).toBe(undefined);
+            expect(
+                await controller.main(
+                    appHealthMockInfrastructureServiceData,
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthFindApplicationApiByIdHandler, AppHealthFindApplicationApiByIdResolver } from '@api/app-health/application-api';
+import { appHealthMockApplicationApiData } from '@app/app-health/application-api';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthFindApplicationApiByIdResolver } from './app-health-find-application-api-by-id.resolver';
-import { AppHealthFindApplicationApiByIdHandler } from '../handlers/app-health-find-application-api-by-id.handler';
-
-// sources
-import { appHealthMockApplicationApiData } from '@app/app-health/application-api/infrastructure/mock/app-health-mock-application-api.data';
 
 describe('AppHealthFindApplicationApiByIdResolver', () =>
 {

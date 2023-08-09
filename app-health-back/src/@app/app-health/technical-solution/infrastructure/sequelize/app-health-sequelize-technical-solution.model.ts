@@ -49,14 +49,14 @@ export class AppHealthTechnicalSolutionModel extends Model<AppHealthTechnicalSol
 
     @Column({
         field: 'architectureDiagram',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.STRING(255),
     })
     architectureDiagram: string;
 
     @Column({
         field: 'proposal',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.TEXT,
     })
     proposal: string;

@@ -39,17 +39,12 @@ aggregateProperties:
     maxLength: 6
     nullable: false
   - name: documentations
-    type: enum
-    enumOptions:
-      - OPENAPI
-      - GRAPGQL
-      - HTML
-      - DOCS
+    type: json
     nullable: true
   - name: requestsPerDay
     type: int.unsigned
     maxLength: 10
-    nullable: false
+    nullable: true
   - name: applicationInfrastructureServiceId
     type: id
     length: 36

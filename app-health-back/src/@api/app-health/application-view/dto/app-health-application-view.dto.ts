@@ -1,7 +1,7 @@
 /* eslint-disable indent */
-import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationDto } from '../../../app-health/application/dto/app-health-application.dto';
+import { AppHealthApplicationDto } from '@api/app-health/application';
 import { AppHealthApplicationViewComplexity } from '@api/graphql';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class AppHealthApplicationViewDto
 {
@@ -41,7 +41,7 @@ export class AppHealthApplicationViewDto
         type       : Number,
         description: 'description [input here api field description]',
     })
-    description: number;
+    description?: number;
 
     @ApiProperty({
         type       : Number,

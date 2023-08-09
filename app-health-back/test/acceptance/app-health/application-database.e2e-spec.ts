@@ -135,22 +135,6 @@ describe('application-database', () =>
             });
     });
 
-    test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseSize property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-database/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                size: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationDatabaseSize must be defined, can not be null');
-            });
-    });
-
     test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseScore property can not to be null', () =>
     {
         return request(app.getHttpServer())
@@ -164,38 +148,6 @@ describe('application-database', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationDatabaseScore must be defined, can not be null');
-            });
-    });
-
-    test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseTotalCollectionsTables property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-database/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                totalCollectionsTables: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationDatabaseTotalCollectionsTables must be defined, can not be null');
-            });
-    });
-
-    test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseTotalFields property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-database/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                totalFields: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationDatabaseTotalFields must be defined, can not be null');
             });
     });
 
@@ -279,22 +231,6 @@ describe('application-database', () =>
             });
     });
 
-    test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseSize property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-database/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                size: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationDatabaseSize must be defined, can not be undefined');
-            });
-    });
-
     test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseScore property can not to be undefined', () =>
     {
         return request(app.getHttpServer())
@@ -308,38 +244,6 @@ describe('application-database', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationDatabaseScore must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseTotalCollectionsTables property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-database/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                totalCollectionsTables: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationDatabaseTotalCollectionsTables must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/application-database/create - Got 400 Conflict, ApplicationDatabaseTotalFields property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-database/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                totalFields: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationDatabaseTotalFields must be defined, can not be undefined');
             });
     });
 

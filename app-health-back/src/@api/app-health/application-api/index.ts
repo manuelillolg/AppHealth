@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationApiController } from './controllers/app-healt
 export { AppHealthDeleteApplicationApiByIdController } from './controllers/app-health-delete-application-api-by-id.controller';
 export { AppHealthDeleteApplicationApisController } from './controllers/app-health-delete-application-apis.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationApiResolver } from './resolvers/app-health-create-application-api.resolver';
+export { AppHealthCreateApplicationApisResolver } from './resolvers/app-health-create-application-apis.resolver';
+export { AppHealthPaginateApplicationApisResolver } from './resolvers/app-health-paginate-application-apis.resolver';
+export { AppHealthGetApplicationApisResolver } from './resolvers/app-health-get-application-apis.resolver';
+export { AppHealthFindApplicationApiByIdResolver } from './resolvers/app-health-find-application-api-by-id.resolver';
+export { AppHealthFindApplicationApiResolver } from './resolvers/app-health-find-application-api.resolver';
+export { AppHealthUpdateApplicationApiByIdResolver } from './resolvers/app-health-update-application-api-by-id.resolver';
+export { AppHealthUpdateApplicationApisResolver } from './resolvers/app-health-update-application-apis.resolver';
+export { AppHealthUpsertApplicationApiResolver } from './resolvers/app-health-upsert-application-api.resolver';
+export { AppHealthDeleteApplicationApiByIdResolver } from './resolvers/app-health-delete-application-api-by-id.resolver';
+export { AppHealthDeleteApplicationApisResolver } from './resolvers/app-health-delete-application-apis.resolver';
+
 // controllers
 import { AppHealthCreateApplicationApiController } from './controllers/app-health-create-application-api.controller';
 import { AppHealthCreateApplicationApisController } from './controllers/app-health-create-application-apis.controller';

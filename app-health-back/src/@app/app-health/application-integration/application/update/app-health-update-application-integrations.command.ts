@@ -14,7 +14,7 @@ export class AppHealthUpdateApplicationIntegrationsCommand
             interfaceNumbers?: number;
             modality?: string;
             score?: number;
-            documentations?: string;
+            documentations?: any;
         },
         public readonly queryStatement?: QueryStatement,
         public readonly constraint?: QueryStatement,

@@ -1,6 +1,6 @@
 /* eslint-disable indent */
+import { AppHealthApplicationIntegrationModality } from '@api/graphql';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationIntegrationModality, AppHealthApplicationIntegrationDocumentations } from '@api/graphql';
 
 export class AppHealthUpdateApplicationIntegrationByIdDto
 {
@@ -63,10 +63,9 @@ export class AppHealthUpdateApplicationIntegrationByIdDto
     score?: number;
 
     @ApiProperty({
-        type       : AppHealthApplicationIntegrationDocumentations,
-        enum       : ['OPENAPI','GRAPHQL','HTML','DOCS'],
+        type       : Object,
         description: 'documentations [input here api field description]',
     })
-    documentations?: AppHealthApplicationIntegrationDocumentations;
+    documentations?: any;
 
 }

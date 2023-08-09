@@ -1,9 +1,8 @@
 /* eslint-disable indent */
+import { AppHealthApiInterfaceTypeDto } from '@api/app-health/api-interface-type';
+import { AppHealthApplicationDto } from '@api/app-health/application';
+import { AppHealthApplicationInfrastructureServiceDto } from '@api/app-health/application-infrastructure-service';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationDto } from '../../../app-health/application/dto/app-health-application.dto';
-import { AppHealthApiInterfaceTypeDto } from '../../../app-health/api-interface-type/dto/app-health-api-interface-type.dto';
-import { AppHealthApplicationInfrastructureServiceDto } from '../../../app-health/application-infrastructure-service/dto/app-health-application-infrastructure-service.dto';
-import { AppHealthApplicationApiDocumentations } from '@api/graphql';
 
 export class AppHealthApplicationApiDto
 {
@@ -46,17 +45,16 @@ export class AppHealthApplicationApiDto
     score: number;
 
     @ApiProperty({
-        type       : AppHealthApplicationApiDocumentations,
-        enum       : ['OPENAPI','GRAPGQL','HTML','DOCS'],
+        type       : Object,
         description: 'documentations [input here api field description]',
     })
-    documentations?: AppHealthApplicationApiDocumentations;
+    documentations?: any;
 
     @ApiProperty({
         type       : Number,
         description: 'requestsPerDay [input here api field description]',
     })
-    requestsPerDay: number;
+    requestsPerDay?: number;
 
     @ApiProperty({
         type       : String,

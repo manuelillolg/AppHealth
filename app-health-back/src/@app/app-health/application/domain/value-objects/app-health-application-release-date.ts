@@ -2,14 +2,14 @@ import { DataValueObject, DateValueObject, ValidationRules } from '@aurorajs.dev
 
 export class AppHealthApplicationReleaseDate extends DateValueObject
 {
-    public readonly type: string = 'ApplicationReleaseDate';
+    public readonly type: string = 'AppHealthApplicationReleaseDate';
 
     constructor(value: string | DataValueObject, validationRules: ValidationRules = {}, data: DataValueObject = {})
     {
         super(value, Object.assign({
-            name       : 'ApplicationReleaseDate',
-            nullable   : false,
-            undefinable: false,
+            name       : 'AppHealthApplicationReleaseDate',
+            nullable   : true,
+            undefinable: true,
         }, validationRules), data);
     }
 }

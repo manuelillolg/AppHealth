@@ -119,38 +119,6 @@ describe('technical-solution', () =>
             });
     });
 
-    test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionArchitectureDiagram property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/technical-solution/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                architectureDiagram: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for TechnicalSolutionArchitectureDiagram must be defined, can not be null');
-            });
-    });
-
-    test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionProposal property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/technical-solution/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                proposal: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for TechnicalSolutionProposal must be defined, can not be null');
-            });
-    });
-
     test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionId property can not to be undefined', () =>
     {
         return request(app.getHttpServer())
@@ -196,38 +164,6 @@ describe('technical-solution', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for TechnicalSolutionName must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionArchitectureDiagram property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/technical-solution/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                architectureDiagram: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for TechnicalSolutionArchitectureDiagram must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionProposal property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/technical-solution/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                proposal: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for TechnicalSolutionProposal must be defined, can not be undefined');
             });
     });
 

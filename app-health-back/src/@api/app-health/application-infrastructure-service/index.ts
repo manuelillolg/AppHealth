@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationInfrastructureServiceController } from './con
 export { AppHealthDeleteApplicationInfrastructureServiceByIdController } from './controllers/app-health-delete-application-infrastructure-service-by-id.controller';
 export { AppHealthDeleteApplicationInfrastructureServicesController } from './controllers/app-health-delete-application-infrastructure-services.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationInfrastructureServiceResolver } from './resolvers/app-health-create-application-infrastructure-service.resolver';
+export { AppHealthCreateApplicationInfrastructureServicesResolver } from './resolvers/app-health-create-application-infrastructure-services.resolver';
+export { AppHealthPaginateApplicationInfrastructureServicesResolver } from './resolvers/app-health-paginate-application-infrastructure-services.resolver';
+export { AppHealthGetApplicationInfrastructureServicesResolver } from './resolvers/app-health-get-application-infrastructure-services.resolver';
+export { AppHealthFindApplicationInfrastructureServiceByIdResolver } from './resolvers/app-health-find-application-infrastructure-service-by-id.resolver';
+export { AppHealthFindApplicationInfrastructureServiceResolver } from './resolvers/app-health-find-application-infrastructure-service.resolver';
+export { AppHealthUpdateApplicationInfrastructureServiceByIdResolver } from './resolvers/app-health-update-application-infrastructure-service-by-id.resolver';
+export { AppHealthUpdateApplicationInfrastructureServicesResolver } from './resolvers/app-health-update-application-infrastructure-services.resolver';
+export { AppHealthUpsertApplicationInfrastructureServiceResolver } from './resolvers/app-health-upsert-application-infrastructure-service.resolver';
+export { AppHealthDeleteApplicationInfrastructureServiceByIdResolver } from './resolvers/app-health-delete-application-infrastructure-service-by-id.resolver';
+export { AppHealthDeleteApplicationInfrastructureServicesResolver } from './resolvers/app-health-delete-application-infrastructure-services.resolver';
+
 // controllers
 import { AppHealthCreateApplicationInfrastructureServiceController } from './controllers/app-health-create-application-infrastructure-service.controller';
 import { AppHealthCreateApplicationInfrastructureServicesController } from './controllers/app-health-create-application-infrastructure-services.controller';

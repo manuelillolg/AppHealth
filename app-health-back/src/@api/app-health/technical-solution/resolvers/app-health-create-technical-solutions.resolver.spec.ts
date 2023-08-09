@@ -1,17 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthCreateTechnicalSolutionsResolver } from './app-health-create-technical-solutions.resolver';
-import { AppHealthCreateTechnicalSolutionsHandler } from '../handlers/app-health-create-technical-solutions.handler';
+import { AppHealthCreateTechnicalSolutionsHandler, AppHealthCreateTechnicalSolutionsResolver } from '@api/app-health/technical-solution';
 import { AppHealthCreateTechnicalSolutionInput } from '@api/graphql';
-
-// sources
-import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution/infrastructure/mock/app-health-mock-technical-solution.data';
+import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateTechnicalSolutionsResolver', () =>
 {
     let resolver: AppHealthCreateTechnicalSolutionsResolver;
-    let handler: AppHealthCreateTechnicalSolutionsHandler;
 
     beforeAll(async () =>
     {
@@ -29,7 +23,6 @@ describe('AppHealthCreateTechnicalSolutionsResolver', () =>
             .compile();
 
         resolver = module.get<AppHealthCreateTechnicalSolutionsResolver>(AppHealthCreateTechnicalSolutionsResolver);
-        handler = module.get<AppHealthCreateTechnicalSolutionsHandler>(AppHealthCreateTechnicalSolutionsHandler);
     });
 
     test('AppHealthCreateTechnicalSolutionsResolver should be defined', () =>

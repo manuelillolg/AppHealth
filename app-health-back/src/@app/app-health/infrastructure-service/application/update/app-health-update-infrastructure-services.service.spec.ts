@@ -20,8 +20,6 @@ import { AppHealthMockInfrastructureServiceRepository } from '../../infrastructu
 describe('AppHealthUpdateInfrastructureServicesService', () =>
 {
     let service: AppHealthUpdateInfrastructureServicesService;
-    let repository: AppHealthIInfrastructureServiceRepository;
-    let mockRepository: AppHealthMockInfrastructureServiceRepository;
 
     beforeAll(async () =>
     {
@@ -45,8 +43,6 @@ describe('AppHealthUpdateInfrastructureServicesService', () =>
             .compile();
 
         service = module.get(AppHealthUpdateInfrastructureServicesService);
-        repository = module.get(AppHealthIInfrastructureServiceRepository);
-        mockRepository = module.get(AppHealthMockInfrastructureServiceRepository);
     });
 
     describe('main', () =>
@@ -58,14 +54,19 @@ describe('AppHealthUpdateInfrastructureServicesService', () =>
 
         test('should update a infrastructureServices and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthInfrastructureServiceId(appHealthMockInfrastructureServiceData[0].id),
-                    providerId: new AppHealthInfrastructureServiceProviderId(appHealthMockInfrastructureServiceData[0].providerId),
-                    name: new AppHealthInfrastructureServiceName(appHealthMockInfrastructureServiceData[0].name),
-                    score: new AppHealthInfrastructureServiceScore(appHealthMockInfrastructureServiceData[0].score),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthInfrastructureServiceId(appHealthMockInfrastructureServiceData[0].id),
+                        providerId: new AppHealthInfrastructureServiceProviderId(appHealthMockInfrastructureServiceData[0].providerId),
+                        name: new AppHealthInfrastructureServiceName(appHealthMockInfrastructureServiceData[0].name),
+                        score: new AppHealthInfrastructureServiceScore(appHealthMockInfrastructureServiceData[0].score),
+                    },
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

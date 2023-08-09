@@ -24,8 +24,6 @@ describe('AppHealthUpsertApplicationApiService', () =>
 
 {
     let service: AppHealthUpsertApplicationApiService;
-    let repository: AppHealthIApplicationApiRepository;
-    let mockRepository: AppHealthMockApplicationApiRepository;
 
     beforeAll(async () =>
     {
@@ -48,8 +46,6 @@ describe('AppHealthUpsertApplicationApiService', () =>
             .compile();
 
         service = module.get(AppHealthUpsertApplicationApiService);
-        repository = module.get(AppHealthIApplicationApiRepository);
-        mockRepository = module.get(AppHealthMockApplicationApiRepository);
     });
 
     describe('main', () =>
@@ -61,17 +57,20 @@ describe('AppHealthUpsertApplicationApiService', () =>
 
         test('should upsert a applicationApi and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationApiId(appHealthMockApplicationApiData[0].id),
-                    applicationId: new AppHealthApplicationApiApplicationId(appHealthMockApplicationApiData[0].applicationId),
-                    apiInterfaceTypeId: new AppHealthApplicationApiApiInterfaceTypeId(appHealthMockApplicationApiData[0].apiInterfaceTypeId),
-                    score: new AppHealthApplicationApiScore(appHealthMockApplicationApiData[0].score),
-                    documentations: new AppHealthApplicationApiDocumentations(appHealthMockApplicationApiData[0].documentations),
-                    requestsPerDay: new AppHealthApplicationApiRequestsPerDay(appHealthMockApplicationApiData[0].requestsPerDay),
-                    applicationInfrastructureServiceId: new AppHealthApplicationApiApplicationInfrastructureServiceId(appHealthMockApplicationApiData[0].applicationInfrastructureServiceId),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationApiId(appHealthMockApplicationApiData[0].id),
+                        applicationId: new AppHealthApplicationApiApplicationId(appHealthMockApplicationApiData[0].applicationId),
+                        apiInterfaceTypeId: new AppHealthApplicationApiApiInterfaceTypeId(appHealthMockApplicationApiData[0].apiInterfaceTypeId),
+                        score: new AppHealthApplicationApiScore(appHealthMockApplicationApiData[0].score),
+                        documentations: new AppHealthApplicationApiDocumentations(appHealthMockApplicationApiData[0].documentations),
+                        requestsPerDay: new AppHealthApplicationApiRequestsPerDay(appHealthMockApplicationApiData[0].requestsPerDay),
+                        applicationInfrastructureServiceId: new AppHealthApplicationApiApplicationInfrastructureServiceId(appHealthMockApplicationApiData[0].applicationInfrastructureServiceId),
+                    },
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

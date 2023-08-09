@@ -1,7 +1,7 @@
 /* eslint-disable indent */
+import { AppHealthApplicationDto } from '@api/app-health/application';
+import { AppHealthInfrastructureServiceDto } from '@api/app-health/infrastructure-service';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationDto } from '../../../app-health/application/dto/app-health-application.dto';
-import { AppHealthInfrastructureServiceDto } from '../../../app-health/infrastructure-service/dto/app-health-infrastructure-service.dto';
 
 export class AppHealthApplicationInfrastructureServiceDto
 {
@@ -41,7 +41,7 @@ export class AppHealthApplicationInfrastructureServiceDto
         type       : Number,
         description: 'averageCostPerYear [input here api field description]',
     })
-    averageCostPerYear: number;
+    averageCostPerYear?: number;
 
     @ApiProperty({
         type       : Number,

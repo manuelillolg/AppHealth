@@ -8,7 +8,6 @@ describe('AppHealthUpsertApplicationDatabaseHandler', () =>
 {
     let handler: AppHealthUpsertApplicationDatabaseHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthUpsertApplicationDatabaseHandler', () =>
 
         handler = module.get<AppHealthUpsertApplicationDatabaseHandler>(AppHealthUpsertApplicationDatabaseHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,12 @@ describe('AppHealthUpsertApplicationDatabaseHandler', () =>
         test('should return an applicationDatabase upserted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationDatabaseData[0])));
-            expect(await handler.main(appHealthMockApplicationDatabaseData[0])).toBe(appHealthMockApplicationDatabaseData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationDatabaseData[0],
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockApplicationDatabaseData[0]);
         });
     });
 });

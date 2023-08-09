@@ -10,14 +10,6 @@ export { AppHealthApplicationHasTenants } from './app-health-application-has-ten
 export { AppHealthApplicationHasLicensing } from './app-health-application-has-licensing';
 export { AppHealthApplicationCostLicensesPerYear } from './app-health-application-cost-licenses-per-year';
 export { AppHealthApplicationRequestsPerDay } from './app-health-application-requests-per-day';
-export { AppHealthApplicationViews } from './app-health-application-views';
-export { AppHealthApplicationAuthentications } from './app-health-application-authentications';
-export { AppHealthApplicationAuthorizations } from './app-health-application-authorizations';
-export { AppHealthApplicationLanguages } from './app-health-application-languages';
-export { AppHealthApplicationInfrastructureServices } from './app-health-application-infrastructure-services';
-export { AppHealthApplicationDatabases } from './app-health-application-databases';
-export { AppHealthApplicationApis } from './app-health-application-apis';
-export { AppHealthApplicationIntegrations } from './app-health-application-integrations';
 export { AppHealthApplicationCreatedAt } from './app-health-application-created-at';
 export { AppHealthApplicationUpdatedAt } from './app-health-application-updated-at';
 export { AppHealthApplicationDeletedAt } from './app-health-application-deleted-at';

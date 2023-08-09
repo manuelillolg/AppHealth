@@ -22,8 +22,6 @@ import { AppHealthMockApplicationViewRepository } from '../../infrastructure/moc
 describe('AppHealthUpdateApplicationViewByIdService', () =>
 {
     let service: AppHealthUpdateApplicationViewByIdService;
-    let repository: AppHealthIApplicationViewRepository;
-    let mockRepository: AppHealthMockApplicationViewRepository;
 
     beforeAll(async () =>
     {
@@ -46,8 +44,6 @@ describe('AppHealthUpdateApplicationViewByIdService', () =>
             .compile();
 
         service = module.get(AppHealthUpdateApplicationViewByIdService);
-        repository = module.get(AppHealthIApplicationViewRepository);
-        mockRepository = module.get(AppHealthMockApplicationViewRepository);
     });
 
     describe('main', () =>
@@ -59,16 +55,19 @@ describe('AppHealthUpdateApplicationViewByIdService', () =>
 
         test('should update a applicationView and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationViewId(appHealthMockApplicationViewData[0].id),
-                    applicationId: new AppHealthApplicationViewApplicationId(appHealthMockApplicationViewData[0].applicationId),
-                    totalViews: new AppHealthApplicationViewTotalViews(appHealthMockApplicationViewData[0].totalViews),
-                    complexity: new AppHealthApplicationViewComplexity(appHealthMockApplicationViewData[0].complexity),
-                    description: new AppHealthApplicationViewDescription(appHealthMockApplicationViewData[0].description),
-                    score: new AppHealthApplicationViewScore(appHealthMockApplicationViewData[0].score),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationViewId(appHealthMockApplicationViewData[0].id),
+                        applicationId: new AppHealthApplicationViewApplicationId(appHealthMockApplicationViewData[0].applicationId),
+                        totalViews: new AppHealthApplicationViewTotalViews(appHealthMockApplicationViewData[0].totalViews),
+                        complexity: new AppHealthApplicationViewComplexity(appHealthMockApplicationViewData[0].complexity),
+                        description: new AppHealthApplicationViewDescription(appHealthMockApplicationViewData[0].description),
+                        score: new AppHealthApplicationViewScore(appHealthMockApplicationViewData[0].score),
+                    },
+                    {},
+                ),
+            ).toBe(undefined);
         });
     });
 });

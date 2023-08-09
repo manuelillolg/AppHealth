@@ -8,10 +8,10 @@ export class AppHealthCreateApplicationDatabaseCommand
             applicationId: string;
             databaseId: string;
             version: string;
-            size: number;
+            size?: number;
             score: number;
-            totalCollectionsTables: number;
-            totalFields: number;
+            totalCollectionsTables?: number;
+            totalFields?: number;
             applicationInfrastructureServiceId: string;
         },
         public readonly cQMetadata?: CQMetadata,

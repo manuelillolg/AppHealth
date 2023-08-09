@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthPaginateApplicationAuthenticationsHandler } from '@api/app-health/application-authentication';
 import { appHealthMockApplicationAuthenticationData } from '@app/app-health/application-authentication';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthPaginateApplicationAuthenticationsHandler', () =>
 {
     let handler: AppHealthPaginateApplicationAuthenticationsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthPaginateApplicationAuthenticationsHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthPaginateApplicationAuthenticationsHandler>(AppHealthPaginateApplicationAuthenticationsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthPaginateApplicationAuthenticationsHandler should be defined', () =>
@@ -57,11 +49,17 @@ describe('AppHealthPaginateApplicationAuthenticationsHandler', () =>
                 count: appHealthMockApplicationAuthenticationData.length,
                 rows : appHealthMockApplicationAuthenticationData,
             })));
-            expect(await handler.main()).toEqual({
-                total: appHealthMockApplicationAuthenticationData.length,
-                count: appHealthMockApplicationAuthenticationData.length,
-                rows : appHealthMockApplicationAuthenticationData,
-            });
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                ),
+            )
+                .toEqual({
+                    total: appHealthMockApplicationAuthenticationData.length,
+                    count: appHealthMockApplicationAuthenticationData.length,
+                    rows : appHealthMockApplicationAuthenticationData,
+                });
         });
     });
 });

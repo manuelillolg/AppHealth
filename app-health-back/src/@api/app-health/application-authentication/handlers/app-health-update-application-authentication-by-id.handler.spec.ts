@@ -9,7 +9,6 @@ describe('AppHealthUpdateApplicationAuthenticationByIdHandler', () =>
 {
     let handler: AppHealthUpdateApplicationAuthenticationByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthUpdateApplicationAuthenticationByIdHandler', () =>
 
         handler = module.get<AppHealthUpdateApplicationAuthenticationByIdHandler>(AppHealthUpdateApplicationAuthenticationByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthUpdateApplicationAuthenticationByIdHandler should be defined', () =>
@@ -54,7 +52,13 @@ describe('AppHealthUpdateApplicationAuthenticationByIdHandler', () =>
         test('should return a applicationAuthentication updated', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthenticationData[0])));
-            expect(await handler.main(<AppHealthUpdateApplicationAuthenticationByIdInput>appHealthMockApplicationAuthenticationData[0])).toBe(appHealthMockApplicationAuthenticationData[0]);
+            expect(
+                await handler.main(
+                    <AppHealthUpdateApplicationAuthenticationByIdInput>appHealthMockApplicationAuthenticationData[0],
+                    {},
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockApplicationAuthenticationData[0]);
         });
     });
 });

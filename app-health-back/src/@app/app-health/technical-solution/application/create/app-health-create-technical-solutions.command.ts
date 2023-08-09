@@ -8,8 +8,8 @@ export class  AppHealthCreateTechnicalSolutionsCommand
             customerId: string;
             name: string;
             description?: string;
-            architectureDiagram: string;
-            proposal: string;
+            architectureDiagram?: string;
+            proposal?: string;
         } [],
         public readonly cQMetadata?: CQMetadata,
     ) {}

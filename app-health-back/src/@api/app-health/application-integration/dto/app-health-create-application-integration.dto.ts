@@ -1,6 +1,6 @@
 /* eslint-disable indent */
+import { AppHealthApplicationIntegrationModality } from '@api/graphql';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationIntegrationModality, AppHealthApplicationIntegrationDocumentations } from '@api/graphql';
 
 export class AppHealthCreateApplicationIntegrationDto
 {
@@ -34,7 +34,7 @@ export class AppHealthCreateApplicationIntegrationDto
         description: 'targetApplicationId [input here api field description]',
         example    : 'b9a07f6b-db80-58a4-85f8-ac3876029381',
     })
-    targetApplicationId: string;
+    targetApplicationId?: string;
 
     @ApiProperty({
         type       : String,
@@ -47,7 +47,7 @@ export class AppHealthCreateApplicationIntegrationDto
         type       : Number,
         description: 'interfaceNumbers [input here api field description]',
     })
-    interfaceNumbers: number;
+    interfaceNumbers?: number;
 
     @ApiProperty({
         type       : AppHealthApplicationIntegrationModality,
@@ -63,10 +63,9 @@ export class AppHealthCreateApplicationIntegrationDto
     score: number;
 
     @ApiProperty({
-        type       : AppHealthApplicationIntegrationDocumentations,
-        enum       : ['OPENAPI','GRAPHQL','HTML','DOCS'],
+        type       : Object,
         description: 'documentations [input here api field description]',
     })
-    documentations?: AppHealthApplicationIntegrationDocumentations;
+    documentations?: any;
 
 }

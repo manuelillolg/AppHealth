@@ -1,8 +1,8 @@
 /* eslint-disable indent */
+import { AppHealthApiInterfaceTypeDto } from '@api/app-health/api-interface-type';
+import { AppHealthApplicationDto } from '@api/app-health/application';
+import { AppHealthApplicationIntegrationModality } from '@api/graphql';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationDto } from '../../../app-health/application/dto/app-health-application.dto';
-import { AppHealthApiInterfaceTypeDto } from '../../../app-health/api-interface-type/dto/app-health-api-interface-type.dto';
-import { AppHealthApplicationIntegrationModality, AppHealthApplicationIntegrationDocumentations } from '@api/graphql';
 
 export class AppHealthApplicationIntegrationDto
 {
@@ -42,7 +42,7 @@ export class AppHealthApplicationIntegrationDto
         description: 'targetApplicationId [input here api field description]',
         example    : 'b9a07f6b-db80-58a4-85f8-ac3876029381',
     })
-    targetApplicationId: string;
+    targetApplicationId?: string;
 
     @ApiProperty({
         type       : () => AppHealthApplicationDto,
@@ -67,7 +67,7 @@ export class AppHealthApplicationIntegrationDto
         type       : Number,
         description: 'interfaceNumbers [input here api field description]',
     })
-    interfaceNumbers: number;
+    interfaceNumbers?: number;
 
     @ApiProperty({
         type       : AppHealthApplicationIntegrationModality,
@@ -83,11 +83,10 @@ export class AppHealthApplicationIntegrationDto
     score: number;
 
     @ApiProperty({
-        type       : AppHealthApplicationIntegrationDocumentations,
-        enum       : ['OPENAPI','GRAPHQL','HTML','DOCS'],
+        type       : Object,
         description: 'documentations [input here api field description]',
     })
-    documentations?: AppHealthApplicationIntegrationDocumentations;
+    documentations?: any;
 
     @ApiProperty({
         type       : String,

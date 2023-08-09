@@ -1,6 +1,6 @@
 /* eslint-disable indent */
+import { AppHealthCustomerDto } from '@api/app-health/customer';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthCustomerDto } from '../../../app-health/customer/dto/app-health-customer.dto';
 
 export class AppHealthTechnicalSolutionDto
 {
@@ -39,13 +39,13 @@ export class AppHealthTechnicalSolutionDto
         type       : String,
         description: 'architectureDiagram [input here api field description]',
     })
-    architectureDiagram: string;
+    architectureDiagram?: string;
 
     @ApiProperty({
         type       : String,
         description: 'proposal [input here api field description]',
     })
-    proposal: string;
+    proposal?: string;
 
     @ApiProperty({
         type       : String,

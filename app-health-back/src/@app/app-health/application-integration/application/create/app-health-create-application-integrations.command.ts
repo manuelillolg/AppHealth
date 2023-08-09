@@ -8,12 +8,12 @@ export class  AppHealthCreateApplicationIntegrationsCommand
             name: string;
             description?: string;
             sourceApplicationId: string;
-            targetApplicationId: string;
+            targetApplicationId?: string;
             apiInterfaceTypeId: string;
-            interfaceNumbers: number;
+            interfaceNumbers?: number;
             modality: string;
             score: number;
-            documentations?: string;
+            documentations?: any;
         } [],
         public readonly cQMetadata?: CQMetadata,
     ) {}

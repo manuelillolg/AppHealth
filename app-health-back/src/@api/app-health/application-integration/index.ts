@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationIntegrationController } from './controllers/a
 export { AppHealthDeleteApplicationIntegrationByIdController } from './controllers/app-health-delete-application-integration-by-id.controller';
 export { AppHealthDeleteApplicationIntegrationsController } from './controllers/app-health-delete-application-integrations.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationIntegrationResolver } from './resolvers/app-health-create-application-integration.resolver';
+export { AppHealthCreateApplicationIntegrationsResolver } from './resolvers/app-health-create-application-integrations.resolver';
+export { AppHealthPaginateApplicationIntegrationsResolver } from './resolvers/app-health-paginate-application-integrations.resolver';
+export { AppHealthGetApplicationIntegrationsResolver } from './resolvers/app-health-get-application-integrations.resolver';
+export { AppHealthFindApplicationIntegrationByIdResolver } from './resolvers/app-health-find-application-integration-by-id.resolver';
+export { AppHealthFindApplicationIntegrationResolver } from './resolvers/app-health-find-application-integration.resolver';
+export { AppHealthUpdateApplicationIntegrationByIdResolver } from './resolvers/app-health-update-application-integration-by-id.resolver';
+export { AppHealthUpdateApplicationIntegrationsResolver } from './resolvers/app-health-update-application-integrations.resolver';
+export { AppHealthUpsertApplicationIntegrationResolver } from './resolvers/app-health-upsert-application-integration.resolver';
+export { AppHealthDeleteApplicationIntegrationByIdResolver } from './resolvers/app-health-delete-application-integration-by-id.resolver';
+export { AppHealthDeleteApplicationIntegrationsResolver } from './resolvers/app-health-delete-application-integrations.resolver';
+
 // controllers
 import { AppHealthCreateApplicationIntegrationController } from './controllers/app-health-create-application-integration.controller';
 import { AppHealthCreateApplicationIntegrationsController } from './controllers/app-health-create-application-integrations.controller';

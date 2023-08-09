@@ -1,6 +1,5 @@
 import { AppHealthCreateApplicationController, AppHealthCreateApplicationHandler } from '@api/app-health/application';
 import { appHealthMockApplicationData } from '@app/app-health/application';
-import { CacheModule } from '@nestjs/cache-manager';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationController', () =>
@@ -41,7 +40,12 @@ describe('AppHealthCreateApplicationController', () =>
         test('should return an application created', async () =>
         {
             jest.spyOn(handler, 'main').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationData[0])));
-            expect(await controller.main(appHealthMockApplicationData[0])).toBe(appHealthMockApplicationData[0]);
+            expect(
+                await controller.main(
+                    appHealthMockApplicationData[0],
+                ),
+            )
+                .toBe(appHealthMockApplicationData[0]);
         });
     });
 });

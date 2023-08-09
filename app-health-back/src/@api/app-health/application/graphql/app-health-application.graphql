@@ -15,28 +15,20 @@ type AppHealthApplication
     description: GraphQLString
     businessImpact: GraphQLString
     type: AppHealthApplicationType!
-    releaseDate: GraphQLISODateTime!
-    architectureDiagram: GraphQLString!
+    releaseDate: GraphQLISODateTime
+    architectureDiagram: GraphQLString
     hasTenants: GraphQLBoolean!
     hasLicensing: GraphQLBoolean!
-    costLicensesPerYear: GraphQLInt!
-    requestsPerDay: GraphQLInt!
-    views: ID!
-    applicationView: AppHealthApplicationView
-    authentications: ID!
-    applicationAuthentication: AppHealthApplicationAuthentication
-    authorizations: ID!
-    applicationAuthorization: AppHealthApplicationAuthorization
-    languages: ID!
-    applicationLanguage: AppHealthApplicationLanguage
-    infrastructureServices: ID!
-    applicationInfrastructureService: AppHealthApplicationInfrastructureService
-    databases: ID!
-    applicationDatabase: AppHealthApplicationDatabase
-    apis: ID!
-    applicationApi: AppHealthApplicationApi
-    integrations: ID!
-    applicationIntegration: AppHealthApplicationIntegration
+    costLicensesPerYear: GraphQLInt
+    requestsPerDay: GraphQLInt
+    views: [AppHealthApplicationView]
+    authentications: [AppHealthApplicationAuthentication]
+    authorizations: [AppHealthApplicationAuthorization]
+    languages: [AppHealthApplicationLanguage]
+    infrastructureServices: [AppHealthApplicationInfrastructureService]
+    databases: [AppHealthApplicationDatabase]
+    apis: [AppHealthApplicationApi]
+    integrations: [AppHealthApplicationIntegration]
     createdAt: GraphQLTimestamp
     updatedAt: GraphQLTimestamp
     deletedAt: GraphQLTimestamp
@@ -50,20 +42,12 @@ input AppHealthCreateApplicationInput
     description: GraphQLString
     businessImpact: GraphQLString
     type: AppHealthApplicationType!
-    releaseDate: GraphQLISODateTime!
-    architectureDiagram: GraphQLString!
+    releaseDate: GraphQLISODateTime
+    architectureDiagram: GraphQLString
     hasTenants: GraphQLBoolean!
     hasLicensing: GraphQLBoolean!
-    costLicensesPerYear: GraphQLInt!
-    requestsPerDay: GraphQLInt!
-    views: ID!
-    authentications: ID!
-    authorizations: ID!
-    languages: ID!
-    infrastructureServices: ID!
-    databases: ID!
-    apis: ID!
-    integrations: ID!
+    costLicensesPerYear: GraphQLInt
+    requestsPerDay: GraphQLInt
 }
 
 input AppHealthUpdateApplicationByIdInput
@@ -80,14 +64,6 @@ input AppHealthUpdateApplicationByIdInput
     hasLicensing: GraphQLBoolean
     costLicensesPerYear: GraphQLInt
     requestsPerDay: GraphQLInt
-    views: ID
-    authentications: ID
-    authorizations: ID
-    languages: ID
-    infrastructureServices: ID
-    databases: ID
-    apis: ID
-    integrations: ID
 }
 
 input AppHealthUpdateApplicationsInput
@@ -104,14 +80,6 @@ input AppHealthUpdateApplicationsInput
     hasLicensing: GraphQLBoolean
     costLicensesPerYear: GraphQLInt
     requestsPerDay: GraphQLInt
-    views: ID
-    authentications: ID
-    authorizations: ID
-    languages: ID
-    infrastructureServices: ID
-    databases: ID
-    apis: ID
-    integrations: ID
 }
 
 type Query

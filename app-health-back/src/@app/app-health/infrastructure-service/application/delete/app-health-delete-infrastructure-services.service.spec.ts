@@ -11,7 +11,6 @@ describe('AppHealthDeleteInfrastructureServicesService', () =>
 {
     let service: AppHealthDeleteInfrastructureServicesService;
     let repository: AppHealthIInfrastructureServiceRepository;
-    let mockRepository: AppHealthMockInfrastructureServiceRepository;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthDeleteInfrastructureServicesService', () =>
 
         service = module.get(AppHealthDeleteInfrastructureServicesService);
         repository = module.get(AppHealthIInfrastructureServiceRepository);
-        mockRepository = module.get(AppHealthMockInfrastructureServiceRepository);
     });
 
     describe('main', () =>
@@ -49,7 +47,13 @@ describe('AppHealthDeleteInfrastructureServicesService', () =>
         test('should delete infrastructureService and emit event', async () =>
         {
             jest.spyOn(repository, 'get').mockImplementation(() => new Promise(resolve => resolve([])));
-            expect(await service.main()).toBe(undefined);
+            expect(
+                await service.main(
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

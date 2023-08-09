@@ -1,6 +1,5 @@
 import { AppHealthCreateApplicationInfrastructureServiceController, AppHealthCreateApplicationInfrastructureServiceHandler } from '@api/app-health/application-infrastructure-service';
 import { appHealthMockApplicationInfrastructureServiceData } from '@app/app-health/application-infrastructure-service';
-import { CacheModule } from '@nestjs/cache-manager';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationInfrastructureServiceController', () =>
@@ -41,7 +40,12 @@ describe('AppHealthCreateApplicationInfrastructureServiceController', () =>
         test('should return an applicationInfrastructureService created', async () =>
         {
             jest.spyOn(handler, 'main').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationInfrastructureServiceData[0])));
-            expect(await controller.main(appHealthMockApplicationInfrastructureServiceData[0])).toBe(appHealthMockApplicationInfrastructureServiceData[0]);
+            expect(
+                await controller.main(
+                    appHealthMockApplicationInfrastructureServiceData[0],
+                ),
+            )
+                .toBe(appHealthMockApplicationInfrastructureServiceData[0]);
         });
     });
 });

@@ -27,7 +27,7 @@ export class AppHealthCreateApplicationAuthorizationDto
         type       : Number,
         description: 'totalUsers [input here api field description]',
     })
-    totalUsers: number;
+    totalUsers?: number;
 
     @ApiProperty({
         type       : Number,

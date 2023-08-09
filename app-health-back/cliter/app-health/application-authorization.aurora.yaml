@@ -37,7 +37,7 @@ aggregateProperties:
   - name: totalUsers
     type: int.unsigned
     maxLength: 10
-    nullable: false
+    nullable: true
   - name: score
     type: int.unsigned
     maxLength: 10

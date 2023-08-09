@@ -14,7 +14,7 @@ export class AppHealthUpdateApplicationIntegrationByIdCommand
             interfaceNumbers?: number;
             modality?: string;
             score?: number;
-            documentations?: string;
+            documentations?: any;
         },
         public readonly constraint?: QueryStatement,
         public readonly cQMetadata?: CQMetadata,

@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthGetApplicationAuthorizationsHandler } from '@api/app-health/application-authorization';
 import { appHealthMockApplicationAuthorizationData } from '@app/app-health/application-authorization';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthGetApplicationAuthorizationsHandler', () =>
 {
     let handler: AppHealthGetApplicationAuthorizationsHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthGetApplicationAuthorizationsHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthGetApplicationAuthorizationsHandler>(AppHealthGetApplicationAuthorizationsHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthGetApplicationAuthorizationsHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthGetApplicationAuthorizationsHandler', () =>
         test('should return a appHealthMockApplicationAuthorizationData', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationAuthorizationData)));
-            expect(await handler.main()).toBe(appHealthMockApplicationAuthorizationData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationAuthorizationData);
         });
     });
 });

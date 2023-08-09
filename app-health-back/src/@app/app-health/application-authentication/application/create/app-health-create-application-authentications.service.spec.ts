@@ -10,7 +10,6 @@ import { AppHealthMockApplicationAuthenticationRepository } from '../../infrastr
 describe('AppHealthCreateApplicationAuthenticationsService', () =>
 {
     let service: AppHealthCreateApplicationAuthenticationsService;
-    let repository: AppHealthIApplicationAuthenticationRepository;
     let mockRepository: AppHealthMockApplicationAuthenticationRepository;
 
     beforeAll(async () =>
@@ -34,7 +33,6 @@ describe('AppHealthCreateApplicationAuthenticationsService', () =>
             .compile();
 
         service = module.get(AppHealthCreateApplicationAuthenticationsService);
-        repository = module.get(AppHealthIApplicationAuthenticationRepository);
         mockRepository = module.get(AppHealthMockApplicationAuthenticationRepository);
     });
 
@@ -47,9 +45,12 @@ describe('AppHealthCreateApplicationAuthenticationsService', () =>
 
         test('should create applicationAuthentications and emit event', async () =>
         {
-            expect(await service.main(
-                mockRepository.collectionSource,
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    mockRepository.collectionSource,
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

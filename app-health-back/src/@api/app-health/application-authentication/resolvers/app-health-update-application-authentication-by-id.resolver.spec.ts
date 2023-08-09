@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthUpdateApplicationAuthenticationByIdResolver } from './app-health-update-application-authentication-by-id.resolver';
-import { AppHealthUpdateApplicationAuthenticationByIdHandler } from '../handlers/app-health-update-application-authentication-by-id.handler';
+import { AppHealthUpdateApplicationAuthenticationByIdHandler, AppHealthUpdateApplicationAuthenticationByIdResolver } from '@api/app-health/application-authentication';
 import { AppHealthUpdateApplicationAuthenticationByIdInput } from '@api/graphql';
-
-// sources
-import { appHealthMockApplicationAuthenticationData } from '@app/app-health/application-authentication/infrastructure/mock/app-health-mock-application-authentication.data';
+import { appHealthMockApplicationAuthenticationData } from '@app/app-health/application-authentication';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthUpdateApplicationAuthenticationByIdResolver', () =>
 {

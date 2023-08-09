@@ -14,14 +14,6 @@ import {
     AppHealthApplicationHasLicensing,
     AppHealthApplicationCostLicensesPerYear,
     AppHealthApplicationRequestsPerDay,
-    AppHealthApplicationViews,
-    AppHealthApplicationAuthentications,
-    AppHealthApplicationAuthorizations,
-    AppHealthApplicationLanguages,
-    AppHealthApplicationInfrastructureServices,
-    AppHealthApplicationDatabases,
-    AppHealthApplicationApis,
-    AppHealthApplicationIntegrations,
     AppHealthApplicationCreatedAt,
     AppHealthApplicationUpdatedAt,
     AppHealthApplicationDeletedAt,
@@ -53,28 +45,20 @@ export class AppHealthApplication extends AggregateRoot
     hasLicensing: AppHealthApplicationHasLicensing;
     costLicensesPerYear: AppHealthApplicationCostLicensesPerYear;
     requestsPerDay: AppHealthApplicationRequestsPerDay;
-    views: AppHealthApplicationViews;
-    authentications: AppHealthApplicationAuthentications;
-    authorizations: AppHealthApplicationAuthorizations;
-    languages: AppHealthApplicationLanguages;
-    infrastructureServices: AppHealthApplicationInfrastructureServices;
-    databases: AppHealthApplicationDatabases;
-    apis: AppHealthApplicationApis;
-    integrations: AppHealthApplicationIntegrations;
     createdAt: AppHealthApplicationCreatedAt;
     updatedAt: AppHealthApplicationUpdatedAt;
     deletedAt: AppHealthApplicationDeletedAt;
 
     // eager relationship
     technicalSolution: AppHealthTechnicalSolution;
-    applicationView: AppHealthApplicationView;
-    applicationAuthentication: AppHealthApplicationAuthentication;
-    applicationAuthorization: AppHealthApplicationAuthorization;
-    applicationLanguage: AppHealthApplicationLanguage;
-    applicationInfrastructureService: AppHealthApplicationInfrastructureService;
-    applicationDatabase: AppHealthApplicationDatabase;
-    applicationApi: AppHealthApplicationApi;
-    applicationIntegration: AppHealthApplicationIntegration;
+    views: AppHealthApplicationView[];
+    authentications: AppHealthApplicationAuthentication[];
+    authorizations: AppHealthApplicationAuthorization[];
+    languages: AppHealthApplicationLanguage[];
+    infrastructureServices: AppHealthApplicationInfrastructureService[];
+    databases: AppHealthApplicationDatabase[];
+    apis: AppHealthApplicationApi[];
+    integrations: AppHealthApplicationIntegration[];
 
     constructor(
         id: AppHealthApplicationId,
@@ -89,27 +73,19 @@ export class AppHealthApplication extends AggregateRoot
         hasLicensing: AppHealthApplicationHasLicensing,
         costLicensesPerYear: AppHealthApplicationCostLicensesPerYear,
         requestsPerDay: AppHealthApplicationRequestsPerDay,
-        views: AppHealthApplicationViews,
-        authentications: AppHealthApplicationAuthentications,
-        authorizations: AppHealthApplicationAuthorizations,
-        languages: AppHealthApplicationLanguages,
-        infrastructureServices: AppHealthApplicationInfrastructureServices,
-        databases: AppHealthApplicationDatabases,
-        apis: AppHealthApplicationApis,
-        integrations: AppHealthApplicationIntegrations,
         createdAt: AppHealthApplicationCreatedAt,
         updatedAt: AppHealthApplicationUpdatedAt,
         deletedAt: AppHealthApplicationDeletedAt,
 
         technicalSolution?: AppHealthTechnicalSolution,
-        applicationView?: AppHealthApplicationView,
-        applicationAuthentication?: AppHealthApplicationAuthentication,
-        applicationAuthorization?: AppHealthApplicationAuthorization,
-        applicationLanguage?: AppHealthApplicationLanguage,
-        applicationInfrastructureService?: AppHealthApplicationInfrastructureService,
-        applicationDatabase?: AppHealthApplicationDatabase,
-        applicationApi?: AppHealthApplicationApi,
-        applicationIntegration?: AppHealthApplicationIntegration,
+        views?: AppHealthApplicationView[],
+        authentications?: AppHealthApplicationAuthentication[],
+        authorizations?: AppHealthApplicationAuthorization[],
+        languages?: AppHealthApplicationLanguage[],
+        infrastructureServices?: AppHealthApplicationInfrastructureService[],
+        databases?: AppHealthApplicationDatabase[],
+        apis?: AppHealthApplicationApi[],
+        integrations?: AppHealthApplicationIntegration[],
     )
     {
         super();
@@ -125,6 +101,12 @@ export class AppHealthApplication extends AggregateRoot
         this.hasLicensing = hasLicensing;
         this.costLicensesPerYear = costLicensesPerYear;
         this.requestsPerDay = requestsPerDay;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
+
+        // eager relationship
+        this.technicalSolution = technicalSolution;
         this.views = views;
         this.authentications = authentications;
         this.authorizations = authorizations;
@@ -133,20 +115,6 @@ export class AppHealthApplication extends AggregateRoot
         this.databases = databases;
         this.apis = apis;
         this.integrations = integrations;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.deletedAt = deletedAt;
-
-        // eager relationship
-        this.technicalSolution = technicalSolution;
-        this.applicationView = applicationView;
-        this.applicationAuthentication = applicationAuthentication;
-        this.applicationAuthorization = applicationAuthorization;
-        this.applicationLanguage = applicationLanguage;
-        this.applicationInfrastructureService = applicationInfrastructureService;
-        this.applicationDatabase = applicationDatabase;
-        this.applicationApi = applicationApi;
-        this.applicationIntegration = applicationIntegration;
     }
 
     static register (
@@ -162,27 +130,19 @@ export class AppHealthApplication extends AggregateRoot
         hasLicensing: AppHealthApplicationHasLicensing,
         costLicensesPerYear: AppHealthApplicationCostLicensesPerYear,
         requestsPerDay: AppHealthApplicationRequestsPerDay,
-        views: AppHealthApplicationViews,
-        authentications: AppHealthApplicationAuthentications,
-        authorizations: AppHealthApplicationAuthorizations,
-        languages: AppHealthApplicationLanguages,
-        infrastructureServices: AppHealthApplicationInfrastructureServices,
-        databases: AppHealthApplicationDatabases,
-        apis: AppHealthApplicationApis,
-        integrations: AppHealthApplicationIntegrations,
         createdAt: AppHealthApplicationCreatedAt,
         updatedAt: AppHealthApplicationUpdatedAt,
         deletedAt: AppHealthApplicationDeletedAt,
 
         technicalSolution?: AppHealthTechnicalSolution,
-        applicationView?: AppHealthApplicationView,
-        applicationAuthentication?: AppHealthApplicationAuthentication,
-        applicationAuthorization?: AppHealthApplicationAuthorization,
-        applicationLanguage?: AppHealthApplicationLanguage,
-        applicationInfrastructureService?: AppHealthApplicationInfrastructureService,
-        applicationDatabase?: AppHealthApplicationDatabase,
-        applicationApi?: AppHealthApplicationApi,
-        applicationIntegration?: AppHealthApplicationIntegration,
+        views?: AppHealthApplicationView[],
+        authentications?: AppHealthApplicationAuthentication[],
+        authorizations?: AppHealthApplicationAuthorization[],
+        languages?: AppHealthApplicationLanguage[],
+        infrastructureServices?: AppHealthApplicationInfrastructureService[],
+        databases?: AppHealthApplicationDatabase[],
+        apis?: AppHealthApplicationApi[],
+        integrations?: AppHealthApplicationIntegration[],
     ): AppHealthApplication
     {
         return new AppHealthApplication(
@@ -198,6 +158,11 @@ export class AppHealthApplication extends AggregateRoot
             hasLicensing,
             costLicensesPerYear,
             requestsPerDay,
+            createdAt,
+            updatedAt,
+            deletedAt,
+
+            technicalSolution,
             views,
             authentications,
             authorizations,
@@ -206,19 +171,6 @@ export class AppHealthApplication extends AggregateRoot
             databases,
             apis,
             integrations,
-            createdAt,
-            updatedAt,
-            deletedAt,
-
-            technicalSolution,
-            applicationView,
-            applicationAuthentication,
-            applicationAuthorization,
-            applicationLanguage,
-            applicationInfrastructureService,
-            applicationDatabase,
-            applicationApi,
-            applicationIntegration,
         );
     }
 
@@ -232,20 +184,12 @@ export class AppHealthApplication extends AggregateRoot
                 application.description?.value,
                 application.businessImpact?.value,
                 application.type.value,
-                application.releaseDate.value,
-                application.architectureDiagram.value,
+                application.releaseDate?.value,
+                application.architectureDiagram?.value,
                 application.hasTenants.value,
                 application.hasLicensing.value,
-                application.costLicensesPerYear.value,
-                application.requestsPerDay.value,
-                application.views.value,
-                application.authentications.value,
-                application.authorizations.value,
-                application.languages.value,
-                application.infrastructureServices.value,
-                application.databases.value,
-                application.apis.value,
-                application.integrations.value,
+                application.costLicensesPerYear?.value,
+                application.requestsPerDay?.value,
                 application.createdAt?.value,
                 application.updatedAt?.value,
                 application.deletedAt?.value,
@@ -269,14 +213,6 @@ export class AppHealthApplication extends AggregateRoot
                 application.hasLicensing?.value,
                 application.costLicensesPerYear?.value,
                 application.requestsPerDay?.value,
-                application.views?.value,
-                application.authentications?.value,
-                application.authorizations?.value,
-                application.languages?.value,
-                application.infrastructureServices?.value,
-                application.databases?.value,
-                application.apis?.value,
-                application.integrations?.value,
                 application.createdAt?.value,
                 application.updatedAt?.value,
                 application.deletedAt?.value,
@@ -294,20 +230,12 @@ export class AppHealthApplication extends AggregateRoot
                 application.description?.value,
                 application.businessImpact?.value,
                 application.type.value,
-                application.releaseDate.value,
-                application.architectureDiagram.value,
+                application.releaseDate?.value,
+                application.architectureDiagram?.value,
                 application.hasTenants.value,
                 application.hasLicensing.value,
-                application.costLicensesPerYear.value,
-                application.requestsPerDay.value,
-                application.views.value,
-                application.authentications.value,
-                application.authorizations.value,
-                application.languages.value,
-                application.infrastructureServices.value,
-                application.databases.value,
-                application.apis.value,
-                application.integrations.value,
+                application.costLicensesPerYear?.value,
+                application.requestsPerDay?.value,
                 application.createdAt?.value,
                 application.updatedAt?.value,
                 application.deletedAt?.value,
@@ -324,34 +252,26 @@ export class AppHealthApplication extends AggregateRoot
             description: this.description?.value,
             businessImpact: this.businessImpact?.value,
             type: this.type.value,
-            releaseDate: this.releaseDate.value,
-            architectureDiagram: this.architectureDiagram.value,
+            releaseDate: this.releaseDate?.value,
+            architectureDiagram: this.architectureDiagram?.value,
             hasTenants: this.hasTenants.value,
             hasLicensing: this.hasLicensing.value,
-            costLicensesPerYear: this.costLicensesPerYear.value,
-            requestsPerDay: this.requestsPerDay.value,
-            views: this.views.value,
-            authentications: this.authentications.value,
-            authorizations: this.authorizations.value,
-            languages: this.languages.value,
-            infrastructureServices: this.infrastructureServices.value,
-            databases: this.databases.value,
-            apis: this.apis.value,
-            integrations: this.integrations.value,
+            costLicensesPerYear: this.costLicensesPerYear?.value,
+            requestsPerDay: this.requestsPerDay?.value,
             createdAt: this.createdAt?.value,
             updatedAt: this.updatedAt?.value,
             deletedAt: this.deletedAt?.value,
 
             // eager relationship
             technicalSolution: this.technicalSolution?.toDTO(),
-            applicationView: this.applicationView?.toDTO(),
-            applicationAuthentication: this.applicationAuthentication?.toDTO(),
-            applicationAuthorization: this.applicationAuthorization?.toDTO(),
-            applicationLanguage: this.applicationLanguage?.toDTO(),
-            applicationInfrastructureService: this.applicationInfrastructureService?.toDTO(),
-            applicationDatabase: this.applicationDatabase?.toDTO(),
-            applicationApi: this.applicationApi?.toDTO(),
-            applicationIntegration: this.applicationIntegration?.toDTO(),
+            views: this.views?.map(item => item.toDTO()),
+            authentications: this.authentications?.map(item => item.toDTO()),
+            authorizations: this.authorizations?.map(item => item.toDTO()),
+            languages: this.languages?.map(item => item.toDTO()),
+            infrastructureServices: this.infrastructureServices?.map(item => item.toDTO()),
+            databases: this.databases?.map(item => item.toDTO()),
+            apis: this.apis?.map(item => item.toDTO()),
+            integrations: this.integrations?.map(item => item.toDTO()),
         };
     }
 
@@ -365,34 +285,26 @@ export class AppHealthApplication extends AggregateRoot
             description: this.description?.value,
             businessImpact: this.businessImpact?.value,
             type: this.type.value,
-            releaseDate: this.releaseDate.value,
-            architectureDiagram: this.architectureDiagram.value,
+            releaseDate: this.releaseDate?.value,
+            architectureDiagram: this.architectureDiagram?.value,
             hasTenants: this.hasTenants.value,
             hasLicensing: this.hasLicensing.value,
-            costLicensesPerYear: this.costLicensesPerYear.value,
-            requestsPerDay: this.requestsPerDay.value,
-            views: this.views.value,
-            authentications: this.authentications.value,
-            authorizations: this.authorizations.value,
-            languages: this.languages.value,
-            infrastructureServices: this.infrastructureServices.value,
-            databases: this.databases.value,
-            apis: this.apis.value,
-            integrations: this.integrations.value,
+            costLicensesPerYear: this.costLicensesPerYear?.value,
+            requestsPerDay: this.requestsPerDay?.value,
             createdAt: this.createdAt?.value,
             updatedAt: this.updatedAt?.value,
             deletedAt: this.deletedAt?.value,
 
             // eager relationship
             technicalSolution: this.technicalSolution?.toDTO(),
-            applicationView: this.applicationView?.toDTO(),
-            applicationAuthentication: this.applicationAuthentication?.toDTO(),
-            applicationAuthorization: this.applicationAuthorization?.toDTO(),
-            applicationLanguage: this.applicationLanguage?.toDTO(),
-            applicationInfrastructureService: this.applicationInfrastructureService?.toDTO(),
-            applicationDatabase: this.applicationDatabase?.toDTO(),
-            applicationApi: this.applicationApi?.toDTO(),
-            applicationIntegration: this.applicationIntegration?.toDTO(),
+            views: this.views?.map(item => item.toDTO()),
+            authentications: this.authentications?.map(item => item.toDTO()),
+            authorizations: this.authorizations?.map(item => item.toDTO()),
+            languages: this.languages?.map(item => item.toDTO()),
+            infrastructureServices: this.infrastructureServices?.map(item => item.toDTO()),
+            databases: this.databases?.map(item => item.toDTO()),
+            apis: this.apis?.map(item => item.toDTO()),
+            integrations: this.integrations?.map(item => item.toDTO()),
         };
     }
 }

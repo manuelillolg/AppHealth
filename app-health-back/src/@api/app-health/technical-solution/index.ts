@@ -30,6 +30,19 @@ export { AppHealthUpsertTechnicalSolutionController } from './controllers/app-he
 export { AppHealthDeleteTechnicalSolutionByIdController } from './controllers/app-health-delete-technical-solution-by-id.controller';
 export { AppHealthDeleteTechnicalSolutionsController } from './controllers/app-health-delete-technical-solutions.controller';
 
+// exports resolvers
+export { AppHealthCreateTechnicalSolutionResolver } from './resolvers/app-health-create-technical-solution.resolver';
+export { AppHealthCreateTechnicalSolutionsResolver } from './resolvers/app-health-create-technical-solutions.resolver';
+export { AppHealthPaginateTechnicalSolutionsResolver } from './resolvers/app-health-paginate-technical-solutions.resolver';
+export { AppHealthGetTechnicalSolutionsResolver } from './resolvers/app-health-get-technical-solutions.resolver';
+export { AppHealthFindTechnicalSolutionByIdResolver } from './resolvers/app-health-find-technical-solution-by-id.resolver';
+export { AppHealthFindTechnicalSolutionResolver } from './resolvers/app-health-find-technical-solution.resolver';
+export { AppHealthUpdateTechnicalSolutionByIdResolver } from './resolvers/app-health-update-technical-solution-by-id.resolver';
+export { AppHealthUpdateTechnicalSolutionsResolver } from './resolvers/app-health-update-technical-solutions.resolver';
+export { AppHealthUpsertTechnicalSolutionResolver } from './resolvers/app-health-upsert-technical-solution.resolver';
+export { AppHealthDeleteTechnicalSolutionByIdResolver } from './resolvers/app-health-delete-technical-solution-by-id.resolver';
+export { AppHealthDeleteTechnicalSolutionsResolver } from './resolvers/app-health-delete-technical-solutions.resolver';
+
 // controllers
 import { AppHealthCreateTechnicalSolutionController } from './controllers/app-health-create-technical-solution.controller';
 import { AppHealthCreateTechnicalSolutionsController } from './controllers/app-health-create-technical-solutions.controller';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { AppHealthApplicationDto, AppHealthCreateApplicationDto, AppHealthCreateApplicationsHandler } from '@api/app-health/application';
-import { Auditing, AuditingMeta, Timezone } from '@aurorajs.dev/core';
+import { Timezone } from '@aurorajs.dev/core';
 import { Body, Controller, Post } from '@nestjs/common';
 import { ApiBody, ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 

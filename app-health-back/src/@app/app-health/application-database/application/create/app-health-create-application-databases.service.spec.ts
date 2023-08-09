@@ -10,7 +10,6 @@ import { AppHealthMockApplicationDatabaseRepository } from '../../infrastructure
 describe('AppHealthCreateApplicationDatabasesService', () =>
 {
     let service: AppHealthCreateApplicationDatabasesService;
-    let repository: AppHealthIApplicationDatabaseRepository;
     let mockRepository: AppHealthMockApplicationDatabaseRepository;
 
     beforeAll(async () =>
@@ -34,7 +33,6 @@ describe('AppHealthCreateApplicationDatabasesService', () =>
             .compile();
 
         service = module.get(AppHealthCreateApplicationDatabasesService);
-        repository = module.get(AppHealthIApplicationDatabaseRepository);
         mockRepository = module.get(AppHealthMockApplicationDatabaseRepository);
     });
 
@@ -47,9 +45,12 @@ describe('AppHealthCreateApplicationDatabasesService', () =>
 
         test('should create applicationDatabases and emit event', async () =>
         {
-            expect(await service.main(
-                mockRepository.collectionSource,
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    mockRepository.collectionSource,
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

@@ -8,7 +8,6 @@ describe('AppHealthCreateApplicationViewHandler', () =>
 {
     let handler: AppHealthCreateApplicationViewHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthCreateApplicationViewHandler', () =>
 
         handler = module.get<AppHealthCreateApplicationViewHandler>(AppHealthCreateApplicationViewHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,13 @@ describe('AppHealthCreateApplicationViewHandler', () =>
         test('should return an applicationView created', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationViewData[0])));
-            expect(await handler.main(appHealthMockApplicationViewData[0])).toBe(appHealthMockApplicationViewData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockApplicationViewData[0],
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationViewData[0]);
         });
     });
 });

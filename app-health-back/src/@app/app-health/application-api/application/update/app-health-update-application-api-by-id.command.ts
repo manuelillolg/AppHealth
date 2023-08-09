@@ -9,7 +9,7 @@ export class AppHealthUpdateApplicationApiByIdCommand
             applicationId?: string;
             apiInterfaceTypeId?: string;
             score?: number;
-            documentations?: string;
+            documentations?: any;
             requestsPerDay?: number;
             applicationInfrastructureServiceId?: string;
         },

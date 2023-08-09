@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthPaginateApplicationApisHandler } from '@api/app-health/application-api';
 import { appHealthMockApplicationApiData } from '@app/app-health/application-api';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthPaginateApplicationApisHandler', () =>
 {
     let handler: AppHealthPaginateApplicationApisHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthPaginateApplicationApisHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthPaginateApplicationApisHandler>(AppHealthPaginateApplicationApisHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthPaginateApplicationApisHandler should be defined', () =>
@@ -57,11 +49,17 @@ describe('AppHealthPaginateApplicationApisHandler', () =>
                 count: appHealthMockApplicationApiData.length,
                 rows : appHealthMockApplicationApiData,
             })));
-            expect(await handler.main()).toEqual({
-                total: appHealthMockApplicationApiData.length,
-                count: appHealthMockApplicationApiData.length,
-                rows : appHealthMockApplicationApiData,
-            });
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                ),
+            )
+                .toEqual({
+                    total: appHealthMockApplicationApiData.length,
+                    count: appHealthMockApplicationApiData.length,
+                    rows : appHealthMockApplicationApiData,
+                });
         });
     });
 });

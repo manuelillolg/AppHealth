@@ -33,7 +33,7 @@ export class AppHealthCreateApplicationDatabaseDto
         type       : Number,
         description: 'size [input here api field description]',
     })
-    size: number;
+    size?: number;
 
     @ApiProperty({
         type       : Number,
@@ -45,13 +45,13 @@ export class AppHealthCreateApplicationDatabaseDto
         type       : Number,
         description: 'totalCollectionsTables [input here api field description]',
     })
-    totalCollectionsTables: number;
+    totalCollectionsTables?: number;
 
     @ApiProperty({
         type       : Number,
         description: 'totalFields [input here api field description]',
     })
-    totalFields: number;
+    totalFields?: number;
 
     @ApiProperty({
         type       : String,

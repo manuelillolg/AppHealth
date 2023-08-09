@@ -1,9 +1,7 @@
-import { Resolver, Args, Mutation } from '@nestjs/graphql';
-import { Auditing, AuditingMeta, Timezone } from '@aurorajs.dev/core';
-
-// @app
-import { AppHealthCreateApplicationIntegrationsHandler } from '../handlers/app-health-create-application-integrations.handler';
+import { AppHealthCreateApplicationIntegrationsHandler } from '@api/app-health/application-integration';
 import { AppHealthCreateApplicationIntegrationInput } from '@api/graphql';
+import { Auditing, AuditingMeta, Timezone } from '@aurorajs.dev/core';
+import { Args, Mutation, Resolver } from '@nestjs/graphql';
 
 @Resolver()
 export class AppHealthCreateApplicationIntegrationsResolver

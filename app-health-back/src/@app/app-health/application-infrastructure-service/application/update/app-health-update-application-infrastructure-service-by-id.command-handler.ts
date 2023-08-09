@@ -28,7 +28,7 @@ export class AppHealthUpdateApplicationInfrastructureServiceByIdCommandHandler i
                 id: new AppHealthApplicationInfrastructureServiceId(command.payload.id),
                 applicationId: new AppHealthApplicationInfrastructureServiceApplicationId(command.payload.applicationId, { undefinable: true }),
                 infrastructureServiceId: new AppHealthApplicationInfrastructureServiceInfrastructureServiceId(command.payload.infrastructureServiceId, { undefinable: true }),
-                averageCostPerYear: new AppHealthApplicationInfrastructureServiceAverageCostPerYear(command.payload.averageCostPerYear, { undefinable: true }),
+                averageCostPerYear: new AppHealthApplicationInfrastructureServiceAverageCostPerYear(command.payload.averageCostPerYear),
                 score: new AppHealthApplicationInfrastructureServiceScore(command.payload.score, { undefinable: true }),
             },
             command.constraint,

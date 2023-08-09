@@ -8,7 +8,7 @@ export class AppHealthCreateApplicationViewCommand
             applicationId: string;
             totalViews: number;
             complexity: string;
-            description: number;
+            description?: number;
             score: number;
         },
         public readonly cQMetadata?: CQMetadata,

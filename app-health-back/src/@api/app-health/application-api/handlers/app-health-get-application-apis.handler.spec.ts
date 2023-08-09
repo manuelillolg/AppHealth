@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AppHealthGetApplicationApisHandler } from '@api/app-health/application-api';
 import { appHealthMockApplicationApiData } from '@app/app-health/application-api';
-import { ICommandBus, IQueryBus } from '@aurorajs.dev/core';
+import { IQueryBus } from '@aurorajs.dev/core';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthGetApplicationApisHandler', () =>
 {
     let handler: AppHealthGetApplicationApisHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -23,19 +22,12 @@ describe('AppHealthGetApplicationApisHandler', () =>
                         ask: () => { /**/ },
                     },
                 },
-                {
-                    provide : ICommandBus,
-                    useValue: {
-                        dispatch: () => { /**/ },
-                    },
-                },
             ],
         })
             .compile();
 
         handler = module.get<AppHealthGetApplicationApisHandler>(AppHealthGetApplicationApisHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthGetApplicationApisHandler should be defined', () =>
@@ -53,7 +45,14 @@ describe('AppHealthGetApplicationApisHandler', () =>
         test('should return a appHealthMockApplicationApiData', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationApiData)));
-            expect(await handler.main()).toBe(appHealthMockApplicationApiData);
+            expect(
+                await handler.main(
+                    {},
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockApplicationApiData);
         });
     });
 });

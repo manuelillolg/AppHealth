@@ -135,22 +135,6 @@ describe('application-api', () =>
             });
     });
 
-    test('/REST:POST app-health/application-api/create - Got 400 Conflict, ApplicationApiRequestsPerDay property can not to be null', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-api/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                requestsPerDay: null,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationApiRequestsPerDay must be defined, can not be null');
-            });
-    });
-
     test('/REST:POST app-health/application-api/create - Got 400 Conflict, ApplicationApiApplicationInfrastructureServiceId property can not to be null', () =>
     {
         return request(app.getHttpServer())
@@ -228,22 +212,6 @@ describe('application-api', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('Value for ApplicationApiScore must be defined, can not be undefined');
-            });
-    });
-
-    test('/REST:POST app-health/application-api/create - Got 400 Conflict, ApplicationApiRequestsPerDay property can not to be undefined', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-api/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                requestsPerDay: undefined,
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationApiRequestsPerDay must be defined, can not be undefined');
             });
     });
 
@@ -372,21 +340,6 @@ describe('application-api', () =>
             .then(res =>
             {
                 expect(res.body.message).toContain('The numerical value for ApplicationApiRequestsPerDay must have a positive sign, this field does not accept negative values');
-            });
-    });
-    test('/REST:POST app-health/application-api/create - Got 400 Conflict, ApplicationApiDocumentations has to be a enum option of OPENAPI, GRAPGQL, HTML, DOCS', () =>
-    {
-        return request(app.getHttpServer())
-            .post('/app-health/application-api/create')
-            .set('Accept', 'application/json')
-            .send({
-                ...mockData[0],
-                documentations: '****',
-            })
-            .expect(400)
-            .then(res =>
-            {
-                expect(res.body.message).toContain('Value for ApplicationApiDocumentations has to be any of this options: OPENAPI, GRAPGQL, HTML, DOCS');
             });
     });
 

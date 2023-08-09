@@ -6,7 +6,7 @@ type AppHealthApplicationInfrastructureService
     application: AppHealthApplication
     infrastructureServiceId: ID!
     infrastructureService: AppHealthInfrastructureService
-    averageCostPerYear: GraphQLInt!
+    averageCostPerYear: GraphQLInt
     score: GraphQLInt!
     createdAt: GraphQLTimestamp
     updatedAt: GraphQLTimestamp
@@ -18,7 +18,7 @@ input AppHealthCreateApplicationInfrastructureServiceInput
     id: ID!
     applicationId: ID!
     infrastructureServiceId: ID!
-    averageCostPerYear: GraphQLInt!
+    averageCostPerYear: GraphQLInt
     score: GraphQLInt!
 }
 

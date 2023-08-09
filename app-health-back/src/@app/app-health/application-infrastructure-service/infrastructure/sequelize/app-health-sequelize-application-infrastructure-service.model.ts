@@ -50,7 +50,7 @@ export class AppHealthApplicationInfrastructureServiceModel extends Model<AppHea
 
     @Column({
         field: 'averageCostPerYear',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     averageCostPerYear: number;

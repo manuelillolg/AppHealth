@@ -1,8 +1,8 @@
 /* eslint-disable indent */
+import { AppHealthApplicationDto } from '@api/app-health/application';
+import { AppHealthApplicationInfrastructureServiceDto } from '@api/app-health/application-infrastructure-service';
+import { AppHealthAuthenticationInterfaceDto } from '@api/app-health/authentication-interface';
 import { ApiProperty } from '@nestjs/swagger';
-import { AppHealthApplicationDto } from '../../../app-health/application/dto/app-health-application.dto';
-import { AppHealthAuthenticationInterfaceDto } from '../../../app-health/authentication-interface/dto/app-health-authentication-interface.dto';
-import { AppHealthApplicationInfrastructureServiceDto } from '../../../app-health/application-infrastructure-service/dto/app-health-application-infrastructure-service.dto';
 
 export class AppHealthApplicationAuthenticationDto
 {
@@ -42,7 +42,7 @@ export class AppHealthApplicationAuthenticationDto
         type       : Number,
         description: 'totalUsers [input here api field description]',
     })
-    totalUsers: number;
+    totalUsers?: number;
 
     @ApiProperty({
         type       : Number,

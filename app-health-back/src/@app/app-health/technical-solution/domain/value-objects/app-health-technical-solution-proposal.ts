@@ -2,14 +2,14 @@ import { StringValueObject, ValidationRules } from '@aurorajs.dev/core';
 
 export class AppHealthTechnicalSolutionProposal extends StringValueObject
 {
-    public readonly type: string = 'TechnicalSolutionProposal';
+    public readonly type: string = 'AppHealthTechnicalSolutionProposal';
 
     constructor(value: string, validationRules: ValidationRules = {})
     {
         super(value, Object.assign({
-            name       : 'TechnicalSolutionProposal',
-            nullable   : false,
-            undefinable: false,
+            name       : 'AppHealthTechnicalSolutionProposal',
+            nullable   : true,
+            undefinable: true,
         }, validationRules));
     }
 }

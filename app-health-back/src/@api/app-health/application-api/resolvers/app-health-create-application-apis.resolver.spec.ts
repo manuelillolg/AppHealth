@@ -1,17 +1,11 @@
-import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthCreateApplicationApisResolver } from './app-health-create-application-apis.resolver';
-import { AppHealthCreateApplicationApisHandler } from '../handlers/app-health-create-application-apis.handler';
+import { AppHealthCreateApplicationApisHandler, AppHealthCreateApplicationApisResolver } from '@api/app-health/application-api';
 import { AppHealthCreateApplicationApiInput } from '@api/graphql';
-
-// sources
-import { appHealthMockApplicationApiData } from '@app/app-health/application-api/infrastructure/mock/app-health-mock-application-api.data';
+import { appHealthMockApplicationApiData } from '@app/app-health/application-api';
+import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateApplicationApisResolver', () =>
 {
     let resolver: AppHealthCreateApplicationApisResolver;
-    let handler: AppHealthCreateApplicationApisHandler;
 
     beforeAll(async () =>
     {
@@ -29,7 +23,6 @@ describe('AppHealthCreateApplicationApisResolver', () =>
             .compile();
 
         resolver = module.get<AppHealthCreateApplicationApisResolver>(AppHealthCreateApplicationApisResolver);
-        handler = module.get<AppHealthCreateApplicationApisHandler>(AppHealthCreateApplicationApisHandler);
     });
 
     test('AppHealthCreateApplicationApisResolver should be defined', () =>

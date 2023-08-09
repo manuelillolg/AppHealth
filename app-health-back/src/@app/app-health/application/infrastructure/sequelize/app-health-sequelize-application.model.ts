@@ -71,14 +71,14 @@ export class AppHealthApplicationModel extends Model<AppHealthApplicationModel>
 
     @Column({
         field: 'releaseDate',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.DATE,
     })
     releaseDate: string;
 
     @Column({
         field: 'architectureDiagram',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.STRING(255),
     })
     architectureDiagram: string;
@@ -99,129 +99,65 @@ export class AppHealthApplicationModel extends Model<AppHealthApplicationModel>
 
     @Column({
         field: 'costLicensesPerYear',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     costLicensesPerYear: number;
 
     @Column({
         field: 'requestsPerDay',
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER.UNSIGNED,
     })
     requestsPerDay: number;
 
-    @ForeignKey(() => AppHealthApplicationViewModel)
-    @Column({
-        field: 'views',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    views: string;
 
-    @BelongsTo(() => AppHealthApplicationViewModel, {
+    @HasMany(() => AppHealthApplicationViewModel, {
         constraints: false,
-        foreignKey: 'views',
     })
-    applicationView: AppHealthApplicationViewModel;
+    views: AppHealthApplicationViewModel[];
 
-    @ForeignKey(() => AppHealthApplicationAuthenticationModel)
-    @Column({
-        field: 'authentications',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    authentications: string;
 
-    @BelongsTo(() => AppHealthApplicationAuthenticationModel, {
+    @HasMany(() => AppHealthApplicationAuthenticationModel, {
         constraints: false,
-        foreignKey: 'authentications',
     })
-    applicationAuthentication: AppHealthApplicationAuthenticationModel;
+    authentications: AppHealthApplicationAuthenticationModel[];
 
-    @ForeignKey(() => AppHealthApplicationAuthorizationModel)
-    @Column({
-        field: 'authorizations',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    authorizations: string;
 
-    @BelongsTo(() => AppHealthApplicationAuthorizationModel, {
+    @HasMany(() => AppHealthApplicationAuthorizationModel, {
         constraints: false,
-        foreignKey: 'authorizations',
     })
-    applicationAuthorization: AppHealthApplicationAuthorizationModel;
+    authorizations: AppHealthApplicationAuthorizationModel[];
 
-    @ForeignKey(() => AppHealthApplicationLanguageModel)
-    @Column({
-        field: 'languages',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    languages: string;
 
-    @BelongsTo(() => AppHealthApplicationLanguageModel, {
+    @HasMany(() => AppHealthApplicationLanguageModel, {
         constraints: false,
-        foreignKey: 'languages',
     })
-    applicationLanguage: AppHealthApplicationLanguageModel;
+    languages: AppHealthApplicationLanguageModel[];
 
-    @ForeignKey(() => AppHealthApplicationInfrastructureServiceModel)
-    @Column({
-        field: 'infrastructureServices',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    infrastructureServices: string;
 
-    @BelongsTo(() => AppHealthApplicationInfrastructureServiceModel, {
+    @HasMany(() => AppHealthApplicationInfrastructureServiceModel, {
         constraints: false,
-        foreignKey: 'infrastructureServices',
     })
-    applicationInfrastructureService: AppHealthApplicationInfrastructureServiceModel;
+    infrastructureServices: AppHealthApplicationInfrastructureServiceModel[];
 
-    @ForeignKey(() => AppHealthApplicationDatabaseModel)
-    @Column({
-        field: 'databases',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    databases: string;
 
-    @BelongsTo(() => AppHealthApplicationDatabaseModel, {
+    @HasMany(() => AppHealthApplicationDatabaseModel, {
         constraints: false,
-        foreignKey: 'databases',
     })
-    applicationDatabase: AppHealthApplicationDatabaseModel;
+    databases: AppHealthApplicationDatabaseModel[];
 
-    @ForeignKey(() => AppHealthApplicationApiModel)
-    @Column({
-        field: 'apis',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    apis: string;
 
-    @BelongsTo(() => AppHealthApplicationApiModel, {
+    @HasMany(() => AppHealthApplicationApiModel, {
         constraints: false,
-        foreignKey: 'apis',
     })
-    applicationApi: AppHealthApplicationApiModel;
+    apis: AppHealthApplicationApiModel[];
 
-    @ForeignKey(() => AppHealthApplicationIntegrationModel)
-    @Column({
-        field: 'integrations',
-        allowNull: false,
-        type: DataTypes.UUID,
-    })
-    integrations: string;
 
-    @BelongsTo(() => AppHealthApplicationIntegrationModel, {
+    @HasMany(() => AppHealthApplicationIntegrationModel, {
         constraints: false,
-        foreignKey: 'integrations',
     })
-    applicationIntegration: AppHealthApplicationIntegrationModel;
+    integrations: AppHealthApplicationIntegrationModel[];
 
     @Column({
         field: 'createdAt',

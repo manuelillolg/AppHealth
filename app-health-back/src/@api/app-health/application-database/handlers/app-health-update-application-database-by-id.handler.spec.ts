@@ -9,7 +9,6 @@ describe('AppHealthUpdateApplicationDatabaseByIdHandler', () =>
 {
     let handler: AppHealthUpdateApplicationDatabaseByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthUpdateApplicationDatabaseByIdHandler', () =>
 
         handler = module.get<AppHealthUpdateApplicationDatabaseByIdHandler>(AppHealthUpdateApplicationDatabaseByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     test('AppHealthUpdateApplicationDatabaseByIdHandler should be defined', () =>
@@ -54,7 +52,13 @@ describe('AppHealthUpdateApplicationDatabaseByIdHandler', () =>
         test('should return a applicationDatabase updated', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockApplicationDatabaseData[0])));
-            expect(await handler.main(<AppHealthUpdateApplicationDatabaseByIdInput>appHealthMockApplicationDatabaseData[0])).toBe(appHealthMockApplicationDatabaseData[0]);
+            expect(
+                await handler.main(
+                    <AppHealthUpdateApplicationDatabaseByIdInput>appHealthMockApplicationDatabaseData[0],
+                    {},
+                    'Europe/Madrid',
+                ))
+                .toBe(appHealthMockApplicationDatabaseData[0]);
         });
     });
 });

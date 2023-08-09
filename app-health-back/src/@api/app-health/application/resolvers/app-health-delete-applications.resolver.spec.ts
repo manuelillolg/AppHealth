@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthDeleteApplicationsHandler, AppHealthDeleteApplicationsResolver } from '@api/app-health/application';
+import { appHealthMockApplicationData } from '@app/app-health/application';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthDeleteApplicationsResolver } from './app-health-delete-applications.resolver';
-import { AppHealthDeleteApplicationsHandler } from '../handlers/app-health-delete-applications.handler';
-
-// sources
-import { appHealthMockApplicationData } from '@app/app-health/application/infrastructure/mock/app-health-mock-application.data';
 
 describe('AppHealthDeleteApplicationsResolver', () =>
 {

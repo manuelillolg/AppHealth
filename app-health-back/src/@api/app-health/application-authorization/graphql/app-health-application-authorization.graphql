@@ -6,7 +6,7 @@ type AppHealthApplicationAuthorization
     application: AppHealthApplication
     authorizationInterfaceId: ID!
     authenticationInterface: AppHealthAuthenticationInterface
-    totalUsers: GraphQLInt!
+    totalUsers: GraphQLInt
     score: GraphQLInt!
     applicationInfrastructureServiceId: ID!
     applicationInfrastructureService: AppHealthApplicationInfrastructureService
@@ -20,7 +20,7 @@ input AppHealthCreateApplicationAuthorizationInput
     id: ID!
     applicationId: ID!
     authorizationInterfaceId: ID!
-    totalUsers: GraphQLInt!
+    totalUsers: GraphQLInt
     score: GraphQLInt!
     applicationInfrastructureServiceId: ID!
 }

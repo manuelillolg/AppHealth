@@ -1,6 +1,5 @@
 import { AppHealthCreateTechnicalSolutionController, AppHealthCreateTechnicalSolutionHandler } from '@api/app-health/technical-solution';
 import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution';
-import { CacheModule } from '@nestjs/cache-manager';
 import { Test, TestingModule } from '@nestjs/testing';
 
 describe('AppHealthCreateTechnicalSolutionController', () =>
@@ -41,7 +40,12 @@ describe('AppHealthCreateTechnicalSolutionController', () =>
         test('should return an technicalSolution created', async () =>
         {
             jest.spyOn(handler, 'main').mockImplementation(() => new Promise(resolve => resolve(appHealthMockTechnicalSolutionData[0])));
-            expect(await controller.main(appHealthMockTechnicalSolutionData[0])).toBe(appHealthMockTechnicalSolutionData[0]);
+            expect(
+                await controller.main(
+                    appHealthMockTechnicalSolutionData[0],
+                ),
+            )
+                .toBe(appHealthMockTechnicalSolutionData[0]);
         });
     });
 });

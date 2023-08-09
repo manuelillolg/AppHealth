@@ -70,7 +70,7 @@ export class AppHealthInfrastructureServiceMapper implements IMapper
             new AppHealthInfrastructureServiceCreatedAt(infrastructureService.createdAt, { undefinable: true }, { addTimezone: cQMetadata?.timezone }),
             new AppHealthInfrastructureServiceUpdatedAt(infrastructureService.updatedAt, { undefinable: true }, { addTimezone: cQMetadata?.timezone }),
             new AppHealthInfrastructureServiceDeletedAt(infrastructureService.deletedAt, { undefinable: true }, { addTimezone: cQMetadata?.timezone }),
-            this.options.eagerLoading ? new AppHealthInfrastructureProviderMapper({ eagerLoading: true }).mapModelToAggregate(infrastructureService.infrastructureProvider, cQMetadata) : undefined,
+            this.options.eagerLoading ? new AppHealthInfrastructureProviderMapper({ eagerLoading: true }).mapModelToAggregate(infrastructureService.provider, cQMetadata) : undefined,
         );
     }
 
@@ -86,7 +86,7 @@ export class AppHealthInfrastructureServiceMapper implements IMapper
             infrastructureService.createdAt.value,
             infrastructureService.updatedAt.value,
             infrastructureService.deletedAt.value,
-            this.options.eagerLoading ? new AppHealthInfrastructureProviderMapper({ eagerLoading: true }).mapAggregateToResponse(infrastructureService.infrastructureProvider) : undefined,
+            this.options.eagerLoading ? new AppHealthInfrastructureProviderMapper({ eagerLoading: true }).mapAggregateToResponse(infrastructureService.provider) : undefined,
         );
     }
 }

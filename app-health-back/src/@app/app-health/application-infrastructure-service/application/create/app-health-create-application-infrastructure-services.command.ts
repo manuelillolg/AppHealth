@@ -7,7 +7,7 @@ export class  AppHealthCreateApplicationInfrastructureServicesCommand
             id: string;
             applicationId: string;
             infrastructureServiceId: string;
-            averageCostPerYear: number;
+            averageCostPerYear?: number;
             score: number;
         } [],
         public readonly cQMetadata?: CQMetadata,

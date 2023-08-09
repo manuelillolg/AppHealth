@@ -1,9 +1,7 @@
-import { Resolver, Args, Query } from '@nestjs/graphql';
-import { QueryStatement, Timezone } from '@aurorajs.dev/core';
-
-// @app
-import { AppHealthGetApplicationInfrastructureServicesHandler } from '../handlers/app-health-get-application-infrastructure-services.handler';
+import { AppHealthGetApplicationInfrastructureServicesHandler } from '@api/app-health/application-infrastructure-service';
 import { AppHealthApplicationInfrastructureService } from '@api/graphql';
+import { QueryStatement, Timezone } from '@aurorajs.dev/core';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 
 @Resolver()
 export class AppHealthGetApplicationInfrastructureServicesResolver

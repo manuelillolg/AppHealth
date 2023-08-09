@@ -22,8 +22,6 @@ import { AppHealthMockApplicationAuthorizationRepository } from '../../infrastru
 describe('AppHealthUpdateApplicationAuthorizationsService', () =>
 {
     let service: AppHealthUpdateApplicationAuthorizationsService;
-    let repository: AppHealthIApplicationAuthorizationRepository;
-    let mockRepository: AppHealthMockApplicationAuthorizationRepository;
 
     beforeAll(async () =>
     {
@@ -47,8 +45,6 @@ describe('AppHealthUpdateApplicationAuthorizationsService', () =>
             .compile();
 
         service = module.get(AppHealthUpdateApplicationAuthorizationsService);
-        repository = module.get(AppHealthIApplicationAuthorizationRepository);
-        mockRepository = module.get(AppHealthMockApplicationAuthorizationRepository);
     });
 
     describe('main', () =>
@@ -60,16 +56,21 @@ describe('AppHealthUpdateApplicationAuthorizationsService', () =>
 
         test('should update a applicationAuthorizations and emit event', async () =>
         {
-            expect(await service.main(
-                {
-                    id: new AppHealthApplicationAuthorizationId(appHealthMockApplicationAuthorizationData[0].id),
-                    applicationId: new AppHealthApplicationAuthorizationApplicationId(appHealthMockApplicationAuthorizationData[0].applicationId),
-                    authorizationInterfaceId: new AppHealthApplicationAuthorizationAuthorizationInterfaceId(appHealthMockApplicationAuthorizationData[0].authorizationInterfaceId),
-                    totalUsers: new AppHealthApplicationAuthorizationTotalUsers(appHealthMockApplicationAuthorizationData[0].totalUsers),
-                    score: new AppHealthApplicationAuthorizationScore(appHealthMockApplicationAuthorizationData[0].score),
-                    applicationInfrastructureServiceId: new AppHealthApplicationAuthorizationApplicationInfrastructureServiceId(appHealthMockApplicationAuthorizationData[0].applicationInfrastructureServiceId),
-                },
-            )).toBe(undefined);
+            expect(
+                await service.main(
+                    {
+                        id: new AppHealthApplicationAuthorizationId(appHealthMockApplicationAuthorizationData[0].id),
+                        applicationId: new AppHealthApplicationAuthorizationApplicationId(appHealthMockApplicationAuthorizationData[0].applicationId),
+                        authorizationInterfaceId: new AppHealthApplicationAuthorizationAuthorizationInterfaceId(appHealthMockApplicationAuthorizationData[0].authorizationInterfaceId),
+                        totalUsers: new AppHealthApplicationAuthorizationTotalUsers(appHealthMockApplicationAuthorizationData[0].totalUsers),
+                        score: new AppHealthApplicationAuthorizationScore(appHealthMockApplicationAuthorizationData[0].score),
+                        applicationInfrastructureServiceId: new AppHealthApplicationAuthorizationApplicationInfrastructureServiceId(appHealthMockApplicationAuthorizationData[0].applicationInfrastructureServiceId),
+                    },
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

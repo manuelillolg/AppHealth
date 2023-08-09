@@ -30,6 +30,19 @@ export { AppHealthUpsertApplicationDatabaseController } from './controllers/app-
 export { AppHealthDeleteApplicationDatabaseByIdController } from './controllers/app-health-delete-application-database-by-id.controller';
 export { AppHealthDeleteApplicationDatabasesController } from './controllers/app-health-delete-application-databases.controller';
 
+// exports resolvers
+export { AppHealthCreateApplicationDatabaseResolver } from './resolvers/app-health-create-application-database.resolver';
+export { AppHealthCreateApplicationDatabasesResolver } from './resolvers/app-health-create-application-databases.resolver';
+export { AppHealthPaginateApplicationDatabasesResolver } from './resolvers/app-health-paginate-application-databases.resolver';
+export { AppHealthGetApplicationDatabasesResolver } from './resolvers/app-health-get-application-databases.resolver';
+export { AppHealthFindApplicationDatabaseByIdResolver } from './resolvers/app-health-find-application-database-by-id.resolver';
+export { AppHealthFindApplicationDatabaseResolver } from './resolvers/app-health-find-application-database.resolver';
+export { AppHealthUpdateApplicationDatabaseByIdResolver } from './resolvers/app-health-update-application-database-by-id.resolver';
+export { AppHealthUpdateApplicationDatabasesResolver } from './resolvers/app-health-update-application-databases.resolver';
+export { AppHealthUpsertApplicationDatabaseResolver } from './resolvers/app-health-upsert-application-database.resolver';
+export { AppHealthDeleteApplicationDatabaseByIdResolver } from './resolvers/app-health-delete-application-database-by-id.resolver';
+export { AppHealthDeleteApplicationDatabasesResolver } from './resolvers/app-health-delete-application-databases.resolver';
+
 // controllers
 import { AppHealthCreateApplicationDatabaseController } from './controllers/app-health-create-application-database.controller';
 import { AppHealthCreateApplicationDatabasesController } from './controllers/app-health-create-application-databases.controller';

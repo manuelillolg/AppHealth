@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthPaginateTechnicalSolutionsHandler, AppHealthPaginateTechnicalSolutionsResolver } from '@api/app-health/technical-solution';
+import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthPaginateTechnicalSolutionsResolver } from './app-health-paginate-technical-solutions.resolver';
-import { AppHealthPaginateTechnicalSolutionsHandler } from '../handlers/app-health-paginate-technical-solutions.handler';
-
-// sources
-import { appHealthMockTechnicalSolutionData } from '@app/app-health/technical-solution/infrastructure/mock/app-health-mock-technical-solution.data';
 
 describe('AppHealthPaginateTechnicalSolutionsResolver', () =>
 {

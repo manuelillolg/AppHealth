@@ -8,7 +8,6 @@ describe('AppHealthDeleteInfrastructureServiceByIdController', () =>
 {
     let handler: AppHealthDeleteInfrastructureServiceByIdHandler;
     let queryBus: IQueryBus;
-    let commandBus: ICommandBus;
 
     beforeAll(async () =>
     {
@@ -35,7 +34,6 @@ describe('AppHealthDeleteInfrastructureServiceByIdController', () =>
 
         handler = module.get<AppHealthDeleteInfrastructureServiceByIdHandler>(AppHealthDeleteInfrastructureServiceByIdHandler);
         queryBus = module.get<IQueryBus>(IQueryBus);
-        commandBus = module.get<ICommandBus>(ICommandBus);
     });
 
     describe('main', () =>
@@ -48,7 +46,14 @@ describe('AppHealthDeleteInfrastructureServiceByIdController', () =>
         test('should return an infrastructureService deleted', async () =>
         {
             jest.spyOn(queryBus, 'ask').mockImplementation(() => new Promise(resolve => resolve(appHealthMockInfrastructureServiceData[0])));
-            expect(await handler.main(appHealthMockInfrastructureServiceData[0].id)).toBe(appHealthMockInfrastructureServiceData[0]);
+            expect(
+                await handler.main(
+                    appHealthMockInfrastructureServiceData[0].id,
+                    {},
+                    'Europe/Madrid',
+                ),
+            )
+                .toBe(appHealthMockInfrastructureServiceData[0]);
         });
     });
 });

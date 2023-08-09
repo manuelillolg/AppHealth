@@ -11,7 +11,6 @@ describe('AppHealthDeleteApplicationAuthorizationsService', () =>
 {
     let service: AppHealthDeleteApplicationAuthorizationsService;
     let repository: AppHealthIApplicationAuthorizationRepository;
-    let mockRepository: AppHealthMockApplicationAuthorizationRepository;
 
     beforeAll(async () =>
     {
@@ -36,7 +35,6 @@ describe('AppHealthDeleteApplicationAuthorizationsService', () =>
 
         service = module.get(AppHealthDeleteApplicationAuthorizationsService);
         repository = module.get(AppHealthIApplicationAuthorizationRepository);
-        mockRepository = module.get(AppHealthMockApplicationAuthorizationRepository);
     });
 
     describe('main', () =>
@@ -49,7 +47,13 @@ describe('AppHealthDeleteApplicationAuthorizationsService', () =>
         test('should delete applicationAuthorization and emit event', async () =>
         {
             jest.spyOn(repository, 'get').mockImplementation(() => new Promise(resolve => resolve([])));
-            expect(await service.main()).toBe(undefined);
+            expect(
+                await service.main(
+                    {},
+                    {},
+                ),
+            )
+                .toBe(undefined);
         });
     });
 });

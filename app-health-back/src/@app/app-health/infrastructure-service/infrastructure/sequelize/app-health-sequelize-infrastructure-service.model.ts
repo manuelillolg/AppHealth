@@ -31,7 +31,7 @@ export class AppHealthInfrastructureServiceModel extends Model<AppHealthInfrastr
         constraints: false,
         foreignKey: 'providerId',
     })
-    infrastructureProvider: AppHealthInfrastructureProviderModel;
+    provider: AppHealthInfrastructureProviderModel;
 
     @Column({
         field: 'name',

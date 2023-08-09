@@ -33,10 +33,10 @@ aggregateProperties:
   - name: architectureDiagram
     type: varchar
     maxLength: 255
-    nullable: false
+    nullable: true
   - name: proposal
     type: text
-    nullable: false
+    nullable: true
   - name: createdAt
     type: timestamp
     nullable: true

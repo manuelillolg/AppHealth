@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { AppHealthGetApplicationIntegrationsHandler, AppHealthGetApplicationIntegrationsResolver } from '@api/app-health/application-integration';
+import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration';
 import { Test, TestingModule } from '@nestjs/testing';
-
-// custom items
-import { AppHealthGetApplicationIntegrationsResolver } from './app-health-get-application-integrations.resolver';
-import { AppHealthGetApplicationIntegrationsHandler } from '../handlers/app-health-get-application-integrations.handler';
-
-// sources
-import { appHealthMockApplicationIntegrationData } from '@app/app-health/application-integration/infrastructure/mock/app-health-mock-application-integration.data';
 
 describe('AppHealthGetApplicationIntegrationsResolver', () =>
 {
