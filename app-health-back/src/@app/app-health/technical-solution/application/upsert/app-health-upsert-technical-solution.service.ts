@@ -3,6 +3,7 @@ import {
     AppHealthTechnicalSolutionArchitectureDiagram,
     AppHealthTechnicalSolutionCreatedAt,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionDeletedAt,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionId,
@@ -26,6 +27,7 @@ export class AppHealthUpsertTechnicalSolutionService
         payload: {
             id: AppHealthTechnicalSolutionId;
             customerId: AppHealthTechnicalSolutionCustomerId;
+            customerName: AppHealthTechnicalSolutionCustomerName;
             name: AppHealthTechnicalSolutionName;
             description: AppHealthTechnicalSolutionDescription;
             architectureDiagram: AppHealthTechnicalSolutionArchitectureDiagram;
@@ -38,6 +40,7 @@ export class AppHealthUpsertTechnicalSolutionService
         const technicalSolution = AppHealthTechnicalSolution.register(
             payload.id,
             payload.customerId,
+            payload.customerName,
             payload.name,
             payload.description,
             payload.architectureDiagram,

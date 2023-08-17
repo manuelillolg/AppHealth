@@ -14,6 +14,7 @@ export class AppHealthApplicationIntegrationResponse
         public readonly modality: string,
         public readonly score: number,
         public readonly documentations: any,
+        public readonly createdAt: string,
         public readonly updatedAt: string,
         public readonly deletedAt: string,
         public readonly sourceApplication: AppHealthApplicationResponse,

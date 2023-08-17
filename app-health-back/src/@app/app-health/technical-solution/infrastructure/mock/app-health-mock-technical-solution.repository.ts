@@ -4,6 +4,7 @@ import { AppHealthITechnicalSolutionRepository } from '@app/app-health/technical
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -48,6 +49,7 @@ export class AppHealthMockTechnicalSolutionRepository extends MockRepository<App
             this.collectionSource.push(AppHealthTechnicalSolution.register(
                 new AppHealthTechnicalSolutionId(itemCollection.id),
                 new AppHealthTechnicalSolutionCustomerId(itemCollection.customerId),
+                new AppHealthTechnicalSolutionCustomerName(itemCollection.customerName),
                 new AppHealthTechnicalSolutionName(itemCollection.name),
                 new AppHealthTechnicalSolutionDescription(itemCollection.description),
                 new AppHealthTechnicalSolutionArchitectureDiagram(itemCollection.architectureDiagram),

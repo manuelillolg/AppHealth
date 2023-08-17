@@ -1,4 +1,4 @@
-import { NgForOf } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
 import { AppHealthCustomer, AppHealthTechnicalSolution } from '../app-health.types';
 import { customerColumnsConfig } from '../customer/customer.columns-config';
 import { CustomerService } from '../customer/customer.service';
@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component, Injector, ViewChild, ViewEncapsulat
 import { Validators } from '@angular/forms';
 import { Action, ColumnConfig, ColumnDataType, Crumb, defaultDetailImports, exportRows, GridColumnsConfigStorageService, GridData, GridFiltersStorageService, GridSelectElementComponent, GridStateService, log, mapActions, QueryStatementHandler, Utils, ViewDetailComponent } from '@aurora';
 import { lastValueFrom, Observable, takeUntil } from 'rxjs';
+import { NgForOf } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
@@ -17,8 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
     standalone     : true,
     imports        : [
         ...defaultDetailImports,
-        NgForOf,
         MatSelectModule,
+        NgForOf,
     ],
 })
 export class TechnicalSolutionDetailComponent extends ViewDetailComponent

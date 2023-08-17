@@ -659,6 +659,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -731,6 +732,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -773,6 +775,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -813,6 +816,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -848,6 +852,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -881,6 +886,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -919,6 +925,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -955,6 +962,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -996,6 +1004,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }
@@ -1031,6 +1040,7 @@ describe('application-integration', () =>
                             modality
                             score
                             documentations
+                            createdAt
                             updatedAt
                         }
                     }

@@ -4,6 +4,7 @@ import { LiteralObject, Utils } from '@aurorajs.dev/core';
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -21,6 +22,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
 {
     id: AppHealthTechnicalSolutionId;
     customerId: AppHealthTechnicalSolutionCustomerId;
+    customerName: AppHealthTechnicalSolutionCustomerName;
     name: AppHealthTechnicalSolutionName;
     description: AppHealthTechnicalSolutionDescription;
     architectureDiagram: AppHealthTechnicalSolutionArchitectureDiagram;
@@ -35,6 +37,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
     constructor(
         id: AppHealthTechnicalSolutionId,
         customerId: AppHealthTechnicalSolutionCustomerId,
+        customerName: AppHealthTechnicalSolutionCustomerName,
         name: AppHealthTechnicalSolutionName,
         description: AppHealthTechnicalSolutionDescription,
         architectureDiagram: AppHealthTechnicalSolutionArchitectureDiagram,
@@ -49,6 +52,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
         super();
         this.id = id;
         this.customerId = customerId;
+        this.customerName = customerName;
         this.name = name;
         this.description = description;
         this.architectureDiagram = architectureDiagram;
@@ -64,6 +68,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
     static register (
         id: AppHealthTechnicalSolutionId,
         customerId: AppHealthTechnicalSolutionCustomerId,
+        customerName: AppHealthTechnicalSolutionCustomerName,
         name: AppHealthTechnicalSolutionName,
         description: AppHealthTechnicalSolutionDescription,
         architectureDiagram: AppHealthTechnicalSolutionArchitectureDiagram,
@@ -78,6 +83,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
         return new AppHealthTechnicalSolution(
             id,
             customerId,
+            customerName,
             name,
             description,
             architectureDiagram,
@@ -96,6 +102,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
             new AppHealthCreatedTechnicalSolutionEvent(
                 technicalSolution.id.value,
                 technicalSolution.customerId.value,
+                technicalSolution.customerName?.value,
                 technicalSolution.name.value,
                 technicalSolution.description?.value,
                 technicalSolution.architectureDiagram?.value,
@@ -113,6 +120,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
             new AppHealthUpdatedTechnicalSolutionEvent(
                 technicalSolution.id?.value,
                 technicalSolution.customerId?.value,
+                technicalSolution.customerName?.value,
                 technicalSolution.name?.value,
                 technicalSolution.description?.value,
                 technicalSolution.architectureDiagram?.value,
@@ -130,6 +138,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
             new AppHealthDeletedTechnicalSolutionEvent(
                 technicalSolution.id.value,
                 technicalSolution.customerId.value,
+                technicalSolution.customerName?.value,
                 technicalSolution.name.value,
                 technicalSolution.description?.value,
                 technicalSolution.architectureDiagram?.value,
@@ -146,6 +155,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
         return {
             id: this.id.value,
             customerId: this.customerId.value,
+            customerName: this.customerName?.value,
             name: this.name.value,
             description: this.description?.value,
             architectureDiagram: this.architectureDiagram?.value,
@@ -165,6 +175,7 @@ export class AppHealthTechnicalSolution extends AggregateRoot
         return {
             id: this.id.value,
             customerId: this.customerId.value,
+            customerName: this.customerName?.value,
             name: this.name.value,
             description: this.description?.value,
             architectureDiagram: this.architectureDiagram?.value,

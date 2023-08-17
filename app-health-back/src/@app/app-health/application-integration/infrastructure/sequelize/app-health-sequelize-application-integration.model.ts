@@ -105,6 +105,13 @@ export class AppHealthApplicationIntegrationModel extends Model<AppHealthApplica
     documentations: any;
 
     @Column({
+        field: 'createdAt',
+        allowNull: true,
+        type: DataTypes.DATE,
+    })
+    createdAt: string;
+
+    @Column({
         field: 'updatedAt',
         allowNull: true,
         type: DataTypes.DATE,

@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 
 export const fields = `
     customerId
+    customerName
     name
     description
     architectureDiagram
@@ -11,12 +12,13 @@ export const fields = `
 `;
 
 export const relationsFields = `
-    appHealthGetCustomers (
-        query: $queryCustomers
-        constraint: $constraintCustomers
+    appHealthPaginateCustomers (
+        query:$queryPaginateCustomers
+        constraint:$constraintPaginateCustomers
     ) {
-        id
-        name
+        total
+        rows
+        count
     }
 `;
 
@@ -54,8 +56,8 @@ export const getQuery = gql`
 
 export const getRelations = gql`
     query AppHealthGetTechnicalSolutionsRelations(
-        $queryCustomers: QueryStatement
-        $constraintCustomers: QueryStatement
+        $queryPaginateCustomers: QueryStatement
+        $constraintPaginateCustomers: QueryStatement
     ) {
         ${relationsFields}
     }
@@ -80,8 +82,8 @@ export const findByIdWithRelationsQuery = gql`
     query AppHealthFindTechnicalSolutionByIdWithRelations (
         $id: ID
         $constraint: QueryStatement
-        $queryCustomers: QueryStatement
-        $constraintCustomers: QueryStatement
+        $queryPaginateCustomers: QueryStatement
+        $constraintPaginateCustomers: QueryStatement
     ) {
         object: appHealthFindTechnicalSolutionById (
             id: $id

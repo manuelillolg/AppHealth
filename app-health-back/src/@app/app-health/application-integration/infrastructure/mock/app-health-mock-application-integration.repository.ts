@@ -12,6 +12,7 @@ import {
     AppHealthApplicationIntegrationModality,
     AppHealthApplicationIntegrationScore,
     AppHealthApplicationIntegrationDocumentations,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationUpdatedAt,
     AppHealthApplicationIntegrationDeletedAt,
 } from '@app/app-health/application-integration/domain/value-objects';
@@ -59,6 +60,7 @@ export class AppHealthMockApplicationIntegrationRepository extends MockRepositor
                 new AppHealthApplicationIntegrationModality(itemCollection.modality),
                 new AppHealthApplicationIntegrationScore(itemCollection.score),
                 new AppHealthApplicationIntegrationDocumentations(itemCollection.documentations),
+                new AppHealthApplicationIntegrationCreatedAt(itemCollection.createdAt),
                 new AppHealthApplicationIntegrationUpdatedAt(itemCollection.updatedAt),
                 new AppHealthApplicationIntegrationDeletedAt(itemCollection.deletedAt),
             ));

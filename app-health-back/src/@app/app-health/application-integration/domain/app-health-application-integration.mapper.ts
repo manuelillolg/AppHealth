@@ -12,6 +12,7 @@ import {
     AppHealthApplicationIntegrationModality,
     AppHealthApplicationIntegrationScore,
     AppHealthApplicationIntegrationDocumentations,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationUpdatedAt,
     AppHealthApplicationIntegrationDeletedAt,
 } from './value-objects';
@@ -79,6 +80,7 @@ export class AppHealthApplicationIntegrationMapper implements IMapper
             new AppHealthApplicationIntegrationModality(applicationIntegration.modality, { undefinable: true }),
             new AppHealthApplicationIntegrationScore(applicationIntegration.score, { undefinable: true }),
             new AppHealthApplicationIntegrationDocumentations(applicationIntegration.documentations, { undefinable: true }),
+            new AppHealthApplicationIntegrationCreatedAt(applicationIntegration.createdAt, { undefinable: true }, { addTimezone: cQMetadata?.timezone }),
             new AppHealthApplicationIntegrationUpdatedAt(applicationIntegration.updatedAt, { undefinable: true }, { addTimezone: cQMetadata?.timezone }),
             new AppHealthApplicationIntegrationDeletedAt(applicationIntegration.deletedAt, { undefinable: true }, { addTimezone: cQMetadata?.timezone }),
             this.options.eagerLoading ? new AppHealthApplicationMapper({ eagerLoading: true }).mapModelToAggregate(applicationIntegration.sourceApplication, cQMetadata) : undefined,
@@ -102,6 +104,7 @@ export class AppHealthApplicationIntegrationMapper implements IMapper
             applicationIntegration.modality.value,
             applicationIntegration.score.value,
             applicationIntegration.documentations.value,
+            applicationIntegration.createdAt.value,
             applicationIntegration.updatedAt.value,
             applicationIntegration.deletedAt.value,
             this.options.eagerLoading ? new AppHealthApplicationMapper({ eagerLoading: true }).mapAggregateToResponse(applicationIntegration.sourceApplication) : undefined,

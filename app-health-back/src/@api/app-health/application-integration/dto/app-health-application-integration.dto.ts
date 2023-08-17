@@ -90,6 +90,12 @@ export class AppHealthApplicationIntegrationDto
 
     @ApiProperty({
         type       : String,
+        description: 'createdAt [input here api field description]',
+    })
+    createdAt?: string;
+
+    @ApiProperty({
+        type       : String,
         description: 'updatedAt [input here api field description]',
     })
     updatedAt?: string;

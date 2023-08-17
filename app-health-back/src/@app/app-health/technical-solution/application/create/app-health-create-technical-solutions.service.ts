@@ -3,6 +3,7 @@ import {
     AppHealthTechnicalSolutionArchitectureDiagram,
     AppHealthTechnicalSolutionCreatedAt,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionDeletedAt,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionId,
@@ -26,6 +27,7 @@ export class AppHealthCreateTechnicalSolutionsService
         technicalSolutions: {
             id: AppHealthTechnicalSolutionId;
             customerId: AppHealthTechnicalSolutionCustomerId;
+            customerName: AppHealthTechnicalSolutionCustomerName;
             name: AppHealthTechnicalSolutionName;
             description: AppHealthTechnicalSolutionDescription;
             architectureDiagram: AppHealthTechnicalSolutionArchitectureDiagram;
@@ -38,6 +40,7 @@ export class AppHealthCreateTechnicalSolutionsService
         const aggregateTechnicalSolutions = technicalSolutions.map(technicalSolution => AppHealthTechnicalSolution.register(
             technicalSolution.id,
             technicalSolution.customerId,
+            technicalSolution.customerName,
             technicalSolution.name,
             technicalSolution.description,
             technicalSolution.architectureDiagram,

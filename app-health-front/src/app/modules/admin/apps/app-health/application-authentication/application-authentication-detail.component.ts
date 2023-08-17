@@ -7,6 +7,7 @@ import { Validators } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { Action, Crumb, defaultDetailImports, log, mapActions, Utils, ViewDetailComponent } from '@aurora';
 import { lastValueFrom, Observable, takeUntil } from 'rxjs';
+import { FuseLoadingBarComponent } from '@fuse/components/loading-bar';
 
 @Component({
     selector       : 'app-health-application-authentication-detail',

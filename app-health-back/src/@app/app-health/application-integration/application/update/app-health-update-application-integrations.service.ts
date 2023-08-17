@@ -13,6 +13,7 @@ import {
     AppHealthApplicationIntegrationModality,
     AppHealthApplicationIntegrationScore,
     AppHealthApplicationIntegrationDocumentations,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationUpdatedAt,
     AppHealthApplicationIntegrationDeletedAt,
 } from '../../domain/value-objects';
@@ -58,6 +59,7 @@ export class AppHealthUpdateApplicationIntegrationsService
             payload.modality,
             payload.score,
             payload.documentations,
+            null, // createdAt
             new AppHealthApplicationIntegrationUpdatedAt({ currentTimestamp: true }),
             null, // deletedAt
         );

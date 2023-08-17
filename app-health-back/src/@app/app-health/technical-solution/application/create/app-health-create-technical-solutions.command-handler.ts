@@ -5,6 +5,7 @@ import { AppHealthCreateTechnicalSolutionsService } from './app-health-create-te
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -31,6 +32,7 @@ export class AppHealthCreateTechnicalSolutionsCommandHandler implements ICommand
                     return {
                         id: new AppHealthTechnicalSolutionId(technicalSolution.id),
                         customerId: new AppHealthTechnicalSolutionCustomerId(technicalSolution.customerId),
+                        customerName: new AppHealthTechnicalSolutionCustomerName(technicalSolution.customerName),
                         name: new AppHealthTechnicalSolutionName(technicalSolution.name),
                         description: new AppHealthTechnicalSolutionDescription(technicalSolution.description),
                         architectureDiagram: new AppHealthTechnicalSolutionArchitectureDiagram(technicalSolution.architectureDiagram),

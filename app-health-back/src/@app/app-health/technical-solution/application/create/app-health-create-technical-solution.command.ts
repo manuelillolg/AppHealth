@@ -6,6 +6,7 @@ export class AppHealthCreateTechnicalSolutionCommand
         public readonly payload: {
             id: string;
             customerId: string;
+            customerName?: string;
             name: string;
             description?: string;
             architectureDiagram?: string;

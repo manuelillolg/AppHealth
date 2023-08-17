@@ -39,6 +39,7 @@
     "CostLicensesPerYear": "CostLicensesPerYear",
     "Customer": "Customer",
     "CustomerId": "CustomerId",
+    "CustomerName": "CustomerName",
     "Customers": "Customers",
     "Database": "Database",
     "DatabaseId": "DatabaseId",

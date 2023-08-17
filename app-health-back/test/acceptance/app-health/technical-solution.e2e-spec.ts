@@ -199,6 +199,22 @@ describe('technical-solution', () =>
             });
     });
 
+    test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionCustomerName is too large, has a maximum length of 50', () =>
+    {
+        return request(app.getHttpServer())
+            .post('/app-health/technical-solution/create')
+            .set('Accept', 'application/json')
+            .send({
+                ...mockData[0],
+                customerName: '***************************************************',
+            })
+            .expect(400)
+            .then(res =>
+            {
+                expect(res.body.message).toContain('Value for TechnicalSolutionCustomerName is too large, has a maximum length of 50');
+            });
+    });
+
     test('/REST:POST app-health/technical-solution/create - Got 400 Conflict, TechnicalSolutionName is too large, has a maximum length of 255', () =>
     {
         return request(app.getHttpServer())
@@ -405,6 +421,7 @@ describe('technical-solution', () =>
                         {
                             id
                             customerId
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -475,6 +492,7 @@ describe('technical-solution', () =>
                         appHealthGetTechnicalSolutions (query:$query)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -509,6 +527,7 @@ describe('technical-solution', () =>
                         {
                             id
                             customerId
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -542,6 +561,7 @@ describe('technical-solution', () =>
                         appHealthFindTechnicalSolution (query:$query)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -583,6 +603,7 @@ describe('technical-solution', () =>
                         appHealthFindTechnicalSolution (query:$query)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -622,6 +643,7 @@ describe('technical-solution', () =>
                         appHealthFindTechnicalSolutionById (id:$id)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -656,6 +678,7 @@ describe('technical-solution', () =>
                         appHealthFindTechnicalSolutionById (id:$id)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -688,6 +711,7 @@ describe('technical-solution', () =>
                         appHealthUpdateTechnicalSolutionById (payload:$payload)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -725,6 +749,7 @@ describe('technical-solution', () =>
                         appHealthUpdateTechnicalSolutionById (payload:$payload)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -760,6 +785,7 @@ describe('technical-solution', () =>
                         appHealthUpdateTechnicalSolutions (payload:$payload query:$query)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -800,6 +826,7 @@ describe('technical-solution', () =>
                         appHealthDeleteTechnicalSolutionById (id:$id)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram
@@ -834,6 +861,7 @@ describe('technical-solution', () =>
                         appHealthDeleteTechnicalSolutionById (id:$id)
                         {
                             id
+                            customerName
                             name
                             description
                             architectureDiagram

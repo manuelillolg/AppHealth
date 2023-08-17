@@ -8,6 +8,7 @@ import { AppHealthUpdateTechnicalSolutionByIdService } from './app-health-update
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -60,6 +61,7 @@ describe('AppHealthUpdateTechnicalSolutionByIdService', () =>
                     {
                         id: new AppHealthTechnicalSolutionId(appHealthMockTechnicalSolutionData[0].id),
                         customerId: new AppHealthTechnicalSolutionCustomerId(appHealthMockTechnicalSolutionData[0].customerId),
+                        customerName: new AppHealthTechnicalSolutionCustomerName(appHealthMockTechnicalSolutionData[0].customerName),
                         name: new AppHealthTechnicalSolutionName(appHealthMockTechnicalSolutionData[0].name),
                         description: new AppHealthTechnicalSolutionDescription(appHealthMockTechnicalSolutionData[0].description),
                         architectureDiagram: new AppHealthTechnicalSolutionArchitectureDiagram(appHealthMockTechnicalSolutionData[0].architectureDiagram),

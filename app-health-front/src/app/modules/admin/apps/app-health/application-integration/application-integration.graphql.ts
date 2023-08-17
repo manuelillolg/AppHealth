@@ -10,6 +10,7 @@ export const fields = `
     modality
     score
     documentations
+    createdAt
     updatedAt
 `;
 

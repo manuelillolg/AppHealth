@@ -16,6 +16,7 @@ import {
     AppHealthApplicationIntegrationModality,
     AppHealthApplicationIntegrationScore,
     AppHealthApplicationIntegrationDocumentations,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationUpdatedAt,
     AppHealthApplicationIntegrationDeletedAt,
 } from '../../domain/value-objects';

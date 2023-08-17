@@ -29,6 +29,7 @@ export class AppHealthAddTechnicalSolutionsContextEvent extends AggregateRoot
                     new AppHealthCreatedTechnicalSolutionEvent(
                         technicalSolution.id.value,
                         technicalSolution.customerId.value,
+                        technicalSolution.customerName?.value,
                         technicalSolution.name.value,
                         technicalSolution.description?.value,
                         technicalSolution.architectureDiagram?.value,
@@ -50,6 +51,7 @@ export class AppHealthAddTechnicalSolutionsContextEvent extends AggregateRoot
                     new AppHealthUpdatedTechnicalSolutionEvent(
                         technicalSolution.id.value,
                         technicalSolution.customerId.value,
+                        technicalSolution.customerName?.value,
                         technicalSolution.name.value,
                         technicalSolution.description?.value,
                         technicalSolution.architectureDiagram?.value,
@@ -71,6 +73,7 @@ export class AppHealthAddTechnicalSolutionsContextEvent extends AggregateRoot
                     new AppHealthDeletedTechnicalSolutionEvent(
                         technicalSolution.id.value,
                         technicalSolution.customerId.value,
+                        technicalSolution.customerName?.value,
                         technicalSolution.name.value,
                         technicalSolution.description?.value,
                         technicalSolution.architectureDiagram?.value,

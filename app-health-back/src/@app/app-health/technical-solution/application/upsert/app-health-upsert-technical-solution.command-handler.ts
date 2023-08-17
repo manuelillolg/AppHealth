@@ -5,6 +5,7 @@ import { AppHealthUpsertTechnicalSolutionService } from './app-health-upsert-tec
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -28,6 +29,7 @@ export class AppHealthUpsertTechnicalSolutionCommandHandler implements ICommandH
             {
                 id: new AppHealthTechnicalSolutionId(command.payload.id),
                 customerId: new AppHealthTechnicalSolutionCustomerId(command.payload.customerId),
+                customerName: new AppHealthTechnicalSolutionCustomerName(command.payload.customerName),
                 name: new AppHealthTechnicalSolutionName(command.payload.name),
                 description: new AppHealthTechnicalSolutionDescription(command.payload.description),
                 architectureDiagram: new AppHealthTechnicalSolutionArchitectureDiagram(command.payload.architectureDiagram),

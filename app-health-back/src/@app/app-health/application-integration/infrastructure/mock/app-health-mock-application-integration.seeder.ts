@@ -11,6 +11,7 @@ import {
     AppHealthApplicationIntegrationModality,
     AppHealthApplicationIntegrationScore,
     AppHealthApplicationIntegrationDocumentations,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationUpdatedAt,
     AppHealthApplicationIntegrationDeletedAt,
 } from '../../domain/value-objects';
@@ -47,6 +48,7 @@ export class AppHealthMockApplicationIntegrationSeeder extends MockSeeder<AppHea
                     new AppHealthApplicationIntegrationModality(applicationIntegration.modality),
                     new AppHealthApplicationIntegrationScore(applicationIntegration.score),
                     new AppHealthApplicationIntegrationDocumentations(applicationIntegration.documentations),
+                    new AppHealthApplicationIntegrationCreatedAt({ currentTimestamp: true }),
                     new AppHealthApplicationIntegrationUpdatedAt({ currentTimestamp: true }),
                     new AppHealthApplicationIntegrationDeletedAt(null),
                 ),

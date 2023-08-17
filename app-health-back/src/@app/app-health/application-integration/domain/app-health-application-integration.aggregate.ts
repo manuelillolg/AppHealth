@@ -12,6 +12,7 @@ import {
     AppHealthApplicationIntegrationModality,
     AppHealthApplicationIntegrationScore,
     AppHealthApplicationIntegrationDocumentations,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationUpdatedAt,
     AppHealthApplicationIntegrationDeletedAt,
 } from './value-objects';
@@ -33,6 +34,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
     modality: AppHealthApplicationIntegrationModality;
     score: AppHealthApplicationIntegrationScore;
     documentations: AppHealthApplicationIntegrationDocumentations;
+    createdAt: AppHealthApplicationIntegrationCreatedAt;
     updatedAt: AppHealthApplicationIntegrationUpdatedAt;
     deletedAt: AppHealthApplicationIntegrationDeletedAt;
 
@@ -52,6 +54,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
         modality: AppHealthApplicationIntegrationModality,
         score: AppHealthApplicationIntegrationScore,
         documentations: AppHealthApplicationIntegrationDocumentations,
+        createdAt: AppHealthApplicationIntegrationCreatedAt,
         updatedAt: AppHealthApplicationIntegrationUpdatedAt,
         deletedAt: AppHealthApplicationIntegrationDeletedAt,
 
@@ -71,6 +74,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
         this.modality = modality;
         this.score = score;
         this.documentations = documentations;
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
 
@@ -91,6 +95,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
         modality: AppHealthApplicationIntegrationModality,
         score: AppHealthApplicationIntegrationScore,
         documentations: AppHealthApplicationIntegrationDocumentations,
+        createdAt: AppHealthApplicationIntegrationCreatedAt,
         updatedAt: AppHealthApplicationIntegrationUpdatedAt,
         deletedAt: AppHealthApplicationIntegrationDeletedAt,
 
@@ -110,6 +115,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
             modality,
             score,
             documentations,
+            createdAt,
             updatedAt,
             deletedAt,
 
@@ -133,6 +139,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
                 applicationIntegration.modality.value,
                 applicationIntegration.score.value,
                 applicationIntegration.documentations?.value,
+                applicationIntegration.createdAt?.value,
                 applicationIntegration.updatedAt?.value,
                 applicationIntegration.deletedAt?.value,
             ),
@@ -153,6 +160,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
                 applicationIntegration.modality?.value,
                 applicationIntegration.score?.value,
                 applicationIntegration.documentations?.value,
+                applicationIntegration.createdAt?.value,
                 applicationIntegration.updatedAt?.value,
                 applicationIntegration.deletedAt?.value,
             ),
@@ -173,6 +181,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
                 applicationIntegration.modality.value,
                 applicationIntegration.score.value,
                 applicationIntegration.documentations?.value,
+                applicationIntegration.createdAt?.value,
                 applicationIntegration.updatedAt?.value,
                 applicationIntegration.deletedAt?.value,
             ),
@@ -192,6 +201,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
             modality: this.modality.value,
             score: this.score.value,
             documentations: this.documentations?.value,
+            createdAt: this.createdAt?.value,
             updatedAt: this.updatedAt?.value,
             deletedAt: this.deletedAt?.value,
 
@@ -216,6 +226,7 @@ export class AppHealthApplicationIntegration extends AggregateRoot
             modality: this.modality.value,
             score: this.score.value,
             documentations: this.documentations?.value,
+            createdAt: this.createdAt?.value,
             updatedAt: this.updatedAt?.value,
             deletedAt: this.deletedAt?.value,
 

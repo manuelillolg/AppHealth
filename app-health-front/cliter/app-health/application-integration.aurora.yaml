@@ -69,6 +69,9 @@ aggregateProperties:
   - name: documentations
     type: json
     nullable: true
+  - name: createdAt
+    type: timestamp
+    nullable: true
   - name: updatedAt
     type: timestamp
     nullable: true

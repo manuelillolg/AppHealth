@@ -474,6 +474,7 @@ export interface AppHealthUpdateLanguagesInput {
 export interface AppHealthCreateTechnicalSolutionInput {
     id: string;
     customerId: string;
+    customerName?: Nullable<GraphQLString>;
     name: GraphQLString;
     description?: Nullable<GraphQLString>;
     architectureDiagram?: Nullable<GraphQLString>;
@@ -483,6 +484,7 @@ export interface AppHealthCreateTechnicalSolutionInput {
 export interface AppHealthUpdateTechnicalSolutionByIdInput {
     id: string;
     customerId?: Nullable<string>;
+    customerName?: Nullable<GraphQLString>;
     name?: Nullable<GraphQLString>;
     description?: Nullable<GraphQLString>;
     architectureDiagram?: Nullable<GraphQLString>;
@@ -492,6 +494,7 @@ export interface AppHealthUpdateTechnicalSolutionByIdInput {
 export interface AppHealthUpdateTechnicalSolutionsInput {
     id?: Nullable<string>;
     customerId?: Nullable<string>;
+    customerName?: Nullable<GraphQLString>;
     name?: Nullable<GraphQLString>;
     description?: Nullable<GraphQLString>;
     architectureDiagram?: Nullable<GraphQLString>;
@@ -818,6 +821,7 @@ export interface AppHealthApplicationIntegration {
     modality: AppHealthApplicationIntegrationModality;
     score: GraphQLInt;
     documentations?: Nullable<JSON>;
+    createdAt?: Nullable<GraphQLTimestamp>;
     updatedAt?: Nullable<GraphQLTimestamp>;
     deletedAt?: Nullable<GraphQLTimestamp>;
 }
@@ -944,6 +948,7 @@ export interface AppHealthTechnicalSolution {
     id: string;
     customerId: string;
     customer?: Nullable<AppHealthCustomer>;
+    customerName?: Nullable<GraphQLString>;
     name: GraphQLString;
     description?: Nullable<GraphQLString>;
     architectureDiagram?: Nullable<GraphQLString>;

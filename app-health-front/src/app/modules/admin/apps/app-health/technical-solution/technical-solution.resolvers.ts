@@ -1,4 +1,5 @@
 import { AppHealthCustomer, AppHealthTechnicalSolution } from '../app-health.types';
+import { customerColumnsConfig } from '../customer/customer.columns-config';
 import { CustomerService } from '../customer/customer.service';
 import { technicalSolutionColumnsConfig } from './technical-solution.columns-config';
 import { TechnicalSolutionService } from './technical-solution.service';
@@ -37,25 +38,40 @@ export const technicalSolutionPaginationResolver: ResolveFn<GridData<AppHealthTe
 };
 
 export const technicalSolutionNewResolver: ResolveFn<{
-    appHealthGetCustomers: AppHealthCustomer[];
+    appHealthPaginateCustomers: GridData<AppHealthCustomer>;
 }> = (
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
 ) =>
 {
     const actionService = inject(ActionService);
+    const gridFiltersStorageService = inject(GridFiltersStorageService);
+    const gridStateService = inject(GridStateService);
     const technicalSolutionService = inject(TechnicalSolutionService);
+
+    // paginate to manage customers grid-select-element
+    const customersGridId = 'appHealth::technicalSolution.detail.customersGridList';
+    gridStateService.setPaginationActionId(customersGridId, 'appHealth::technicalSolution.detail.customersPagination');
+    gridStateService.setExportActionId(customersGridId, 'appHealth::technicalSolution.detail.exportCustomers');
 
     actionService.action({
         id          : 'appHealth::technicalSolution.detail.new',
         isViewAction: true,
     });
 
-    return technicalSolutionService.getRelations();
+    return technicalSolutionService.getRelations({
+        queryPaginateCustomers: QueryStatementHandler
+            .init({ columnsConfig: customerColumnsConfig })
+            .setColumFilters(gridFiltersStorageService.getColumnFilterState(customersGridId))
+            .setSort(gridStateService.getSort(customersGridId))
+            .setPage(gridStateService.getPage(customersGridId))
+            .setSearch(gridStateService.getSearchState(customersGridId))
+            .getQueryStatement(),
+    });
 };
 
 export const technicalSolutionEditResolver: ResolveFn<{
-    appHealthGetCustomers: AppHealthCustomer[];
+    appHealthPaginateCustomers: GridData<AppHealthCustomer>;
     object: AppHealthTechnicalSolution;
 }> = (
     route: ActivatedRouteSnapshot,
@@ -63,7 +79,14 @@ export const technicalSolutionEditResolver: ResolveFn<{
 ) =>
 {
     const actionService = inject(ActionService);
+    const gridFiltersStorageService = inject(GridFiltersStorageService);
+    const gridStateService = inject(GridStateService);
     const technicalSolutionService = inject(TechnicalSolutionService);
+
+    // paginate to manage customers grid-select-element
+    const customersGridId = 'appHealth::technicalSolution.detail.customersGridList';
+    gridStateService.setPaginationActionId(customersGridId, 'appHealth::technicalSolution.detail.customersPagination');
+    gridStateService.setExportActionId(customersGridId, 'appHealth::technicalSolution.detail.exportCustomers');
 
     actionService.action({
         id          : 'appHealth::technicalSolution.detail.edit',
@@ -73,5 +96,13 @@ export const technicalSolutionEditResolver: ResolveFn<{
     return technicalSolutionService
         .findByIdWithRelations({
             id: route.paramMap.get('id'),
+            queryPaginateCustomers: QueryStatementHandler
+                .init({ columnsConfig: customerColumnsConfig })
+                .setColumFilters(gridFiltersStorageService.getColumnFilterState(customersGridId))
+                .setSort(gridStateService.getSort(customersGridId))
+                .setPage(gridStateService.getPage(customersGridId))
+                .setSearch(gridStateService.getSearchState(customersGridId))
+                .getQueryStatement(),
+            constraintPaginateCustomers: { /**/ },
         });
 };

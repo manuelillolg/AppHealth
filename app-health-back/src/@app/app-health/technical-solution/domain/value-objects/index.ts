@@ -1,5 +1,6 @@
 export { AppHealthTechnicalSolutionId } from './app-health-technical-solution-id';
 export { AppHealthTechnicalSolutionCustomerId } from './app-health-technical-solution-customer-id';
+export { AppHealthTechnicalSolutionCustomerName } from './app-health-technical-solution-customer-name';
 export { AppHealthTechnicalSolutionName } from './app-health-technical-solution-name';
 export { AppHealthTechnicalSolutionDescription } from './app-health-technical-solution-description';
 export { AppHealthTechnicalSolutionArchitectureDiagram } from './app-health-technical-solution-architecture-diagram';

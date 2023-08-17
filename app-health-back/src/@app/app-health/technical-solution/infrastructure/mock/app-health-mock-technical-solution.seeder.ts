@@ -3,6 +3,7 @@ import { MockSeeder } from '@aurorajs.dev/core';
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -36,6 +37,7 @@ export class AppHealthMockTechnicalSolutionSeeder extends MockSeeder<AppHealthTe
                 AppHealthTechnicalSolution.register(
                     new AppHealthTechnicalSolutionId(technicalSolution.id),
                     new AppHealthTechnicalSolutionCustomerId(technicalSolution.customerId),
+                    new AppHealthTechnicalSolutionCustomerName(technicalSolution.customerName),
                     new AppHealthTechnicalSolutionName(technicalSolution.name),
                     new AppHealthTechnicalSolutionDescription(technicalSolution.description),
                     new AppHealthTechnicalSolutionArchitectureDiagram(technicalSolution.architectureDiagram),

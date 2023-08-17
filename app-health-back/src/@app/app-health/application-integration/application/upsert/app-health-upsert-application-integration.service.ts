@@ -1,6 +1,7 @@
 import { AppHealthApplicationIntegration, AppHealthIApplicationIntegrationRepository } from '@app/app-health/application-integration';
 import {
     AppHealthApplicationIntegrationApiInterfaceTypeId,
+    AppHealthApplicationIntegrationCreatedAt,
     AppHealthApplicationIntegrationDeletedAt,
     AppHealthApplicationIntegrationDescription,
     AppHealthApplicationIntegrationDocumentations,
@@ -53,6 +54,7 @@ export class AppHealthUpsertApplicationIntegrationService
             payload.modality,
             payload.score,
             payload.documentations,
+            new AppHealthApplicationIntegrationCreatedAt({ currentTimestamp: true }),
             new AppHealthApplicationIntegrationUpdatedAt({ currentTimestamp: true }),
             null, // deletedAt
         );

@@ -5,6 +5,7 @@ import { CQMetadata } from '@aurorajs.dev/core';
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -29,6 +30,7 @@ export class AppHealthUpdateTechnicalSolutionsService
         payload: {
             id?: AppHealthTechnicalSolutionId;
             customerId?: AppHealthTechnicalSolutionCustomerId;
+            customerName?: AppHealthTechnicalSolutionCustomerName;
             name?: AppHealthTechnicalSolutionName;
             description?: AppHealthTechnicalSolutionDescription;
             architectureDiagram?: AppHealthTechnicalSolutionArchitectureDiagram;
@@ -43,6 +45,7 @@ export class AppHealthUpdateTechnicalSolutionsService
         const technicalSolution = AppHealthTechnicalSolution.register(
             payload.id,
             payload.customerId,
+            payload.customerName,
             payload.name,
             payload.description,
             payload.architectureDiagram,

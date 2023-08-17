@@ -120,33 +120,33 @@ export class TechnicalSolutionService
             id = '',
             constraint = {},
             headers = {},
-            queryCustomers = {},
-            constraintCustomers = {},
+            queryPaginateCustomers = {},
+            constraintPaginateCustomers = {},
         }: {
             graphqlStatement?: DocumentNode;
             id?: string;
             constraint?: QueryStatement;
             headers?: GraphQLHeaders;
-            queryCustomers?: QueryStatement;
-            constraintCustomers?: QueryStatement;
+            queryPaginateCustomers?: QueryStatement;
+            constraintPaginateCustomers?: QueryStatement;
         } = {},
     ): Observable<{
         object: AppHealthTechnicalSolution;
-        appHealthGetCustomers: AppHealthCustomer[];
+        appHealthPaginateCustomers: GridData<AppHealthCustomer>;
     }>
     {
         return this.graphqlService
             .client()
             .watchQuery<{
                 object: AppHealthTechnicalSolution;
-                appHealthGetCustomers: AppHealthCustomer[];
+                appHealthPaginateCustomers: GridData<AppHealthCustomer>;
             }>({
                 query    : parseGqlFields(graphqlStatement, fields, constraint),
                 variables: {
                     id,
                     constraint,
-                    queryCustomers,
-                    constraintCustomers,
+                    queryPaginateCustomers,
+                    constraintPaginateCustomers,
                 },
                 context: {
                     headers,
@@ -159,7 +159,7 @@ export class TechnicalSolutionService
                 tap(data =>
                 {
                     this.technicalSolutionSubject$.next(data.object);
-                    this.customerService.customersSubject$.next(data.appHealthGetCustomers);
+                    this.customerService.paginationSubject$.next(data.appHealthPaginateCustomers);
                 }),
             );
     }
@@ -248,27 +248,27 @@ export class TechnicalSolutionService
 
     getRelations(
         {
-            queryCustomers = {},
-            constraintCustomers = {},
+            queryPaginateCustomers = {},
+            constraintPaginateCustomers = {},
             headers = {},
         }: {
-            queryCustomers?: QueryStatement;
-            constraintCustomers?: QueryStatement;
+            queryPaginateCustomers?: QueryStatement;
+            constraintPaginateCustomers?: QueryStatement;
             headers?: GraphQLHeaders;
         } = {},
     ): Observable<{
-        appHealthGetCustomers: AppHealthCustomer[];
+        appHealthPaginateCustomers: GridData<AppHealthCustomer>;
     }>
     {
         return this.graphqlService
             .client()
             .watchQuery<{
-                appHealthGetCustomers: AppHealthCustomer[];
+                appHealthPaginateCustomers: GridData<AppHealthCustomer>;
             }>({
                 query    : getRelations,
                 variables: {
-                    queryCustomers,
-                    constraintCustomers,
+                    queryPaginateCustomers,
+                    constraintPaginateCustomers,
                 },
             })
             .valueChanges
@@ -277,7 +277,7 @@ export class TechnicalSolutionService
                 map(result => result.data),
                 tap(data =>
                 {
-                    this.customerService.customersSubject$.next(data.appHealthGetCustomers);
+                    this.customerService.paginationSubject$.next(data.appHealthPaginateCustomers);
                 }),
             );
     }

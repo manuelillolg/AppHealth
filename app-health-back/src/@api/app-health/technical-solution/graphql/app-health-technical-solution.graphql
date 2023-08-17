@@ -4,6 +4,7 @@ type AppHealthTechnicalSolution
     id: ID!
     customerId: ID!
     customer: AppHealthCustomer
+    customerName: GraphQLString
     name: GraphQLString!
     description: GraphQLString
     architectureDiagram: GraphQLString
@@ -17,6 +18,7 @@ input AppHealthCreateTechnicalSolutionInput
 {
     id: ID!
     customerId: ID!
+    customerName: GraphQLString
     name: GraphQLString!
     description: GraphQLString
     architectureDiagram: GraphQLString
@@ -27,6 +29,7 @@ input AppHealthUpdateTechnicalSolutionByIdInput
 {
     id: ID!
     customerId: ID
+    customerName: GraphQLString
     name: GraphQLString
     description: GraphQLString
     architectureDiagram: GraphQLString
@@ -37,6 +40,7 @@ input AppHealthUpdateTechnicalSolutionsInput
 {
     id: ID
     customerId: ID
+    customerName: GraphQLString
     name: GraphQLString
     description: GraphQLString
     architectureDiagram: GraphQLString

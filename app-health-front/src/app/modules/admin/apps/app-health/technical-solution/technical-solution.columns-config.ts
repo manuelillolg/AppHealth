@@ -9,6 +9,12 @@ export const technicalSolutionColumnsConfig: ColumnConfig[] = [
     },
     {
         type       : ColumnDataType.STRING,
+        field      : 'customerName',
+        sort       : 'customerName',
+        translation: 'appHealth.CustomerName',
+    },
+    {
+        type       : ColumnDataType.STRING,
         field      : 'name',
         sort       : 'name',
         translation: 'appHealth.Name',

@@ -4,6 +4,7 @@ import { AppHealthTechnicalSolutionResponse } from './app-health-technical-solut
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -67,6 +68,7 @@ export class AppHealthTechnicalSolutionMapper implements IMapper
         return AppHealthTechnicalSolution.register(
             new AppHealthTechnicalSolutionId(technicalSolution.id, { undefinable: true }),
             new AppHealthTechnicalSolutionCustomerId(technicalSolution.customerId, { undefinable: true }),
+            new AppHealthTechnicalSolutionCustomerName(technicalSolution.customerName, { undefinable: true }),
             new AppHealthTechnicalSolutionName(technicalSolution.name, { undefinable: true }),
             new AppHealthTechnicalSolutionDescription(technicalSolution.description, { undefinable: true }),
             new AppHealthTechnicalSolutionArchitectureDiagram(technicalSolution.architectureDiagram, { undefinable: true }),
@@ -85,6 +87,7 @@ export class AppHealthTechnicalSolutionMapper implements IMapper
         return new AppHealthTechnicalSolutionResponse(
             technicalSolution.id.value,
             technicalSolution.customerId.value,
+            technicalSolution.customerName.value,
             technicalSolution.name.value,
             technicalSolution.description.value,
             technicalSolution.architectureDiagram.value,

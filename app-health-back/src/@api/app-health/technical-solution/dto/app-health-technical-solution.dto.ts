@@ -25,6 +25,12 @@ export class AppHealthTechnicalSolutionDto
 
     @ApiProperty({
         type       : String,
+        description: 'customerName [input here api field description]',
+    })
+    customerName?: string;
+
+    @ApiProperty({
+        type       : String,
         description: 'name [input here api field description]',
     })
     name: string;

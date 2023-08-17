@@ -8,5 +8,6 @@ export { AppHealthApplicationIntegrationInterfaceNumbers } from './app-health-ap
 export { AppHealthApplicationIntegrationModality } from './app-health-application-integration-modality';
 export { AppHealthApplicationIntegrationScore } from './app-health-application-integration-score';
 export { AppHealthApplicationIntegrationDocumentations } from './app-health-application-integration-documentations';
+export { AppHealthApplicationIntegrationCreatedAt } from './app-health-application-integration-created-at';
 export { AppHealthApplicationIntegrationUpdatedAt } from './app-health-application-integration-updated-at';
 export { AppHealthApplicationIntegrationDeletedAt } from './app-health-application-integration-deleted-at';

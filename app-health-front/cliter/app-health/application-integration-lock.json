@@ -31,7 +31,7 @@
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application-integration/application-integration.graphql.ts",
-            "integrity": "sha1:87875ba080d79474d8591eba71a0158656aedd6b"
+            "integrity": "sha1:0ff2e9055eab22c3ceaa46cd5d49155267ec6125"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application-integration/application-integration.resolvers.ts",

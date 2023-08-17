@@ -44,6 +44,7 @@ describe('AppHealthUpsertTechnicalSolutionCommandHandler', () =>
                     {
                         id: appHealthMockTechnicalSolutionData[0].id,
                         customerId: appHealthMockTechnicalSolutionData[0].customerId,
+                        customerName: appHealthMockTechnicalSolutionData[0].customerName,
                         name: appHealthMockTechnicalSolutionData[0].name,
                         description: appHealthMockTechnicalSolutionData[0].description,
                         architectureDiagram: appHealthMockTechnicalSolutionData[0].architectureDiagram,

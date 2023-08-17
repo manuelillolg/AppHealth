@@ -11,11 +11,11 @@
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-detail.component.html",
-            "integrity": "sha1:d682ff5bcb0af389bacecfa334646b2c303f0641"
+            "integrity": "sha1:f81186f1d92e76e4768101695c7569d5c8c87b99"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-detail.component.ts",
-            "integrity": "sha1:4cf258d247f7d04ed85437c1ee1466e81864fd28"
+            "integrity": "sha1:1d2097a90c1faf0d0eaf08dcbc5bd5b07fe140e8"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution-list.component.html",
@@ -27,19 +27,19 @@
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.columns-config.ts",
-            "integrity": "sha1:06cef5a7c58a1a51d7bc52e0072d115d4e08c9a4"
+            "integrity": "sha1:bd069a7a30e410c100e60f808f53f02ef9250364"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.graphql.ts",
-            "integrity": "sha1:7afce6da829d63d3815f72ebf078057b73c29696"
+            "integrity": "sha1:e2b8a8bf512488eb00b6d2c598dd76d90db3b2c7"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.resolvers.ts",
-            "integrity": "sha1:897050fef1144064c336383623268021bffab273"
+            "integrity": "sha1:b1768f56b5c2845265794910c1a903406041cea3"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/technical-solution/technical-solution.service.ts",
-            "integrity": "sha1:7731bc982cbda15521438c2b0ba714b87f07b65d"
+            "integrity": "sha1:2533c2389de181f70e4b176057307901263550b5"
         }
     ]
 }

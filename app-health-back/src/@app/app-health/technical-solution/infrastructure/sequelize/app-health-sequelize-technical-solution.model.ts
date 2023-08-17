@@ -34,6 +34,13 @@ export class AppHealthTechnicalSolutionModel extends Model<AppHealthTechnicalSol
     customer: AppHealthCustomerModel;
 
     @Column({
+        field: 'customerName',
+        allowNull: true,
+        type: DataTypes.STRING(50),
+    })
+    customerName: string;
+
+    @Column({
         field: 'name',
         allowNull: false,
         type: DataTypes.STRING(255),

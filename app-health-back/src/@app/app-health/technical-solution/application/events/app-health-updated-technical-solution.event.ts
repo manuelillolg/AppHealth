@@ -3,6 +3,7 @@ export class AppHealthUpdatedTechnicalSolutionEvent
     constructor(
         public readonly id: string,
         public readonly customerId: string,
+        public readonly customerName: string,
         public readonly name: string,
         public readonly description: string,
         public readonly architectureDiagram: string,

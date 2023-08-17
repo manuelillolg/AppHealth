@@ -5,6 +5,7 @@ import { AppHealthUpdateTechnicalSolutionByIdService } from './app-health-update
 import {
     AppHealthTechnicalSolutionId,
     AppHealthTechnicalSolutionCustomerId,
+    AppHealthTechnicalSolutionCustomerName,
     AppHealthTechnicalSolutionName,
     AppHealthTechnicalSolutionDescription,
     AppHealthTechnicalSolutionArchitectureDiagram,
@@ -28,6 +29,7 @@ export class AppHealthUpdateTechnicalSolutionByIdCommandHandler implements IComm
             {
                 id: new AppHealthTechnicalSolutionId(command.payload.id),
                 customerId: new AppHealthTechnicalSolutionCustomerId(command.payload.customerId, { undefinable: true }),
+                customerName: new AppHealthTechnicalSolutionCustomerName(command.payload.customerName),
                 name: new AppHealthTechnicalSolutionName(command.payload.name, { undefinable: true }),
                 description: new AppHealthTechnicalSolutionDescription(command.payload.description),
                 architectureDiagram: new AppHealthTechnicalSolutionArchitectureDiagram(command.payload.architectureDiagram),
