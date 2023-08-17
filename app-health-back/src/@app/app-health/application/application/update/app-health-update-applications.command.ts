@@ -11,7 +11,6 @@ export class AppHealthUpdateApplicationsCommand
             description?: string;
             businessImpact?: string;
             type?: string;
-            releaseDate?: string;
             architectureDiagram?: string;
             hasTenants?: boolean;
             hasLicensing?: boolean;

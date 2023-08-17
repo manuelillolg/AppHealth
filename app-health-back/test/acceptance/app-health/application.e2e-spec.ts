@@ -612,7 +612,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -688,7 +687,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -728,7 +726,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -767,7 +764,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -814,7 +810,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -859,7 +854,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -899,7 +893,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -937,7 +930,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -980,7 +972,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -1021,7 +1012,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -1067,7 +1057,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing
@@ -1107,7 +1096,6 @@ describe('application', () =>
                             description
                             businessImpact
                             type
-                            releaseDate
                             architectureDiagram
                             hasTenants
                             hasLicensing

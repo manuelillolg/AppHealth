@@ -11,11 +11,11 @@
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application/application-detail.component.html",
-            "integrity": "sha1:dba4ccc72d8340d2f01c9e23e119ddf7591c4c19"
+            "integrity": "sha1:aa0a188bb882bb7d820f51995256767359e5df78"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application/application-detail.component.ts",
-            "integrity": "sha1:743f4bb99784e2e111be39f0290b2edd6c12eeaf"
+            "integrity": "sha1:d0a74bfdb8bffd13cadf44585decfb15205233a7"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application/application-list.component.html",
@@ -27,11 +27,11 @@
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application/application.columns-config.ts",
-            "integrity": "sha1:ec3b841de5eff66f75d029763c6ee2831b4f8b08"
+            "integrity": "sha1:77e149f4cd4d236184867d464157aed21554e5d8"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application/application.graphql.ts",
-            "integrity": "sha1:6ef5d779ec3f0d5249205f8eac509097995b7222"
+            "integrity": "sha1:5df9fa748329624a457b3121de149237679b73db"
         },
         {
             "path": "src/app/modules/admin/apps/app-health/application/application.resolvers.ts",

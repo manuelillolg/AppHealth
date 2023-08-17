@@ -1,10 +1,13 @@
+import { NgForOf } from '@angular/common';
 import { AppHealthApplication, AppHealthTechnicalSolution } from '../app-health.types';
 import { TechnicalSolutionService } from '../technical-solution/technical-solution.service';
 import { ApplicationService } from './application.service';
 import { ChangeDetectionStrategy, Component, Injector, ViewEncapsulation } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 import { Action, Crumb, defaultDetailImports, log, mapActions, Utils, ViewDetailComponent } from '@aurora';
 import { lastValueFrom, Observable, takeUntil } from 'rxjs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
     selector       : 'app-health-application-detail',
@@ -14,6 +17,7 @@ import { lastValueFrom, Observable, takeUntil } from 'rxjs';
     standalone     : true,
     imports        : [
         ...defaultDetailImports,
+        MatSelectModule, NgForOf, MatCheckboxModule
     ],
 })
 export class ApplicationDetailComponent extends ViewDetailComponent

@@ -146,27 +146,6 @@
                     </mat-form-field>
                     <mat-form-field
                         appearance="outline"
-                        class="au-datepicker col-4"
-                    >
-                        <mat-label>{{ t('appHealth.ReleaseDate') }}</mat-label>
-                        <input
-                            matInput
-                            autocomplete="off"
-                            formControlName="releaseDate"
-                            [auDatepickerSqlFormat]
-                            [matDatepicker]="releaseDatePicker"
-                        >
-                        <mat-datepicker-toggle
-                            matSuffix
-                            [for]="releaseDatePicker"
-                        >
-                        </mat-datepicker-toggle>
-                        <mat-datepicker #releaseDatePicker>
-                        </mat-datepicker>
-                        <mat-error>{{ formErrors?.releaseDate | async }}</mat-error>
-                    </mat-form-field>
-                    <mat-form-field
-                        appearance="outline"
                         class="col-12"
                     >
                         <mat-label>{{ t('appHealth.ArchitectureDiagram') }}</mat-label>

@@ -45,7 +45,6 @@ describe('AppHealthCreateApplicationCommandHandler', () =>
                         description: appHealthMockApplicationData[0].description,
                         businessImpact: appHealthMockApplicationData[0].businessImpact,
                         type: appHealthMockApplicationData[0].type,
-                        releaseDate: appHealthMockApplicationData[0].releaseDate,
                         architectureDiagram: appHealthMockApplicationData[0].architectureDiagram,
                         hasTenants: appHealthMockApplicationData[0].hasTenants,
                         hasLicensing: appHealthMockApplicationData[0].hasLicensing,

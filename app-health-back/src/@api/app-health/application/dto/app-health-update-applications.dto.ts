@@ -44,12 +44,6 @@ export class AppHealthUpdateApplicationsDto
 
     @ApiProperty({
         type       : String,
-        description: 'releaseDate [input here api field description]',
-    })
-    releaseDate?: string;
-
-    @ApiProperty({
-        type       : String,
         description: 'architectureDiagram [input here api field description]',
     })
     architectureDiagram?: string;

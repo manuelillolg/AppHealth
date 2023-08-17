@@ -24,7 +24,7 @@ aggregateProperties:
       field: customer
       avoidConstraint: true
     webComponent:
-      type: grid-select-element
+      type: select
   - name: name
     type: varchar
     maxLength: 255

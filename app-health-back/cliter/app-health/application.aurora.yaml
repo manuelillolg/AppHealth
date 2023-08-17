@@ -41,9 +41,6 @@ aggregateProperties:
       - MOBILE
       - EMBEDDED
     nullable: false
-  - name: releaseDate
-    type: date
-    nullable: true
   - name: architectureDiagram
     type: varchar
     maxLength: 255

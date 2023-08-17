@@ -70,13 +70,6 @@ export class AppHealthApplicationModel extends Model<AppHealthApplicationModel>
     type: string;
 
     @Column({
-        field: 'releaseDate',
-        allowNull: true,
-        type: DataTypes.DATE,
-    })
-    releaseDate: string;
-
-    @Column({
         field: 'architectureDiagram',
         allowNull: true,
         type: DataTypes.STRING(255),

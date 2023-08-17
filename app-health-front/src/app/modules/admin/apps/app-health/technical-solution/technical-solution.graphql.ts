@@ -11,13 +11,12 @@ export const fields = `
 `;
 
 export const relationsFields = `
-    appHealthPaginateCustomers (
-        query:$queryPaginateCustomers
-        constraint:$constraintPaginateCustomers
+    appHealthGetCustomers (
+        query: $queryCustomers
+        constraint: $constraintCustomers
     ) {
-        total
-        rows
-        count
+        id
+        name
     }
 `;
 
@@ -55,8 +54,8 @@ export const getQuery = gql`
 
 export const getRelations = gql`
     query AppHealthGetTechnicalSolutionsRelations(
-        $queryPaginateCustomers: QueryStatement
-        $constraintPaginateCustomers: QueryStatement
+        $queryCustomers: QueryStatement
+        $constraintCustomers: QueryStatement
     ) {
         ${relationsFields}
     }
@@ -81,8 +80,8 @@ export const findByIdWithRelationsQuery = gql`
     query AppHealthFindTechnicalSolutionByIdWithRelations (
         $id: ID
         $constraint: QueryStatement
-        $queryPaginateCustomers: QueryStatement
-        $constraintPaginateCustomers: QueryStatement
+        $queryCustomers: QueryStatement
+        $constraintCustomers: QueryStatement
     ) {
         object: appHealthFindTechnicalSolutionById (
             id: $id

@@ -2,6 +2,7 @@ import { AppHealthApplicationView } from '../app-health.types';
 import { ApplicationViewService } from './application-view.service';
 import { ChangeDetectionStrategy, Component, Injector, ViewEncapsulation } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { Action, Crumb, defaultDetailImports, log, mapActions, Utils, ViewDetailComponent } from '@aurora';
 import { lastValueFrom, takeUntil } from 'rxjs';
 
@@ -13,6 +14,7 @@ import { lastValueFrom, takeUntil } from 'rxjs';
     standalone     : true,
     imports        : [
         ...defaultDetailImports,
+        MatSelectModule
     ],
 })
 export class ApplicationViewDetailComponent extends ViewDetailComponent

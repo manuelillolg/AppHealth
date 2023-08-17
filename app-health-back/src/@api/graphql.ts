@@ -307,7 +307,6 @@ export interface AppHealthCreateApplicationInput {
     description?: Nullable<GraphQLString>;
     businessImpact?: Nullable<GraphQLString>;
     type: AppHealthApplicationType;
-    releaseDate?: Nullable<GraphQLISODateTime>;
     architectureDiagram?: Nullable<GraphQLString>;
     hasTenants: GraphQLBoolean;
     hasLicensing: GraphQLBoolean;
@@ -322,7 +321,6 @@ export interface AppHealthUpdateApplicationByIdInput {
     description?: Nullable<GraphQLString>;
     businessImpact?: Nullable<GraphQLString>;
     type?: Nullable<AppHealthApplicationType>;
-    releaseDate?: Nullable<GraphQLISODateTime>;
     architectureDiagram?: Nullable<GraphQLString>;
     hasTenants?: Nullable<GraphQLBoolean>;
     hasLicensing?: Nullable<GraphQLBoolean>;
@@ -337,7 +335,6 @@ export interface AppHealthUpdateApplicationsInput {
     description?: Nullable<GraphQLString>;
     businessImpact?: Nullable<GraphQLString>;
     type?: Nullable<AppHealthApplicationType>;
-    releaseDate?: Nullable<GraphQLISODateTime>;
     architectureDiagram?: Nullable<GraphQLString>;
     hasTenants?: Nullable<GraphQLBoolean>;
     hasLicensing?: Nullable<GraphQLBoolean>;
@@ -860,7 +857,6 @@ export interface AppHealthApplication {
     description?: Nullable<GraphQLString>;
     businessImpact?: Nullable<GraphQLString>;
     type: AppHealthApplicationType;
-    releaseDate?: Nullable<GraphQLISODateTime>;
     architectureDiagram?: Nullable<GraphQLString>;
     hasTenants: GraphQLBoolean;
     hasLicensing: GraphQLBoolean;

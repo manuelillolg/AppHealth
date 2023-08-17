@@ -33,12 +33,6 @@ export const applicationColumnsConfig: ColumnConfig[] = [
     },
     {
         type       : ColumnDataType.STRING,
-        field      : 'releaseDate',
-        sort       : 'releaseDate',
-        translation: 'appHealth.ReleaseDate',
-    },
-    {
-        type       : ColumnDataType.STRING,
         field      : 'architectureDiagram',
         sort       : 'architectureDiagram',
         translation: 'appHealth.ArchitectureDiagram',

@@ -79,85 +79,21 @@
 
                     <mat-form-field
                         appearance="outline"
-                        class="col-start-1 col-6"
+                        class="col-6"
                     >
                         <mat-label>{{ t('appHealth.CustomerId') }}</mat-label>
-                        <input
-                            matInput
-                            formControlName="customerName"
-                            readonly
+                        <mat-select
+                            formControlName="customerId"
                         >
-                        <button
-                            matIconSuffix
-                            mat-icon-button
-                            type="button"
-                            class="mr-2"
-                            [aria-label]="t('Search')"
-                            (click)="
-                                actionService.action({
-                                    id          : 'appHealth::technicalSolution.detail.customersOpenDialog',
-                                    isViewAction: false
-                                })
-                            "
-                        >
-                            <mat-icon>search</mat-icon>
-                        </button>
+                            <mat-option
+                                *ngFor="let customer of customers$ | async"
+                                [value]="customer.id"
+                            >
+                                {{ customer.name }}
+                            </mat-option>
+                        </mat-select>
                         <mat-error>{{ formErrors?.customerId | async }}</mat-error>
                     </mat-form-field>
-                    <au-grid-select-element
-                        [columnsConfig]="customersColumnsConfig$ | async"
-                        [dialogTitle]="t('appHealth.Customer')"
-                        [gridData]="customersGridData$ | async"
-                        [id]="customersGridId"
-                        [originColumnsConfig]="customersOriginColumnsConfig"
-                        #customerGridElementSelector
-                    >
-                        <au-grid-translations
-                            [actions]="t('Actions')"
-                            [AND]="t('AND')"
-                            [clearFilters]="t('ClearFilters')"
-                            [clickAndDragInfo]="t('ClickAndDragInfo')"
-                            [columns]="t('Columns')"
-                            [field]="t('Field')"
-                            [filter]="t('Filter')"
-                            [for]="customersGridId"
-                            [operator]="t('Operator')"
-                            [OR]="t('OR')"
-                            [pleaseSelectField]="t('PleaseSelectField')"
-                            [translations]="t('Translations')"
-                            [value]="t('Value')"
-                            [paginator]="{
-                                firstPageLabel: t('Paginator.FirstPageLabel'),
-                                itemsPerPageLabel: t('Paginator.ItemsPerPageLabel'),
-                                lastPageLabel: t('Paginator.LastPageLabel'),
-                                nextPageLabel: t('Paginator.NextPageLabel'),
-                                ofLabel: t('Paginator.OfLabel'),
-                                previousPageLabel: t('Paginator.PreviousPageLabel')
-                            }"
-                            [operators]="{
-                                contains: t('Operators.Contains'),
-                                endsWith: t('Operators.EndsWith'),
-                                equals: t('Operators.Equals'),
-                                greaterThan: t('Operators.GreaterThan'),
-                                greaterThanEqual: t('Operators.GreaterThanEqual'),
-                                lessThan: t('Operators.LessThan'),
-                                lessThanEqual: t('Operators.LessThanEqual'),
-                                notEquals: t('Operators.NotEquals'),
-                                startsWith: t('Operators.StartsWith')
-                            }"
-                            [actionsMenu]="{
-                                editCallLog: t('Edit'),
-                                deleteCallLog: t('Delete')
-                            }"
-                        >
-                            <au-grid-column-translation
-                                *ngFor="let columnConfig of customersOriginColumnsConfig"
-                                [field]="columnConfig.field"
-                            >
-                                {{ t(columnConfig.translation ? columnConfig.translation : columnConfig.field.toPascalCase()) }}
-                            </au-grid-column-translation>
-                        </au-grid-translations>
-                    </au-grid-select-element>
                     <mat-form-field
                         appearance="outline"
                         class="col-12"

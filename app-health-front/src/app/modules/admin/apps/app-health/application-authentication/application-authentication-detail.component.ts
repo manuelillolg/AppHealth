@@ -1,9 +1,12 @@
-import { AppHealthApplicationAuthentication } from '../app-health.types';
+import { NgForOf } from '@angular/common';
+import { AppHealthApplication, AppHealthApplicationAuthentication } from '../app-health.types';
+import { ApplicationService } from '../application/application.service';
 import { ApplicationAuthenticationService } from './application-authentication.service';
 import { ChangeDetectionStrategy, Component, Injector, ViewEncapsulation } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 import { Action, Crumb, defaultDetailImports, log, mapActions, Utils, ViewDetailComponent } from '@aurora';
-import { lastValueFrom, takeUntil } from 'rxjs';
+import { lastValueFrom, Observable, takeUntil } from 'rxjs';
 
 @Component({
     selector       : 'app-health-application-authentication-detail',
@@ -13,6 +16,8 @@ import { lastValueFrom, takeUntil } from 'rxjs';
     standalone     : true,
     imports        : [
         ...defaultDetailImports,
+        MatSelectModule,
+        NgForOf,
     ],
 })
 export class ApplicationAuthenticationDetailComponent extends ViewDetailComponent
@@ -26,6 +31,9 @@ export class ApplicationAuthenticationDetailComponent extends ViewDetailComponen
     // It should not be used habitually, since the source of truth is the form.
     managedObject: AppHealthApplicationAuthentication;
 
+    // relationships
+    applications$: Observable<AppHealthApplication[]>;
+
     // breadcrumb component definition
     breadcrumb: Crumb[] = [
         { translation: 'App' },
@@ -35,6 +43,7 @@ export class ApplicationAuthenticationDetailComponent extends ViewDetailComponen
 
     constructor(
         private readonly applicationAuthenticationService: ApplicationAuthenticationService,
+        private readonly applicationService: ApplicationService,
         protected readonly injector: Injector,
     )
     {
@@ -46,6 +55,7 @@ export class ApplicationAuthenticationDetailComponent extends ViewDetailComponen
     init(): void
     {
         /**/
+        this.applications$ = this.applicationService.applications$;
     }
 
     onSubmit($event): void

@@ -17,7 +17,6 @@ export class AppHealthApplicationResponse
         public readonly description: string,
         public readonly businessImpact: string,
         public readonly type: string,
-        public readonly releaseDate: string,
         public readonly architectureDiagram: string,
         public readonly hasTenants: boolean,
         public readonly hasLicensing: boolean,

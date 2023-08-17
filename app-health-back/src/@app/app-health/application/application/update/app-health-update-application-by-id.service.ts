@@ -10,7 +10,6 @@ import {
     AppHealthApplicationHasTenants,
     AppHealthApplicationId,
     AppHealthApplicationName,
-    AppHealthApplicationReleaseDate,
     AppHealthApplicationRequestsPerDay,
     AppHealthApplicationTechnicalSolutionId,
     AppHealthApplicationType,
@@ -36,7 +35,6 @@ export class AppHealthUpdateApplicationByIdService
             description?: AppHealthApplicationDescription;
             businessImpact?: AppHealthApplicationBusinessImpact;
             type?: AppHealthApplicationType;
-            releaseDate?: AppHealthApplicationReleaseDate;
             architectureDiagram?: AppHealthApplicationArchitectureDiagram;
             hasTenants?: AppHealthApplicationHasTenants;
             hasLicensing?: AppHealthApplicationHasLicensing;
@@ -55,7 +53,6 @@ export class AppHealthUpdateApplicationByIdService
             payload.description,
             payload.businessImpact,
             payload.type,
-            payload.releaseDate,
             payload.architectureDiagram,
             payload.hasTenants,
             payload.hasLicensing,

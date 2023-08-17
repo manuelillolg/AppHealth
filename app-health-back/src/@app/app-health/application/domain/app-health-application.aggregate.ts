@@ -8,7 +8,6 @@ import {
     AppHealthApplicationDescription,
     AppHealthApplicationBusinessImpact,
     AppHealthApplicationType,
-    AppHealthApplicationReleaseDate,
     AppHealthApplicationArchitectureDiagram,
     AppHealthApplicationHasTenants,
     AppHealthApplicationHasLicensing,
@@ -39,7 +38,6 @@ export class AppHealthApplication extends AggregateRoot
     description: AppHealthApplicationDescription;
     businessImpact: AppHealthApplicationBusinessImpact;
     type: AppHealthApplicationType;
-    releaseDate: AppHealthApplicationReleaseDate;
     architectureDiagram: AppHealthApplicationArchitectureDiagram;
     hasTenants: AppHealthApplicationHasTenants;
     hasLicensing: AppHealthApplicationHasLicensing;
@@ -67,7 +65,6 @@ export class AppHealthApplication extends AggregateRoot
         description: AppHealthApplicationDescription,
         businessImpact: AppHealthApplicationBusinessImpact,
         type: AppHealthApplicationType,
-        releaseDate: AppHealthApplicationReleaseDate,
         architectureDiagram: AppHealthApplicationArchitectureDiagram,
         hasTenants: AppHealthApplicationHasTenants,
         hasLicensing: AppHealthApplicationHasLicensing,
@@ -95,7 +92,6 @@ export class AppHealthApplication extends AggregateRoot
         this.description = description;
         this.businessImpact = businessImpact;
         this.type = type;
-        this.releaseDate = releaseDate;
         this.architectureDiagram = architectureDiagram;
         this.hasTenants = hasTenants;
         this.hasLicensing = hasLicensing;
@@ -124,7 +120,6 @@ export class AppHealthApplication extends AggregateRoot
         description: AppHealthApplicationDescription,
         businessImpact: AppHealthApplicationBusinessImpact,
         type: AppHealthApplicationType,
-        releaseDate: AppHealthApplicationReleaseDate,
         architectureDiagram: AppHealthApplicationArchitectureDiagram,
         hasTenants: AppHealthApplicationHasTenants,
         hasLicensing: AppHealthApplicationHasLicensing,
@@ -152,7 +147,6 @@ export class AppHealthApplication extends AggregateRoot
             description,
             businessImpact,
             type,
-            releaseDate,
             architectureDiagram,
             hasTenants,
             hasLicensing,
@@ -184,7 +178,6 @@ export class AppHealthApplication extends AggregateRoot
                 application.description?.value,
                 application.businessImpact?.value,
                 application.type.value,
-                application.releaseDate?.value,
                 application.architectureDiagram?.value,
                 application.hasTenants.value,
                 application.hasLicensing.value,
@@ -207,7 +200,6 @@ export class AppHealthApplication extends AggregateRoot
                 application.description?.value,
                 application.businessImpact?.value,
                 application.type?.value,
-                application.releaseDate?.value,
                 application.architectureDiagram?.value,
                 application.hasTenants?.value,
                 application.hasLicensing?.value,
@@ -230,7 +222,6 @@ export class AppHealthApplication extends AggregateRoot
                 application.description?.value,
                 application.businessImpact?.value,
                 application.type.value,
-                application.releaseDate?.value,
                 application.architectureDiagram?.value,
                 application.hasTenants.value,
                 application.hasLicensing.value,
@@ -252,7 +243,6 @@ export class AppHealthApplication extends AggregateRoot
             description: this.description?.value,
             businessImpact: this.businessImpact?.value,
             type: this.type.value,
-            releaseDate: this.releaseDate?.value,
             architectureDiagram: this.architectureDiagram?.value,
             hasTenants: this.hasTenants.value,
             hasLicensing: this.hasLicensing.value,
@@ -285,7 +275,6 @@ export class AppHealthApplication extends AggregateRoot
             description: this.description?.value,
             businessImpact: this.businessImpact?.value,
             type: this.type.value,
-            releaseDate: this.releaseDate?.value,
             architectureDiagram: this.architectureDiagram?.value,
             hasTenants: this.hasTenants.value,
             hasLicensing: this.hasLicensing.value,

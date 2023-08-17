@@ -15,7 +15,6 @@ type AppHealthApplication
     description: GraphQLString
     businessImpact: GraphQLString
     type: AppHealthApplicationType!
-    releaseDate: GraphQLISODateTime
     architectureDiagram: GraphQLString
     hasTenants: GraphQLBoolean!
     hasLicensing: GraphQLBoolean!
@@ -42,7 +41,6 @@ input AppHealthCreateApplicationInput
     description: GraphQLString
     businessImpact: GraphQLString
     type: AppHealthApplicationType!
-    releaseDate: GraphQLISODateTime
     architectureDiagram: GraphQLString
     hasTenants: GraphQLBoolean!
     hasLicensing: GraphQLBoolean!
@@ -58,7 +56,6 @@ input AppHealthUpdateApplicationByIdInput
     description: GraphQLString
     businessImpact: GraphQLString
     type: AppHealthApplicationType
-    releaseDate: GraphQLISODateTime
     architectureDiagram: GraphQLString
     hasTenants: GraphQLBoolean
     hasLicensing: GraphQLBoolean
@@ -74,7 +71,6 @@ input AppHealthUpdateApplicationsInput
     description: GraphQLString
     businessImpact: GraphQLString
     type: AppHealthApplicationType
-    releaseDate: GraphQLISODateTime
     architectureDiagram: GraphQLString
     hasTenants: GraphQLBoolean
     hasLicensing: GraphQLBoolean

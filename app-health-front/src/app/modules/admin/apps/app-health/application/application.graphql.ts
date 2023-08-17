@@ -6,7 +6,6 @@ export const fields = `
     description
     businessImpact
     type
-    releaseDate
     architectureDiagram
     hasTenants
     hasLicensing
